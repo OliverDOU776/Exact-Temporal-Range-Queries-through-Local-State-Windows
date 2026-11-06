@@ -190,6 +190,13 @@ document.querySelectorAll('input[name="budget"]').forEach((radio) => {
     if (!pair) return;
     document.getElementById("lower-count").textContent = pair[0];
     document.getElementById("upper-count").textContent = pair[1];
+    // Endpoint positions encode only the exact extrema, not attainable interiors.
+    const lowerX = 18 + 244 * pair[0] / 96;
+    const upperX = 18 + 244 * pair[1] / 96;
+    document.getElementById("count-range-line").setAttribute("d", `M${lowerX} 36H${upperX}`);
+    document.getElementById("count-min-dot").setAttribute("cx", lowerX);
+    document.getElementById("count-max-dot").setAttribute("cx", upperX);
+    document.getElementById("count-range-title").textContent = `Exact count extrema: ${pair[0]} and ${pair[1]} out of 96`;
     document.getElementById("budget-explanation").textContent = budgetNotes[radio.value];
     document.getElementById("budget-status").textContent = budgetNotes[radio.value];
   });

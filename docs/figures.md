@@ -2,7 +2,7 @@
 
 [← README](../README.md)
 
-The README uses the manuscript's original rendered figures. Their editable native SVG sources are included alongside the PNG exports. No new experimental measurements or scientific diagrams were generated for this release. PNGs preserve the original typography when the reader does not have Calibri installed; the SVG files retain live text without bundling font files.
+The README uses the manuscript's original rendered figures. Their editable native SVG sources are included alongside the PNG exports, and all three original figures remain unchanged. The project page adds a compact rendering of the same fixed BIG001 observations for its opening teaser, described below. No new experimental measurements were made. PNGs preserve the original typography when the reader does not have Calibri installed; the SVG files retain live text without bundling font files.
 
 | Figure | Rendered artwork | Native source | Content |
 |:--|:--|:--|:--|
@@ -31,6 +31,10 @@ The figure uses the original earliest qualifying 96-row window for BIG participa
 The bounds are copied from the fixed original count payload and agree with the primary campaigns' available case checks. Segments connect extrema at discrete budgets. They are not confidence intervals and do not assert attainability of every interior count. Different metrics may require different attaining paths. Historical timing of this source payload is not used as performance evidence.
 
 The observations are from **Peter Cho, Juseong Kim, Brinnae Bent, and Jessilyn Dunn, _BIG IDEAs Lab Glycemic Variability and Wearable Device Data_, PhysioNet, version 1.1.3**, [doi:10.13026/aw6y-fc44](https://doi.org/10.13026/aw6y-fc44). The associated study is **Brinnae Bent et al., _Engineering Digital Biomarkers of Interstitial Glucose from Noninvasive Smartwatches_, npj Digital Medicine 4, 89 (2021)**, [doi:10.1038/s41746-021-00465-w](https://doi.org/10.1038/s41746-021-00465-w). Retain the supplied [ODC Attribution license notice](assets/BIG_IDEAs_ODC-By.txt).
+
+### Project-page teaser
+
+The [opening input plot](project/big001-teaser.svg) renders the same 96 original BIG001 readings against their original elapsed timestamps, spanning 28,499 seconds. It uses the pinned official `001/Dexcom_001.csv`, original file lines 14–109. The pale band marks the closed TITR interval `[70,140]` mg/dL. The plot shows observed glucose only; it does not display a fitted or corrected trajectory. Adjacent count bounds on the project page are the fixed exact pairs listed above. This derived SVG is editable and uses standard fonts. The dataset attribution and ODC-By notice above also apply to this rendering.
 
 ## Figure 3: native prepared-operator costs
 
