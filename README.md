@@ -8,7 +8,7 @@
 
 Exact range extrema under one shared temporal variation budget.
 
-[Quick start](#quick-start) · [How it works](#why-local-windows-work) · [Results](#measured-results-and-the-crossover) · [Query contract](docs/method.md) · [Figure sources](docs/figures.md)
+[Project page source](docs/index.html) · [Quick start](#quick-start) · [How it works](#why-local-windows-work) · [Results](#measured-results-and-the-crossover) · [Query contract](docs/method.md) · [Figure sources](docs/figures.md)
 
 </div>
 
@@ -117,6 +117,8 @@ For the fixed public **BIG001** example, $n=96$, $D=\{-30,\ldots,30\}$, and the 
 The offsets and budgets define an analyst-specified sensitivity scenario. They do not estimate calibrated sensor error or clinical effects. The plotted data are from BIG IDEAs Lab Glycemic Variability and Wearable Device Data, version 1.1.3; [attribution and figure details](docs/figures.md) accompany the artwork.
 
 ## Paper and attribution
+
+The static project page in [`docs/index.html`](docs/index.html) includes an interactive fixed BIG001 count explorer, the original figures, measured results and runnable examples. See the [GitHub Pages publishing guide](docs/PAGES.md) to serve it directly from this repository.
 
 **Zijia Wang. _Exact Temporal Range Queries through Local State Windows._ Imperial College London.**
 
