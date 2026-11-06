@@ -4,13 +4,27 @@
 
 ### Exact Temporal Range Queries<br>Without Full-Domain Enumeration
 
-**Zijia Wang · Imperial College London**
+**Zijia Wang · Christofer Toumazou**  
+Imperial College London
 
 Exact range extrema under one shared temporal variation budget.
 
-[Project page source](docs/index.html) · [Quick start](#quick-start) · [How it works](#why-local-windows-work) · [Results](#measured-results-and-the-crossover) · [Query contract](docs/method.md) · [Figure sources](docs/figures.md)
+[Project](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/) · [Quick start](#quick-start) · [How it works](#why-local-windows-work) · [Results](#measured-results-and-the-crossover) · [Query contract](docs/method.md) · [Figure sources](docs/figures.md)
 
 </div>
+
+## Start with four concrete examples
+
+Count corrected readings inside the closed band **[70,140] mg/dL**. A reading is corrected as **glucose − offset**. The answer gives the smallest and largest possible counts under one shared movement budget.
+
+| Example | Allowed offsets and budget | Exact count bounds | What it means |
+|:--|:--|:--|:--|
+| **One reading: 141** (toy) | Offsets 0 or 1; budget 0 | **[0,1]** | Offset 0 leaves 141 outside the band; offset 1 gives 140 inside. Zero movement permits any constant offset. |
+| **Two readings: 70, 141** (toy) | Offsets 0 or 1; budget **0 → 1** | **[1,1] → [0,2]** | A constant offset gives one hit. With one unit of movement, offsets (0,1) give two hits; (1,0) give zero. |
+| **Mask the middle: 70, 100, 141** (toy) | Weights 1, 0, 1; offsets 0 or 1; budget **0 → 1** | **[1,1] → [0,2]** | The middle reading contributes no count. Both retained readings still share one budget. |
+| **Real public BIG001 sequence** | 96 samples; offsets −30…30; budget 4 | **[63,92] / 96** | Exact lower and upper TITR counts for the manuscript's fixed public example. |
+
+The first three are fully specified teaching examples; the last uses public observations. These pairs are exact extrema, not confidence intervals. Explore the [interactive examples on Project](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/#examples).
 
 <table>
 <tr>
@@ -118,8 +132,8 @@ The offsets and budgets define an analyst-specified sensitivity scenario. They d
 
 ## Paper and attribution
 
-The static project page in [`docs/index.html`](docs/index.html) includes an interactive fixed BIG001 count explorer, the original figures, measured results and runnable examples. See the [GitHub Pages publishing guide](docs/PAGES.md) to serve it directly from this repository.
+The [Project](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/) starts with worked examples and includes the interactive fixed BIG001 count explorer, original figures, measured results and runnable code.
 
-**Zijia Wang. _Exact Temporal Range Queries through Local State Windows._ Imperial College London.**
+**Zijia Wang and Christofer Toumazou. _Exact Temporal Range Queries through Local State Windows._ Imperial College London.**
 
 The evaluation uses [BIG IDEAs Lab data v1.1.3](https://doi.org/10.13026/aw6y-fc44) and [Shanghai diabetes datasets v5](https://doi.org/10.6084/m9.figshare.21600933.v5). Report predicates and masks are grounded in [QoCGM's pinned author implementation](https://github.com/simcich/QoCGM/tree/b0bac0f5dbcc97bcdcf3ef85c2789594f3dfece3). Retain the third-party attribution and applicable licenses when reusing data or derived figures. See [figure provenance](docs/figures.md) and the [third-party notices](NOTICE).

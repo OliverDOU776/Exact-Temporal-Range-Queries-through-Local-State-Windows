@@ -1,6 +1,6 @@
 # Implementation provenance
 
-The author of this project and its accompanying manuscript, **Exact Temporal Range Queries through Local State Windows**, is **Zijia Wang**. This repository makes the query operator runnable independently of the manuscript-production and experiment-campaign directories. It does not assign a new code license; see [NOTICE](../NOTICE).
+The authors of this project and its accompanying manuscript, **Exact Temporal Range Queries through Local State Windows**, are **Zijia Wang and Christofer Toumazou**. This repository makes the query operator runnable independently of the manuscript-production and experiment-campaign directories. It does not assign a new code license; see [NOTICE](../NOTICE).
 
 ## Original native algorithm
 

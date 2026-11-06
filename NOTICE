@@ -1,7 +1,7 @@
-Author: Zijia Wang
+Project authors: Zijia Wang; Christofer Toumazou
 Project: Exact Temporal Range Queries through Local State Windows
 
-The native solver is adapted from the author's supplied D011 operator source,
+The native solver is adapted from the supplied D011 operator source,
 which in turn identifies the frozen D005 operator as its origin. The portable
 Python implementation follows those algorithms and the accompanying paper.
 See docs/provenance.md for exact source identities and adaptation scope.

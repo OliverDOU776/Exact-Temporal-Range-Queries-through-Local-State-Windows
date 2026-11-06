@@ -1,8 +1,10 @@
 # Publish the project page
 
+Live page: [Project](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/). GitHub Pages is enabled; subsequent updates to `main` rebuild this page automatically.
+
 The buildless project page is `docs/index.html`. Its styles and interaction code are in `docs/project/`; it reuses the original figures and summary CSV in `docs/assets/`. The page works beneath a GitHub repository subpath and needs no package installation or build workflow.
 
-For this repository, an owner can activate GitHub Pages once:
+The active publishing configuration can be checked in repository settings:
 
 1. Open [Settings → Pages](https://github.com/OliverDOU776/Exact-Temporal-Range-Queries-through-Local-State-Windows/settings/pages).
 2. Under **Build and deployment**, choose **Deploy from a branch**.
