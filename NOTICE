@@ -1,0 +1,13 @@
+Author: Zijia Wang
+Project: Exact Temporal Range Queries through Local State Windows
+
+The native solver is adapted from the author's supplied D011 operator source,
+which in turn identifies the frozen D005 operator as its origin. The portable
+Python implementation follows those algorithms and the accompanying paper.
+See docs/provenance.md for exact source identities and adaptation scope.
+
+No open-source license grant is included in this repository. Public availability
+does not by itself grant permission to redistribute, sublicense, or relicense
+the code. Obtain applicable permissions from the rights holder before reuse.
+
+No third-party patient dataset, fonts, paper PDFs, or benchmark logs are bundled.
