@@ -1,0 +1,6 @@
+include NOTICE
+include CITATION.cff
+recursive-include docs *.md *.png *.svg *.csv *.txt
+recursive-include examples *.json *.txt *.py
+recursive-include native *.cpp
+recursive-include tests *.py

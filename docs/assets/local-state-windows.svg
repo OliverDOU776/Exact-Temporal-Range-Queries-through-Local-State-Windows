@@ -1,0 +1,500 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="178mm" height="68.44796829mm" viewBox="0 0 1009 388" version="1.1" role="img" aria-labelledby="title desc">
+  <title id="title">Exact localization of temporal interval queries</title>
+  <desc id="desc">Mathematical four-run example, overlapping offset covers, exact sparse incidence graph, fixed-score restoration, and endpoint reduction.</desc>
+  <defs id="definitions">
+    <marker id="arrow" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5.5" markerHeight="5.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0.5 0.5 L 6 3.5 L 0.5 6.5" fill="none" stroke="#202020" stroke-width="1" />
+    </marker>
+    <marker id="warm-arrow" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5.5" markerHeight="5.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0.5 0.5 L 6 3.5 L 0.5 6.5" fill="none" stroke="#A74A22" stroke-width="1" />
+    </marker>
+    <marker id="ochre-arrow" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5.5" markerHeight="5.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0.5 0.5 L 6 3.5 L 0.5 6.5" fill="none" stroke="#A47000" stroke-width="1" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1009" height="388" fill="white" stroke="none" stroke-width="0.85" rx="0" id="background" />
+  <g id="input">
+    <rect x="9" y="31" width="236" height="347" fill="white" stroke="#202020" stroke-width="0.9" rx="17" id="input-frame" />
+    <rect x="53.2209" y="13" width="147.5582" height="34" fill="white" stroke="none" stroke-width="0.85" rx="0" id="input-title-white" />
+    <text x="127" y="28" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="input-title-0">a. Positive weighted</text>
+    <text x="127" y="45" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="input-title-1">interval runs</text>
+    <text x="22" y="66" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="input-domain">D = {0,…,23}     V = 4</text>
+    <g id="input-I1">
+      <text x="22" y="88" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="run-label-0">I₁ [2,6]</text>
+      <text x="228" y="88" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="run-weight-0">w = 2</text>
+      <circle cx="35" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-0" />
+      <circle cx="43.3478" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-1" />
+      <circle cx="51.6957" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-2" />
+      <circle cx="60.0435" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-3" />
+      <circle cx="68.3913" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-4" />
+      <circle cx="76.7391" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-5" />
+      <circle cx="85.087" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-6" />
+      <circle cx="93.4348" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-7" />
+      <circle cx="101.7826" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-8" />
+      <circle cx="110.1304" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-9" />
+      <circle cx="118.4783" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-10" />
+      <circle cx="126.8261" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-11" />
+      <circle cx="135.1739" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-12" />
+      <circle cx="143.5217" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-13" />
+      <circle cx="151.8696" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-14" />
+      <circle cx="160.2174" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-15" />
+      <circle cx="168.5652" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-16" />
+      <circle cx="176.913" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-17" />
+      <circle cx="185.2609" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-18" />
+      <circle cx="193.6087" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-19" />
+      <circle cx="201.9565" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-20" />
+      <circle cx="210.3043" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-21" />
+      <circle cx="218.6522" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-22" />
+      <circle cx="227" cy="98" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-0-23" />
+      <line x1="51.6957" y1="98" x2="85.087" y2="98" stroke="#A47000" stroke-width="3" id="run-interval-0" />
+      <circle cx="51.6957" cy="98" r="2.5" fill="#FBEDBA" stroke="#202020" stroke-width="0.8" id="run-end-0-2" />
+      <circle cx="85.087" cy="98" r="2.5" fill="#FBEDBA" stroke="#202020" stroke-width="0.8" id="run-end-0-6" />
+      <circle cx="85.087" cy="98" r="3.5" fill="#A74A22" stroke="#A74A22" stroke-width="0.8" id="witness-on-I1" />
+    </g>
+    <g id="input-I2">
+      <text x="22" y="119" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="run-label-1">I₂ [7,13]</text>
+      <text x="228" y="119" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="run-weight-1">w = 1</text>
+      <circle cx="35" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-0" />
+      <circle cx="43.3478" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-1" />
+      <circle cx="51.6957" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-2" />
+      <circle cx="60.0435" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-3" />
+      <circle cx="68.3913" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-4" />
+      <circle cx="76.7391" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-5" />
+      <circle cx="85.087" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-6" />
+      <circle cx="93.4348" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-7" />
+      <circle cx="101.7826" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-8" />
+      <circle cx="110.1304" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-9" />
+      <circle cx="118.4783" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-10" />
+      <circle cx="126.8261" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-11" />
+      <circle cx="135.1739" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-12" />
+      <circle cx="143.5217" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-13" />
+      <circle cx="151.8696" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-14" />
+      <circle cx="160.2174" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-15" />
+      <circle cx="168.5652" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-16" />
+      <circle cx="176.913" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-17" />
+      <circle cx="185.2609" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-18" />
+      <circle cx="193.6087" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-19" />
+      <circle cx="201.9565" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-20" />
+      <circle cx="210.3043" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-21" />
+      <circle cx="218.6522" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-22" />
+      <circle cx="227" cy="129" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-1-23" />
+      <line x1="93.4348" y1="129" x2="143.5217" y2="129" stroke="#A47000" stroke-width="3" id="run-interval-1" />
+      <circle cx="93.4348" cy="129" r="2.5" fill="#FBEDBA" stroke="#202020" stroke-width="0.8" id="run-end-1-7" />
+      <circle cx="143.5217" cy="129" r="2.5" fill="#FBEDBA" stroke="#202020" stroke-width="0.8" id="run-end-1-13" />
+      <circle cx="93.4348" cy="129" r="3.5" fill="#A74A22" stroke="#A74A22" stroke-width="0.8" id="witness-on-I2" />
+    </g>
+    <g id="input-I3">
+      <text x="22" y="150" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="run-label-2">I₃ [4,19]</text>
+      <text x="228" y="150" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="run-weight-2">w = 3</text>
+      <circle cx="35" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-0" />
+      <circle cx="43.3478" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-1" />
+      <circle cx="51.6957" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-2" />
+      <circle cx="60.0435" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-3" />
+      <circle cx="68.3913" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-4" />
+      <circle cx="76.7391" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-5" />
+      <circle cx="85.087" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-6" />
+      <circle cx="93.4348" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-7" />
+      <circle cx="101.7826" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-8" />
+      <circle cx="110.1304" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-9" />
+      <circle cx="118.4783" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-10" />
+      <circle cx="126.8261" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-11" />
+      <circle cx="135.1739" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-12" />
+      <circle cx="143.5217" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-13" />
+      <circle cx="151.8696" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-14" />
+      <circle cx="160.2174" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-15" />
+      <circle cx="168.5652" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-16" />
+      <circle cx="176.913" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-17" />
+      <circle cx="185.2609" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-18" />
+      <circle cx="193.6087" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-19" />
+      <circle cx="201.9565" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-20" />
+      <circle cx="210.3043" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-21" />
+      <circle cx="218.6522" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-22" />
+      <circle cx="227" cy="160" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-2-23" />
+      <line x1="68.3913" y1="160" x2="193.6087" y2="160" stroke="#A47000" stroke-width="3" id="run-interval-2" />
+      <circle cx="68.3913" cy="160" r="2.5" fill="#FBEDBA" stroke="#202020" stroke-width="0.8" id="run-end-2-4" />
+      <circle cx="193.6087" cy="160" r="2.5" fill="#FBEDBA" stroke="#202020" stroke-width="0.8" id="run-end-2-19" />
+      <circle cx="93.4348" cy="160" r="3.5" fill="#A74A22" stroke="#A74A22" stroke-width="0.8" id="witness-on-I3" />
+    </g>
+    <g id="input-I4">
+      <text x="22" y="181" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="run-label-3">I₄ [10,17]</text>
+      <text x="228" y="181" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="run-weight-3">w = 2</text>
+      <circle cx="35" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-0" />
+      <circle cx="43.3478" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-1" />
+      <circle cx="51.6957" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-2" />
+      <circle cx="60.0435" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-3" />
+      <circle cx="68.3913" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-4" />
+      <circle cx="76.7391" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-5" />
+      <circle cx="85.087" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-6" />
+      <circle cx="93.4348" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-7" />
+      <circle cx="101.7826" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-8" />
+      <circle cx="110.1304" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-9" />
+      <circle cx="118.4783" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-10" />
+      <circle cx="126.8261" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-11" />
+      <circle cx="135.1739" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-12" />
+      <circle cx="143.5217" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-13" />
+      <circle cx="151.8696" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-14" />
+      <circle cx="160.2174" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-15" />
+      <circle cx="168.5652" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-16" />
+      <circle cx="176.913" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-17" />
+      <circle cx="185.2609" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-18" />
+      <circle cx="193.6087" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-19" />
+      <circle cx="201.9565" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-20" />
+      <circle cx="210.3043" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-21" />
+      <circle cx="218.6522" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-22" />
+      <circle cx="227" cy="191" r="0.65" fill="#D0D0CA" stroke="#D0D0CA" stroke-width="0.2" id="input-track-3-23" />
+      <line x1="118.4783" y1="191" x2="176.913" y2="191" stroke="#A47000" stroke-width="3" id="run-interval-3" />
+      <circle cx="118.4783" cy="191" r="2.5" fill="#FBEDBA" stroke="#202020" stroke-width="0.8" id="run-end-3-10" />
+      <circle cx="176.913" cy="191" r="2.5" fill="#FBEDBA" stroke="#202020" stroke-width="0.8" id="run-end-3-17" />
+      <circle cx="118.4783" cy="191" r="3.5" fill="#A74A22" stroke="#A74A22" stroke-width="0.8" id="witness-on-I4" />
+    </g>
+    <line x1="35" y1="207" x2="227" y2="207" stroke="#202020" stroke-width="0.85" id="input-offset-axis" />
+    <line x1="35" y1="205" x2="35" y2="210" stroke="#202020" stroke-width="0.7" id="input-offset-tick-0" />
+    <text x="35" y="224" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="input-offset-label-0">0</text>
+    <line x1="68.3913" y1="205" x2="68.3913" y2="210" stroke="#202020" stroke-width="0.7" id="input-offset-tick-4" />
+    <text x="68.3913" y="224" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="input-offset-label-4">4</text>
+    <line x1="101.7826" y1="205" x2="101.7826" y2="210" stroke="#202020" stroke-width="0.7" id="input-offset-tick-8" />
+    <text x="101.7826" y="224" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="input-offset-label-8">8</text>
+    <line x1="135.1739" y1="205" x2="135.1739" y2="210" stroke="#202020" stroke-width="0.7" id="input-offset-tick-12" />
+    <text x="135.1739" y="224" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="input-offset-label-12">12</text>
+    <line x1="168.5652" y1="205" x2="168.5652" y2="210" stroke="#202020" stroke-width="0.7" id="input-offset-tick-16" />
+    <text x="168.5652" y="224" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="input-offset-label-16">16</text>
+    <line x1="201.9565" y1="205" x2="201.9565" y2="210" stroke="#202020" stroke-width="0.7" id="input-offset-tick-20" />
+    <text x="201.9565" y="224" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="input-offset-label-20">20</text>
+    <line x1="227" y1="205" x2="227" y2="210" stroke="#202020" stroke-width="0.7" id="input-offset-tick-23" />
+    <text x="227" y="224" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="input-offset-label-23">23</text>
+    <text x="131" y="240" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="input-offset-name">offset state</text>
+    <text x="22" y="260" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="witness-label">Feasible temporal witness</text>
+    <line x1="48" y1="282" x2="83" y2="282" stroke="#202020" stroke-width="0.85" marker-end="url(#arrow)" id="witness-transition-0" />
+    <text x="66" y="304" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="witness-cost-0">1</text>
+    <circle cx="38" cy="282" r="10" fill="#FBEDBA" stroke="#202020" stroke-width="0.8" id="witness-node-0" />
+    <text x="38" y="286.5" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="witness-value-0">6</text>
+    <line x1="104" y1="282" x2="139" y2="282" stroke="#202020" stroke-width="0.85" marker-end="url(#arrow)" id="witness-transition-1" />
+    <text x="122" y="304" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="witness-cost-1">0</text>
+    <circle cx="94" cy="282" r="10" fill="#F8DCC9" stroke="#202020" stroke-width="0.8" id="witness-node-1" />
+    <text x="94" y="286.5" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="witness-value-1">7</text>
+    <line x1="160" y1="282" x2="195" y2="282" stroke="#202020" stroke-width="0.85" marker-end="url(#arrow)" id="witness-transition-2" />
+    <text x="178" y="304" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="witness-cost-2">3</text>
+    <circle cx="150" cy="282" r="10" fill="#FBEDBA" stroke="#202020" stroke-width="0.8" id="witness-node-2" />
+    <text x="150" y="286.5" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="witness-value-2">7</text>
+    <circle cx="206" cy="282" r="10" fill="#F8DCC9" stroke="#202020" stroke-width="0.8" id="witness-node-3" />
+    <text x="206" y="286.5" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="witness-value-3">10</text>
+    <text x="127" y="322" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="witness-TV-and-score">TV = 4; score = 8</text>
+    <text x="22" y="342" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="boundary-example-label">I₂ boundary edges</text>
+    <text x="22" y="359" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="boundary-lower">(6,7) → W₀,W₁</text>
+    <text x="22" y="374" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="boundary-upper">(13,14) → W₂,W₃</text>
+  </g>
+  <g id="overlapping-covers">
+    <text x="374" y="24" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="covers-title-0">b. Overlapping</text>
+    <text x="374" y="41" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="covers-title-1">offset covers</text>
+    <g id="cover-W0">
+      <text x="268" y="66" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#767676" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="cover-label-0">W₀[0,7]</text>
+      <rect x="337" y="57" width="47.6957" height="10" fill="#F5F5F1" stroke="none" stroke-width="0.85" rx="0" id="cover-shade-0" />
+      <line x1="340" y1="62" x2="381.6957" y2="62" stroke="#767676" stroke-width="1.1" id="cover-segment-0" />
+      <circle cx="340" cy="62" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-0-state-0" />
+      <circle cx="345.9565" cy="62" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-0-state-1" />
+      <circle cx="351.913" cy="62" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-0-state-2" />
+      <circle cx="357.8696" cy="62" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-0-state-3" />
+      <circle cx="363.8261" cy="62" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-0-state-4" />
+      <circle cx="369.7826" cy="62" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-0-state-5" />
+      <circle cx="375.7391" cy="62" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-0-state-6" />
+      <circle cx="381.6957" cy="62" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-0-state-7" />
+    </g>
+    <g id="cover-W1">
+      <text x="268" y="87" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A47000" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="cover-label-1">W₁[4,11]</text>
+      <rect x="360.8261" y="78" width="47.6957" height="10" fill="#FBEDBA" stroke="none" stroke-width="0.85" rx="0" id="cover-shade-1" />
+      <line x1="363.8261" y1="83" x2="405.5217" y2="83" stroke="#A47000" stroke-width="1.1" id="cover-segment-1" />
+      <circle cx="363.8261" cy="83" r="1.7" fill="white" stroke="#A47000" stroke-width="0.6" id="cover-1-state-4" />
+      <circle cx="369.7826" cy="83" r="1.7" fill="white" stroke="#A47000" stroke-width="0.6" id="cover-1-state-5" />
+      <circle cx="375.7391" cy="83" r="1.7" fill="white" stroke="#A47000" stroke-width="0.6" id="cover-1-state-6" />
+      <circle cx="381.6957" cy="83" r="1.7" fill="white" stroke="#A47000" stroke-width="0.6" id="cover-1-state-7" />
+      <circle cx="387.6522" cy="83" r="1.7" fill="white" stroke="#A47000" stroke-width="0.6" id="cover-1-state-8" />
+      <circle cx="393.6087" cy="83" r="1.7" fill="white" stroke="#A47000" stroke-width="0.6" id="cover-1-state-9" />
+      <circle cx="399.5652" cy="83" r="1.7" fill="white" stroke="#A47000" stroke-width="0.6" id="cover-1-state-10" />
+      <circle cx="405.5217" cy="83" r="1.7" fill="white" stroke="#A47000" stroke-width="0.6" id="cover-1-state-11" />
+      <circle cx="399.5652" cy="83" r="2.5" fill="#A47000" stroke="#A47000" stroke-width="0.6" id="cover-witness-state-10" />
+      <circle cx="375.7391" cy="83" r="2.5" fill="#A47000" stroke="#A47000" stroke-width="0.6" id="cover-witness-state-6" />
+      <circle cx="381.6957" cy="83" r="2.5" fill="#A47000" stroke="#A47000" stroke-width="0.6" id="cover-witness-state-7" />
+    </g>
+    <g id="cover-W2">
+      <text x="268" y="108" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A74A22" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="cover-label-2">W₂[8,15]</text>
+      <rect x="384.6522" y="99" width="47.6957" height="10" fill="#F8DCC9" stroke="none" stroke-width="0.85" rx="0" id="cover-shade-2" />
+      <line x1="387.6522" y1="104" x2="429.3478" y2="104" stroke="#A74A22" stroke-width="1.1" id="cover-segment-2" />
+      <circle cx="387.6522" cy="104" r="1.7" fill="white" stroke="#A74A22" stroke-width="0.6" id="cover-2-state-8" />
+      <circle cx="393.6087" cy="104" r="1.7" fill="white" stroke="#A74A22" stroke-width="0.6" id="cover-2-state-9" />
+      <circle cx="399.5652" cy="104" r="1.7" fill="white" stroke="#A74A22" stroke-width="0.6" id="cover-2-state-10" />
+      <circle cx="405.5217" cy="104" r="1.7" fill="white" stroke="#A74A22" stroke-width="0.6" id="cover-2-state-11" />
+      <circle cx="411.4783" cy="104" r="1.7" fill="white" stroke="#A74A22" stroke-width="0.6" id="cover-2-state-12" />
+      <circle cx="417.4348" cy="104" r="1.7" fill="white" stroke="#A74A22" stroke-width="0.6" id="cover-2-state-13" />
+      <circle cx="423.3913" cy="104" r="1.7" fill="white" stroke="#A74A22" stroke-width="0.6" id="cover-2-state-14" />
+      <circle cx="429.3478" cy="104" r="1.7" fill="white" stroke="#A74A22" stroke-width="0.6" id="cover-2-state-15" />
+    </g>
+    <g id="cover-W3">
+      <text x="268" y="129" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#767676" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="cover-label-3">W₃[12,19]</text>
+      <rect x="408.4783" y="120" width="47.6957" height="10" fill="#F5F5F1" stroke="none" stroke-width="0.85" rx="0" id="cover-shade-3" />
+      <line x1="411.4783" y1="125" x2="453.1739" y2="125" stroke="#767676" stroke-width="1.1" id="cover-segment-3" />
+      <circle cx="411.4783" cy="125" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-3-state-12" />
+      <circle cx="417.4348" cy="125" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-3-state-13" />
+      <circle cx="423.3913" cy="125" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-3-state-14" />
+      <circle cx="429.3478" cy="125" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-3-state-15" />
+      <circle cx="435.3043" cy="125" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-3-state-16" />
+      <circle cx="441.2609" cy="125" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-3-state-17" />
+      <circle cx="447.2174" cy="125" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-3-state-18" />
+      <circle cx="453.1739" cy="125" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-3-state-19" />
+    </g>
+    <g id="cover-W4">
+      <text x="268" y="150" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#767676" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="cover-label-4">W₄[16,23]</text>
+      <rect x="432.3043" y="141" width="47.6957" height="10" fill="#F5F5F1" stroke="none" stroke-width="0.85" rx="0" id="cover-shade-4" />
+      <line x1="435.3043" y1="146" x2="477" y2="146" stroke="#767676" stroke-width="1.1" id="cover-segment-4" />
+      <circle cx="435.3043" cy="146" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-4-state-16" />
+      <circle cx="441.2609" cy="146" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-4-state-17" />
+      <circle cx="447.2174" cy="146" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-4-state-18" />
+      <circle cx="453.1739" cy="146" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-4-state-19" />
+      <circle cx="459.1304" cy="146" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-4-state-20" />
+      <circle cx="465.087" cy="146" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-4-state-21" />
+      <circle cx="471.0435" cy="146" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-4-state-22" />
+      <circle cx="477" cy="146" r="1.7" fill="white" stroke="#767676" stroke-width="0.6" id="cover-4-state-23" />
+    </g>
+    <line x1="340" y1="163" x2="477" y2="163" stroke="#202020" stroke-width="0.6" id="critical-support-axis" />
+    <circle cx="340" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-0" />
+    <circle cx="345.9565" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-1" />
+    <circle cx="351.913" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-2" />
+    <circle cx="357.8696" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-3" />
+    <circle cx="363.8261" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-4" />
+    <circle cx="375.7391" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-6" />
+    <circle cx="381.6957" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-7" />
+    <circle cx="393.6087" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-9" />
+    <circle cx="399.5652" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-10" />
+    <circle cx="417.4348" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-13" />
+    <circle cx="423.3913" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-14" />
+    <circle cx="441.2609" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-17" />
+    <circle cx="447.2174" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-18" />
+    <circle cx="453.1739" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-19" />
+    <circle cx="459.1304" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-20" />
+    <circle cx="477" cy="163" r="1.4" fill="white" stroke="#202020" stroke-width="0.6" id="critical-state-23" />
+    <text x="340" y="180" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="cover-coordinate-0">0</text>
+    <text x="387.6522" y="180" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="cover-coordinate-8">8</text>
+    <text x="435.3043" y="180" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="cover-coordinate-16">16</text>
+    <text x="477" y="180" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="cover-coordinate-23">23</text>
+    <text x="270" y="197" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="cover-size">≤ 2V = 8 states; gap ≤ 3</text>
+  </g>
+  <g id="static-depth">
+    <text x="622" y="24" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="depth-title-0">d. Weighted static</text>
+    <text x="622" y="41" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="depth-title-1">depth and baseline</text>
+    <rect x="595.4783" y="65" width="65.0435" height="86" fill="#F8DCC9" stroke="none" stroke-width="0.85" rx="0" id="selected-W2-depth-band" />
+    <line x1="531" y1="151" x2="725" y2="151" stroke="#D0D0CA" stroke-width="0.5" id="depth-grid-0" />
+    <text x="524" y="155" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="depth-y-0">0</text>
+    <line x1="531" y1="112" x2="725" y2="112" stroke="#D0D0CA" stroke-width="0.5" id="depth-grid-3" />
+    <text x="524" y="116" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="depth-y-3">3</text>
+    <line x1="531" y1="73" x2="725" y2="73" stroke="#D0D0CA" stroke-width="0.5" id="depth-grid-6" />
+    <text x="524" y="77" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="depth-y-6">6</text>
+    <path d="M 531.0 151 H 535.2173913043479 V 151 H 539.4347826086956 H 543.6521739130435 V 125 H 547.8695652173913 H 552.0869565217391 V 125 H 556.304347826087 H 560.5217391304348 V 86 H 564.7391304347826 H 568.9565217391305 V 86 H 573.1739130434783 H 577.3913043478261 V 86 H 581.6086956521739 H 585.8260869565217 V 99 H 590.0434782608695 H 594.2608695652174 V 99 H 598.4782608695652 H 602.695652173913 V 99 H 606.9130434782609 H 611.1304347826087 V 73 H 615.3478260869565 H 619.5652173913044 V 73 H 623.7826086956521 H 628.0 V 73 H 632.2173913043479 H 636.4347826086956 V 73 H 640.6521739130435 H 644.8695652173913 V 86 H 649.0869565217391 H 653.304347826087 V 86 H 657.5217391304348 H 661.7391304347826 V 86 H 665.9565217391305 H 670.1739130434783 V 86 H 674.3913043478261 H 678.6086956521739 V 112 H 682.8260869565217 H 687.0434782608695 V 112 H 691.2608695652174 H 695.4782608695652 V 151 H 699.695652173913 H 703.9130434782609 V 151 H 708.1304347826087 H 712.3478260869565 V 151 H 716.5652173913044 H 720.7826086956522 V 151 H 725.0" stroke="#202020" stroke-width="1.15" fill="none" id="static-depth-step" />
+    <circle cx="531" cy="151" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-0" />
+    <circle cx="539.4348" cy="151" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-1" />
+    <circle cx="547.8696" cy="125" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-2" />
+    <circle cx="556.3043" cy="125" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-3" />
+    <circle cx="564.7391" cy="86" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-4" />
+    <circle cx="573.1739" cy="86" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-5" />
+    <circle cx="581.6087" cy="86" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-6" />
+    <circle cx="590.0435" cy="99" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-7" />
+    <circle cx="598.4783" cy="99" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-8" />
+    <circle cx="606.913" cy="99" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-9" />
+    <circle cx="615.3478" cy="73" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-10" />
+    <circle cx="623.7826" cy="73" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-11" />
+    <circle cx="632.2174" cy="73" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-12" />
+    <circle cx="640.6522" cy="73" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-13" />
+    <circle cx="649.087" cy="86" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-14" />
+    <circle cx="657.5217" cy="86" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-15" />
+    <circle cx="665.9565" cy="86" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-16" />
+    <circle cx="674.3913" cy="86" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-17" />
+    <circle cx="682.8261" cy="112" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-18" />
+    <circle cx="691.2609" cy="112" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-19" />
+    <circle cx="699.6957" cy="151" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-20" />
+    <circle cx="708.1304" cy="151" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-21" />
+    <circle cx="716.5652" cy="151" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-22" />
+    <circle cx="725" cy="151" r="1.55" fill="#FBEDBA" stroke="#202020" stroke-width="0.6" id="depth-state-23" />
+    <line x1="531" y1="66" x2="531" y2="151" stroke="#202020" stroke-width="0.75" id="depth-y-axis" />
+    <text x="531" y="169" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="depth-x-0">0</text>
+    <text x="598.4783" y="169" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="depth-x-8">8</text>
+    <text x="665.9565" y="169" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="depth-x-16">16</text>
+    <text x="725" y="169" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="depth-x-23">23</text>
+    <text x="507" y="63" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="depth-axis-title">d(z)</text>
+    <text x="628" y="63" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="depth-selected-W2">W₂</text>
+    <text x="622" y="191" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="depth-baseline-equation">f₂ = d(8) − 1 = 3</text>
+  </g>
+  <g id="localwindows">
+    <rect x="260" y="216" width="488" height="162" fill="white" stroke="#202020" stroke-width="0.9" rx="17" id="localwindows-frame" />
+    <rect x="413.0802" y="198" width="181.8396" height="19" fill="white" stroke="none" stroke-width="0.85" rx="0" id="localwindows-title-white" />
+    <text x="504" y="220" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="localwindows-title-0">c. Sparse local evaluation</text>
+    <g id="sensitivity-graph">
+      <text x="278" y="239" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="sensitivity-graph-label">run–cover incidences</text>
+      <line x1="306" y1="258" x2="433" y2="251" stroke="#202020" stroke-width="0.75" id="incidence-I1-W0" />
+      <line x1="306" y1="288" x2="433" y2="251" stroke="#202020" stroke-width="0.75" id="incidence-I2-W0" />
+      <line x1="306" y1="318" x2="433" y2="251" stroke="#202020" stroke-width="0.75" id="incidence-I3-W0" />
+      <line x1="306" y1="258" x2="433" y2="275" stroke="#202020" stroke-width="0.75" id="incidence-I1-W1" />
+      <line x1="306" y1="288" x2="433" y2="275" stroke="#202020" stroke-width="0.75" id="incidence-I2-W1" />
+      <line x1="306" y1="348" x2="433" y2="275" stroke="#202020" stroke-width="0.75" id="incidence-I4-W1" />
+      <line x1="306" y1="288" x2="433" y2="299" stroke="#A74A22" stroke-width="1.25" id="incidence-I2-W2" />
+      <line x1="306" y1="348" x2="433" y2="299" stroke="#A74A22" stroke-width="1.25" id="incidence-I4-W2" />
+      <line x1="306" y1="288" x2="433" y2="323" stroke="#202020" stroke-width="0.75" id="incidence-I2-W3" />
+      <line x1="306" y1="348" x2="433" y2="323" stroke="#202020" stroke-width="0.75" id="incidence-I4-W3" />
+      <line x1="306" y1="318" x2="433" y2="347" stroke="#202020" stroke-width="0.75" id="incidence-I3-W4" />
+      <line x1="306" y1="348" x2="433" y2="347" stroke="#202020" stroke-width="0.75" id="incidence-I4-W4" />
+      <circle cx="306" cy="258" r="4" fill="#FBEDBA" stroke="#202020" stroke-width="0.9" id="incidence-run-1" />
+      <text x="290" y="262" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="incidence-run-label-1">I₁</text>
+      <circle cx="306" cy="288" r="4" fill="#FBEDBA" stroke="#202020" stroke-width="0.9" id="incidence-run-2" />
+      <text x="290" y="292" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="incidence-run-label-2">I₂</text>
+      <circle cx="306" cy="318" r="4" fill="#FBEDBA" stroke="#202020" stroke-width="0.9" id="incidence-run-3" />
+      <text x="290" y="322" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="incidence-run-label-3">I₃</text>
+      <circle cx="306" cy="348" r="4" fill="#FBEDBA" stroke="#202020" stroke-width="0.9" id="incidence-run-4" />
+      <text x="290" y="352" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="incidence-run-label-4">I₄</text>
+      <circle cx="433" cy="251" r="4" fill="#FBEDBA" stroke="#202020" stroke-width="0.9" id="incidence-cover-0" />
+      <text x="444" y="255" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="incidence-cover-label-0">W₀</text>
+      <circle cx="433" cy="275" r="4" fill="#FBEDBA" stroke="#202020" stroke-width="0.9" id="incidence-cover-1" />
+      <text x="444" y="279" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="incidence-cover-label-1">W₁</text>
+      <circle cx="433" cy="299" r="8.5" fill="#F8DCC9" stroke="none" stroke-width="0.85" id="selected-cover-halo" />
+      <circle cx="433" cy="299" r="4" fill="#F8DCC9" stroke="#202020" stroke-width="0.9" id="incidence-cover-2" />
+      <text x="444" y="303" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A74A22" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="incidence-cover-label-2">W₂</text>
+      <circle cx="433" cy="323" r="4" fill="#FBEDBA" stroke="#202020" stroke-width="0.9" id="incidence-cover-3" />
+      <text x="444" y="327" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="incidence-cover-label-3">W₃</text>
+      <circle cx="433" cy="347" r="4" fill="#FBEDBA" stroke="#202020" stroke-width="0.9" id="incidence-cover-4" />
+      <text x="444" y="351" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="incidence-cover-label-4">W₄</text>
+      <text x="368" y="370" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="incidence-bound">12 ≤ 4r = 16</text>
+    </g>
+    <path d="M 467 299 C 478 299 479 277 491 277" stroke="#202020" stroke-width="0.9" fill="none" marker-end="url(#arrow)" id="selected-cover-to-detail" />
+    <g id="selected-window-W2">
+      <text x="612" y="239" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="selected-window-title">W₂ = [8,15]</text>
+      <text x="542" y="258" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="local-coordinate-8">8</text>
+      <text x="563" y="258" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="local-coordinate-9">9</text>
+      <text x="584" y="258" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="local-coordinate-10">10</text>
+      <text x="605" y="258" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="local-coordinate-11">11</text>
+      <text x="626" y="258" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="local-coordinate-12">12</text>
+      <text x="647" y="258" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="local-coordinate-13">13</text>
+      <text x="668" y="258" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="local-coordinate-14">14</text>
+      <text x="689" y="258" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="local-coordinate-15">15</text>
+      <g id="local-I1">
+        <text x="519" y="280" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#767676" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="local-label-1">I₁</text>
+        <path d="M 539.9 273.9 L 544.1 278.1 M 539.9 278.1 L 544.1 273.9" stroke="#767676" stroke-width="0.95" fill="none" id="local-miss-I1-8" />
+        <path d="M 560.9 273.9 L 565.1 278.1 M 560.9 278.1 L 565.1 273.9" stroke="#767676" stroke-width="0.95" fill="none" id="local-miss-I1-9" />
+        <path d="M 581.9 273.9 L 586.1 278.1 M 581.9 278.1 L 586.1 273.9" stroke="#767676" stroke-width="0.95" fill="none" id="local-miss-I1-10" />
+        <path d="M 602.9 273.9 L 607.1 278.1 M 602.9 278.1 L 607.1 273.9" stroke="#767676" stroke-width="0.95" fill="none" id="local-miss-I1-11" />
+        <path d="M 623.9 273.9 L 628.1 278.1 M 623.9 278.1 L 628.1 273.9" stroke="#767676" stroke-width="0.95" fill="none" id="local-miss-I1-12" />
+        <path d="M 644.9 273.9 L 649.1 278.1 M 644.9 278.1 L 649.1 273.9" stroke="#767676" stroke-width="0.95" fill="none" id="local-miss-I1-13" />
+        <path d="M 665.9 273.9 L 670.1 278.1 M 665.9 278.1 L 670.1 273.9" stroke="#767676" stroke-width="0.95" fill="none" id="local-miss-I1-14" />
+        <path d="M 686.9 273.9 L 691.1 278.1 M 686.9 278.1 L 691.1 273.9" stroke="#767676" stroke-width="0.95" fill="none" id="local-miss-I1-15" />
+        <text x="708" y="280" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#767676" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="fixed-run-score-1">0</text>
+      </g>
+      <g id="local-I2">
+        <rect x="533" y="290" width="165" height="14" fill="#FBEDBA" stroke="none" stroke-width="0.85" rx="3" id="active-run-strip-2" />
+        <text x="519" y="301" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="local-label-2">I₂</text>
+        <circle cx="542" cy="297" r="2.4" fill="#A47000" stroke="#A47000" stroke-width="0.3" id="local-hit-I2-8" />
+        <circle cx="563" cy="297" r="2.4" fill="#A47000" stroke="#A47000" stroke-width="0.3" id="local-hit-I2-9" />
+        <circle cx="584" cy="297" r="2.4" fill="#A47000" stroke="#A47000" stroke-width="0.3" id="local-hit-I2-10" />
+        <circle cx="605" cy="297" r="2.4" fill="#A47000" stroke="#A47000" stroke-width="0.3" id="local-hit-I2-11" />
+        <circle cx="626" cy="297" r="2.4" fill="#A47000" stroke="#A47000" stroke-width="0.3" id="local-hit-I2-12" />
+        <circle cx="647" cy="297" r="2.4" fill="#A47000" stroke="#A47000" stroke-width="0.3" id="local-hit-I2-13" />
+        <path d="M 665.9 294.9 L 670.1 299.1 M 665.9 299.1 L 670.1 294.9" stroke="#767676" stroke-width="0.95" fill="none" id="local-miss-I2-14" />
+        <path d="M 686.9 294.9 L 691.1 299.1 M 686.9 299.1 L 691.1 294.9" stroke="#767676" stroke-width="0.95" fill="none" id="local-miss-I2-15" />
+      </g>
+      <g id="local-I3">
+        <rect x="533" y="311" width="165" height="14" fill="#F8DCC9" stroke="none" stroke-width="0.85" rx="3" id="fixed-hit-strip" />
+        <text x="519" y="322" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="local-label-3">I₃</text>
+        <circle cx="542" cy="318" r="2.4" fill="#A74A22" stroke="#A74A22" stroke-width="0.3" id="local-hit-I3-8" />
+        <circle cx="563" cy="318" r="2.4" fill="#A74A22" stroke="#A74A22" stroke-width="0.3" id="local-hit-I3-9" />
+        <circle cx="584" cy="318" r="2.4" fill="#A74A22" stroke="#A74A22" stroke-width="0.3" id="local-hit-I3-10" />
+        <circle cx="605" cy="318" r="2.4" fill="#A74A22" stroke="#A74A22" stroke-width="0.3" id="local-hit-I3-11" />
+        <circle cx="626" cy="318" r="2.4" fill="#A74A22" stroke="#A74A22" stroke-width="0.3" id="local-hit-I3-12" />
+        <circle cx="647" cy="318" r="2.4" fill="#A74A22" stroke="#A74A22" stroke-width="0.3" id="local-hit-I3-13" />
+        <circle cx="668" cy="318" r="2.4" fill="#A74A22" stroke="#A74A22" stroke-width="0.3" id="local-hit-I3-14" />
+        <circle cx="689" cy="318" r="2.4" fill="#A74A22" stroke="#A74A22" stroke-width="0.3" id="local-hit-I3-15" />
+        <text x="708" y="322" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#A74A22" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="fixed-run-score-3">+3</text>
+      </g>
+      <g id="local-I4">
+        <rect x="533" y="332" width="165" height="14" fill="#FBEDBA" stroke="none" stroke-width="0.85" rx="3" id="active-run-strip-4" />
+        <text x="519" y="343" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="local-label-4">I₄</text>
+        <path d="M 539.9 336.9 L 544.1 341.1 M 539.9 341.1 L 544.1 336.9" stroke="#767676" stroke-width="0.95" fill="none" id="local-miss-I4-8" />
+        <path d="M 560.9 336.9 L 565.1 341.1 M 560.9 341.1 L 565.1 336.9" stroke="#767676" stroke-width="0.95" fill="none" id="local-miss-I4-9" />
+        <circle cx="584" cy="339" r="2.4" fill="#A47000" stroke="#A47000" stroke-width="0.3" id="local-hit-I4-10" />
+        <circle cx="605" cy="339" r="2.4" fill="#A47000" stroke="#A47000" stroke-width="0.3" id="local-hit-I4-11" />
+        <circle cx="626" cy="339" r="2.4" fill="#A47000" stroke="#A47000" stroke-width="0.3" id="local-hit-I4-12" />
+        <circle cx="647" cy="339" r="2.4" fill="#A47000" stroke="#A47000" stroke-width="0.3" id="local-hit-I4-13" />
+        <circle cx="668" cy="339" r="2.4" fill="#A47000" stroke="#A47000" stroke-width="0.3" id="local-hit-I4-14" />
+        <circle cx="689" cy="339" r="2.4" fill="#A47000" stroke="#A47000" stroke-width="0.3" id="local-hit-I4-15" />
+      </g>
+      <text x="612" y="368" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="fixed-restoration">[1,3] + 3 = [4,6]</text>
+    </g>
+  </g>
+  <g id="endpoint-reduction">
+    <rect x="763" y="31" width="237" height="347" fill="white" stroke="#202020" stroke-width="0.9" rx="17" id="endpoint-reduction-frame" />
+    <rect x="817.3903" y="13" width="128.2193" height="34" fill="white" stroke="none" stroke-width="0.85" rx="0" id="endpoint-reduction-title-white" />
+    <text x="881.5" y="28" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="endpoint-reduction-title-0">e. Exact endpoint</text>
+    <text x="881.5" y="45" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="endpoint-reduction-title-1">reduction</text>
+    <text x="892" y="67" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="score-axis-label">weighted score</text>
+    <line x1="830" y1="85" x2="980.4" y2="85" stroke="#202020" stroke-width="0.85" id="score-axis" />
+    <line x1="830" y1="83" x2="830" y2="88" stroke="#202020" stroke-width="0.7" id="score-tick-0" />
+    <text x="830" y="102" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="score-label-0">0</text>
+    <line x1="867.6" y1="83" x2="867.6" y2="88" stroke="#202020" stroke-width="0.7" id="score-tick-2" />
+    <text x="867.6" y="102" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="score-label-2">2</text>
+    <line x1="905.2" y1="83" x2="905.2" y2="88" stroke="#202020" stroke-width="0.7" id="score-tick-4" />
+    <text x="905.2" y="102" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="score-label-4">4</text>
+    <line x1="942.8" y1="83" x2="942.8" y2="88" stroke="#202020" stroke-width="0.7" id="score-tick-6" />
+    <text x="942.8" y="102" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="score-label-6">6</text>
+    <line x1="980.4" y1="83" x2="980.4" y2="88" stroke="#202020" stroke-width="0.7" id="score-tick-8" />
+    <text x="980.4" y="102" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="score-label-8">8</text>
+    <line x1="830" y1="110" x2="830" y2="282" stroke="#D0D0CA" stroke-width="0.5" id="endpoint-guide-0" />
+    <line x1="867.6" y1="110" x2="867.6" y2="282" stroke="#D0D0CA" stroke-width="0.5" id="endpoint-guide-2" />
+    <line x1="905.2" y1="110" x2="905.2" y2="282" stroke="#D0D0CA" stroke-width="0.5" id="endpoint-guide-4" />
+    <line x1="942.8" y1="110" x2="942.8" y2="282" stroke="#D0D0CA" stroke-width="0.5" id="endpoint-guide-6" />
+    <line x1="980.4" y1="110" x2="980.4" y2="282" stroke="#D0D0CA" stroke-width="0.5" id="endpoint-guide-8" />
+    <g id="candidate-static">
+      <text x="776" y="124" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="candidate-name-0">static</text>
+      <line x1="830" y1="120" x2="942.8" y2="120" stroke="#A47000" stroke-width="1.3" id="candidate-pair-0" />
+      <circle cx="830" cy="120" r="3.1" fill="white" stroke="#A47000" stroke-width="1.15" id="candidate-min-0" />
+      <circle cx="942.8" cy="120" r="3.1" fill="#A47000" stroke="#A47000" stroke-width="1.15" id="candidate-max-0" />
+    </g>
+    <g id="candidate-W₀">
+      <text x="776" y="154" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="candidate-name-1">W₀</text>
+      <line x1="830" y1="150" x2="942.8" y2="150" stroke="#A47000" stroke-width="1.3" id="candidate-pair-1" />
+      <circle cx="830" cy="150" r="3.1" fill="white" stroke="#A47000" stroke-width="1.15" id="candidate-min-1" />
+      <circle cx="942.8" cy="150" r="3.1" fill="#A47000" stroke="#A47000" stroke-width="1.15" id="candidate-max-1" />
+    </g>
+    <g id="candidate-W₁">
+      <text x="776" y="184" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="candidate-name-2">W₁</text>
+      <line x1="886.4" y1="180" x2="980.4" y2="180" stroke="#A74A22" stroke-width="1.3" id="candidate-pair-2" />
+      <circle cx="886.4" cy="180" r="3.1" fill="white" stroke="#A74A22" stroke-width="1.15" id="candidate-min-2" />
+      <circle cx="980.4" cy="180" r="3.1" fill="#A74A22" stroke="#A74A22" stroke-width="1.15" id="candidate-max-2" />
+    </g>
+    <g id="candidate-W₂">
+      <text x="776" y="214" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="candidate-name-3">W₂</text>
+      <line x1="905.2" y1="210" x2="942.8" y2="210" stroke="#A74A22" stroke-width="1.3" id="candidate-pair-3" />
+      <circle cx="905.2" cy="210" r="3.1" fill="white" stroke="#A74A22" stroke-width="1.15" id="candidate-min-3" />
+      <circle cx="942.8" cy="210" r="3.1" fill="#A74A22" stroke="#A74A22" stroke-width="1.15" id="candidate-max-3" />
+    </g>
+    <g id="candidate-W₃">
+      <text x="776" y="244" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="candidate-name-4">W₃</text>
+      <line x1="886.4" y1="240" x2="942.8" y2="240" stroke="#A47000" stroke-width="1.3" id="candidate-pair-4" />
+      <circle cx="886.4" cy="240" r="3.1" fill="white" stroke="#A47000" stroke-width="1.15" id="candidate-min-4" />
+      <circle cx="942.8" cy="240" r="3.1" fill="#A47000" stroke="#A47000" stroke-width="1.15" id="candidate-max-4" />
+    </g>
+    <g id="candidate-W₄">
+      <text x="776" y="274" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="candidate-name-5">W₄</text>
+      <line x1="830" y1="270" x2="924" y2="270" stroke="#A47000" stroke-width="1.3" id="candidate-pair-5" />
+      <circle cx="830" cy="270" r="3.1" fill="white" stroke="#A47000" stroke-width="1.15" id="candidate-min-5" />
+      <circle cx="924" cy="270" r="3.1" fill="#A47000" stroke="#A47000" stroke-width="1.15" id="candidate-max-5" />
+    </g>
+    <line x1="778" y1="291" x2="984" y2="291" stroke="#D0D0CA" stroke-width="0.7" id="reduction-separator" />
+    <path d="M 830 285 C 830 303 839 309 839 319" stroke="#202020" stroke-width="0.8" fill="none" marker-end="url(#arrow)" id="min-reduction-arrow" />
+    <path d="M 980 285 C 980 303 969 309 969 319" stroke="#202020" stroke-width="0.8" fill="none" marker-end="url(#arrow)" id="max-reduction-arrow" />
+    <rect x="808" y="321" width="175" height="27" fill="#F8DCC9" stroke="none" stroke-width="0.85" rx="3" id="global-result-bg" />
+    <text x="895.5" y="340" font-family="Calibri" font-size="17" font-weight="bold" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="global-result">global [0,8]</text>
+    <circle cx="806" cy="363" r="3" fill="white" stroke="#202020" stroke-width="1" id="legend-min" />
+    <text x="814" y="367" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="legend-min-label">min</text>
+    <circle cx="868" cy="363" r="3" fill="#202020" stroke="#202020" stroke-width="1" id="legend-max" />
+    <text x="876" y="367" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="legend-max-label">max</text>
+  </g>
+  <g id="cross-zone-relations">
+    <path d="M 245 129 C 254 129 254 98 264 98" stroke="#202020" stroke-width="0.9" fill="none" marker-end="url(#arrow)" id="input-to-cover" />
+    <path d="M 245 240 C 255 240 250 282 264 282" stroke="#202020" stroke-width="0.9" fill="none" marker-end="url(#arrow)" id="input-to-incidences" />
+    <path d="M 730 193 C 741 193 741 249 727 249" stroke="#202020" stroke-width="0.9" fill="none" marker-end="url(#arrow)" id="baseline-to-restoration" />
+    <path d="M 748 301 C 756 301 753 213 762 213" stroke="#202020" stroke-width="0.9" fill="none" marker-end="url(#arrow)" id="local-to-candidates" />
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lsw-range"
+version = "0.1.0"
+description = "Exact temporal range queries through local state windows"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Zijia Wang"}]
+keywords = ["range queries", "total variation", "dynamic programming", "time series"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering",
+]
+
+[project.scripts]
+lsw-range = "lsw_range.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

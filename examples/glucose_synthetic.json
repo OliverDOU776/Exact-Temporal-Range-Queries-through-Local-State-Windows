@@ -1,0 +1,8 @@
+{
+  "description": "Invented glucose values solely to demonstrate exact endpoint compilation and zero-weight masks.",
+  "domain": [-3, 3],
+  "budgets": [0, 1, 4, 1],
+  "glucose": [69.5, 70, 138, 141, 142.5, 71],
+  "band": {"lower": 70, "upper": 140, "lower_closed": true, "upper_closed": true},
+  "weights": [1, 1, 0, 1, 1, 1]
+}

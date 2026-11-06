@@ -1,0 +1,477 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="178mm" height="68.44796829mm" viewBox="0 0 1009 388" version="1.1" role="img" aria-labelledby="title desc">
+  <title id="title">A fixed BIG001 glucose query</title>
+  <desc id="desc">Ninety-six original observations and their exact timestamps, two closed glucose bands, three offset-interval examples, one shared temporal budget, and saved exact count extrema.</desc>
+  <defs id="definitions">
+    <marker id="arrow" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5.5" markerHeight="5.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0.5 0.5 L 6 3.5 L 0.5 6.5" fill="none" stroke="#202020" stroke-width="1" />
+    </marker>
+    <marker id="warm-arrow" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5.5" markerHeight="5.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0.5 0.5 L 6 3.5 L 0.5 6.5" fill="none" stroke="#A74A22" stroke-width="1" />
+    </marker>
+    <marker id="ochre-arrow" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5.5" markerHeight="5.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0.5 0.5 L 6 3.5 L 0.5 6.5" fill="none" stroke="#A47000" stroke-width="1" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1009" height="388" fill="white" stroke="none" stroke-width="0.85" rx="0" id="background" />
+  <g id="observed-input">
+    <rect x="9" y="31" width="236" height="347" fill="white" stroke="#202020" stroke-width="0.9" rx="17" id="observed-input-frame" />
+    <rect x="60.7402" y="13" width="132.5195" height="34" fill="white" stroke="none" stroke-width="0.85" rx="0" id="observed-input-title-white" />
+    <text x="127" y="28" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="observed-input-title-0">a. Original BIG001</text>
+    <text x="127" y="45" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="observed-input-title-1">observations</text>
+    <text x="127" y="66" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="record-summary">96 original samples</text>
+    <text x="49" y="88" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="glucose-axis-label">Glucose (mg/dL)</text>
+    <rect x="49" y="114.1034" width="180" height="144.1379" fill="#FFF8DE" stroke="none" stroke-width="0.85" rx="0" id="TIR-inclusive-band" />
+    <rect x="49" y="166.5172" width="180" height="91.7241" fill="#F8DCC9" stroke="none" stroke-width="0.85" rx="0" id="TITR-inclusive-band" />
+    <line x1="49" y1="258.2414" x2="229" y2="258.2414" stroke="#767676" stroke-width="0.6" stroke-dasharray="2 2" id="glucose-threshold-70" />
+    <line x1="49" y1="166.5172" x2="229" y2="166.5172" stroke="#767676" stroke-width="0.6" stroke-dasharray="2 2" id="glucose-threshold-140" />
+    <line x1="49" y1="114.1034" x2="229" y2="114.1034" stroke="#767676" stroke-width="0.6" stroke-dasharray="2 2" id="glucose-threshold-180" />
+    <line x1="46" y1="258.2414" x2="49" y2="258.2414" stroke="#202020" stroke-width="0.7" id="glucose-y-tick-70" />
+    <text x="43" y="262.2414" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="glucose-y-label-70">70</text>
+    <line x1="46" y1="218.931" x2="49" y2="218.931" stroke="#202020" stroke-width="0.7" id="glucose-y-tick-100" />
+    <text x="43" y="222.931" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="glucose-y-label-100">100</text>
+    <line x1="46" y1="166.5172" x2="49" y2="166.5172" stroke="#202020" stroke-width="0.7" id="glucose-y-tick-140" />
+    <text x="43" y="170.5172" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="glucose-y-label-140">140</text>
+    <line x1="46" y1="114.1034" x2="49" y2="114.1034" stroke="#202020" stroke-width="0.7" id="glucose-y-tick-180" />
+    <text x="43" y="118.1034" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="glucose-y-label-180">180</text>
+    <line x1="49" y1="270.0345" x2="50.875" y2="272.6552" stroke="#202020" stroke-width="1.05" id="observed-adjacency-1" />
+    <line x1="50.875" y1="272.6552" x2="52.75" y2="273.9655" stroke="#202020" stroke-width="1.05" id="observed-adjacency-2" />
+    <line x1="52.75" y1="273.9655" x2="54.625" y2="272.6552" stroke="#202020" stroke-width="1.05" id="observed-adjacency-3" />
+    <line x1="54.625" y1="272.6552" x2="56.4937" y2="267.4138" stroke="#202020" stroke-width="1.05" id="observed-adjacency-4" />
+    <line x1="56.4937" y1="267.4138" x2="58.3687" y2="262.1724" stroke="#202020" stroke-width="1.05" id="observed-adjacency-5" />
+    <line x1="58.3687" y1="262.1724" x2="60.2437" y2="260.8621" stroke="#202020" stroke-width="1.05" id="observed-adjacency-6" />
+    <line x1="60.2437" y1="260.8621" x2="62.1187" y2="267.4138" stroke="#202020" stroke-width="1.05" id="observed-adjacency-7" />
+    <line x1="62.1187" y1="267.4138" x2="64" y2="272.6552" stroke="#202020" stroke-width="1.05" id="observed-adjacency-8" />
+    <line x1="64" y1="272.6552" x2="65.875" y2="271.3448" stroke="#202020" stroke-width="1.05" id="observed-adjacency-9" />
+    <line x1="65.875" y1="271.3448" x2="67.75" y2="258.2414" stroke="#202020" stroke-width="1.05" id="observed-adjacency-10" />
+    <line x1="67.75" y1="258.2414" x2="69.625" y2="237.2759" stroke="#202020" stroke-width="1.05" id="observed-adjacency-11" />
+    <line x1="69.625" y1="237.2759" x2="71.5" y2="212.3793" stroke="#202020" stroke-width="1.05" id="observed-adjacency-12" />
+    <line x1="71.5" y1="212.3793" x2="73.3688" y2="195.3448" stroke="#202020" stroke-width="1.05" id="observed-adjacency-13" />
+    <line x1="73.3688" y1="195.3448" x2="75.2438" y2="183.5517" stroke="#202020" stroke-width="1.05" id="observed-adjacency-14" />
+    <line x1="75.2438" y1="183.5517" x2="77.125" y2="175.6897" stroke="#202020" stroke-width="1.05" id="observed-adjacency-15" />
+    <line x1="77.125" y1="175.6897" x2="79" y2="167.8276" stroke="#202020" stroke-width="1.05" id="observed-adjacency-16" />
+    <line x1="79" y1="167.8276" x2="80.875" y2="162.5862" stroke="#202020" stroke-width="1.05" id="observed-adjacency-17" />
+    <line x1="80.875" y1="162.5862" x2="82.75" y2="165.2069" stroke="#202020" stroke-width="1.05" id="observed-adjacency-18" />
+    <line x1="82.75" y1="165.2069" x2="84.625" y2="177" stroke="#202020" stroke-width="1.05" id="observed-adjacency-19" />
+    <line x1="84.625" y1="177" x2="86.4938" y2="190.1034" stroke="#202020" stroke-width="1.05" id="observed-adjacency-20" />
+    <line x1="86.4938" y1="190.1034" x2="88.3688" y2="197.9655" stroke="#202020" stroke-width="1.05" id="observed-adjacency-21" />
+    <line x1="88.3688" y1="197.9655" x2="90.25" y2="200.5862" stroke="#202020" stroke-width="1.05" id="observed-adjacency-22" />
+    <line x1="90.25" y1="200.5862" x2="92.125" y2="201.8966" stroke="#202020" stroke-width="1.05" id="observed-adjacency-23" />
+    <line x1="92.125" y1="201.8966" x2="93.9938" y2="204.5172" stroke="#202020" stroke-width="1.05" id="observed-adjacency-24" />
+    <line x1="93.9938" y1="204.5172" x2="95.8688" y2="205.8276" stroke="#202020" stroke-width="1.05" id="observed-adjacency-25" />
+    <line x1="95.8688" y1="205.8276" x2="97.75" y2="205.8276" stroke="#202020" stroke-width="1.05" id="observed-adjacency-26" />
+    <line x1="97.75" y1="205.8276" x2="99.6188" y2="199.2759" stroke="#202020" stroke-width="1.05" id="observed-adjacency-27" />
+    <line x1="99.6188" y1="199.2759" x2="101.5" y2="194.0345" stroke="#202020" stroke-width="1.05" id="observed-adjacency-28" />
+    <line x1="101.5" y1="194.0345" x2="103.375" y2="188.7931" stroke="#202020" stroke-width="1.05" id="observed-adjacency-29" />
+    <line x1="103.375" y1="188.7931" x2="105.2438" y2="188.7931" stroke="#202020" stroke-width="1.05" id="observed-adjacency-30" />
+    <line x1="105.2438" y1="188.7931" x2="107.1188" y2="187.4828" stroke="#202020" stroke-width="1.05" id="observed-adjacency-31" />
+    <line x1="107.1188" y1="187.4828" x2="109" y2="188.7931" stroke="#202020" stroke-width="1.05" id="observed-adjacency-32" />
+    <line x1="109" y1="188.7931" x2="110.875" y2="188.7931" stroke="#202020" stroke-width="1.05" id="observed-adjacency-33" />
+    <line x1="110.875" y1="188.7931" x2="112.75" y2="192.7241" stroke="#202020" stroke-width="1.05" id="observed-adjacency-34" />
+    <line x1="112.75" y1="192.7241" x2="114.625" y2="196.6552" stroke="#202020" stroke-width="1.05" id="observed-adjacency-35" />
+    <line x1="114.625" y1="196.6552" x2="116.4938" y2="201.8966" stroke="#202020" stroke-width="1.05" id="observed-adjacency-36" />
+    <line x1="116.4938" y1="201.8966" x2="118.3688" y2="208.4483" stroke="#202020" stroke-width="1.05" id="observed-adjacency-37" />
+    <line x1="118.3688" y1="208.4483" x2="120.2438" y2="213.6897" stroke="#202020" stroke-width="1.05" id="observed-adjacency-38" />
+    <line x1="120.2438" y1="213.6897" x2="122.125" y2="213.6897" stroke="#202020" stroke-width="1.05" id="observed-adjacency-39" />
+    <line x1="122.125" y1="213.6897" x2="123.9938" y2="211.069" stroke="#202020" stroke-width="1.05" id="observed-adjacency-40" />
+    <line x1="123.9938" y1="211.069" x2="125.875" y2="213.6897" stroke="#202020" stroke-width="1.05" id="observed-adjacency-41" />
+    <line x1="125.875" y1="213.6897" x2="127.7438" y2="218.931" stroke="#202020" stroke-width="1.05" id="observed-adjacency-42" />
+    <line x1="127.7438" y1="218.931" x2="129.6188" y2="221.5517" stroke="#202020" stroke-width="1.05" id="observed-adjacency-43" />
+    <line x1="129.6188" y1="221.5517" x2="131.5" y2="225.4828" stroke="#202020" stroke-width="1.05" id="observed-adjacency-44" />
+    <line x1="131.5" y1="225.4828" x2="133.3688" y2="233.3448" stroke="#202020" stroke-width="1.05" id="observed-adjacency-45" />
+    <line x1="133.3688" y1="233.3448" x2="135.25" y2="241.2069" stroke="#202020" stroke-width="1.05" id="observed-adjacency-46" />
+    <line x1="135.25" y1="241.2069" x2="137.1188" y2="242.5172" stroke="#202020" stroke-width="1.05" id="observed-adjacency-47" />
+    <line x1="137.1188" y1="242.5172" x2="139" y2="237.2759" stroke="#202020" stroke-width="1.05" id="observed-adjacency-48" />
+    <line x1="139" y1="237.2759" x2="140.875" y2="232.0345" stroke="#202020" stroke-width="1.05" id="observed-adjacency-49" />
+    <line x1="140.875" y1="232.0345" x2="142.75" y2="228.1034" stroke="#202020" stroke-width="1.05" id="observed-adjacency-50" />
+    <line x1="142.75" y1="228.1034" x2="144.625" y2="228.1034" stroke="#202020" stroke-width="1.05" id="observed-adjacency-51" />
+    <line x1="144.625" y1="228.1034" x2="146.5" y2="230.7241" stroke="#202020" stroke-width="1.05" id="observed-adjacency-52" />
+    <line x1="146.5" y1="230.7241" x2="148.375" y2="232.0345" stroke="#202020" stroke-width="1.05" id="observed-adjacency-53" />
+    <line x1="148.375" y1="232.0345" x2="150.2438" y2="233.3448" stroke="#202020" stroke-width="1.05" id="observed-adjacency-54" />
+    <line x1="150.2438" y1="233.3448" x2="152.1188" y2="233.3448" stroke="#202020" stroke-width="1.05" id="observed-adjacency-55" />
+    <line x1="152.1188" y1="233.3448" x2="153.9938" y2="234.6552" stroke="#202020" stroke-width="1.05" id="observed-adjacency-56" />
+    <line x1="153.9938" y1="234.6552" x2="155.875" y2="237.2759" stroke="#202020" stroke-width="1.05" id="observed-adjacency-57" />
+    <line x1="155.875" y1="237.2759" x2="157.7438" y2="238.5862" stroke="#202020" stroke-width="1.05" id="observed-adjacency-58" />
+    <line x1="157.7438" y1="238.5862" x2="159.6188" y2="232.0345" stroke="#202020" stroke-width="1.05" id="observed-adjacency-59" />
+    <line x1="159.6188" y1="232.0345" x2="161.4938" y2="224.1724" stroke="#202020" stroke-width="1.05" id="observed-adjacency-60" />
+    <line x1="161.4938" y1="224.1724" x2="163.375" y2="215" stroke="#202020" stroke-width="1.05" id="observed-adjacency-61" />
+    <line x1="163.375" y1="215" x2="165.25" y2="215" stroke="#202020" stroke-width="1.05" id="observed-adjacency-62" />
+    <line x1="165.25" y1="215" x2="167.1188" y2="216.3103" stroke="#202020" stroke-width="1.05" id="observed-adjacency-63" />
+    <line x1="167.1188" y1="216.3103" x2="169" y2="216.3103" stroke="#202020" stroke-width="1.05" id="observed-adjacency-64" />
+    <line x1="169" y1="216.3103" x2="170.8688" y2="215" stroke="#202020" stroke-width="1.05" id="observed-adjacency-65" />
+    <line x1="170.8688" y1="215" x2="172.7438" y2="211.069" stroke="#202020" stroke-width="1.05" id="observed-adjacency-66" />
+    <line x1="172.7438" y1="211.069" x2="174.6188" y2="205.8276" stroke="#202020" stroke-width="1.05" id="observed-adjacency-67" />
+    <line x1="174.6188" y1="205.8276" x2="176.5" y2="203.2069" stroke="#202020" stroke-width="1.05" id="observed-adjacency-68" />
+    <line x1="176.5" y1="203.2069" x2="178.3812" y2="204.5172" stroke="#202020" stroke-width="1.05" id="observed-adjacency-69" />
+    <line x1="178.3812" y1="204.5172" x2="180.2562" y2="205.8276" stroke="#202020" stroke-width="1.05" id="observed-adjacency-70" />
+    <line x1="180.2562" y1="205.8276" x2="182.1312" y2="205.8276" stroke="#202020" stroke-width="1.05" id="observed-adjacency-71" />
+    <line x1="182.1312" y1="205.8276" x2="184" y2="205.8276" stroke="#202020" stroke-width="1.05" id="observed-adjacency-72" />
+    <line x1="184" y1="205.8276" x2="185.875" y2="204.5172" stroke="#202020" stroke-width="1.05" id="observed-adjacency-73" />
+    <line x1="185.875" y1="204.5172" x2="187.75" y2="203.2069" stroke="#202020" stroke-width="1.05" id="observed-adjacency-74" />
+    <line x1="187.75" y1="203.2069" x2="189.6188" y2="201.8966" stroke="#202020" stroke-width="1.05" id="observed-adjacency-75" />
+    <line x1="189.6188" y1="201.8966" x2="191.4938" y2="200.5862" stroke="#202020" stroke-width="1.05" id="observed-adjacency-76" />
+    <line x1="191.4938" y1="200.5862" x2="193.3688" y2="201.8966" stroke="#202020" stroke-width="1.05" id="observed-adjacency-77" />
+    <line x1="193.3688" y1="201.8966" x2="195.2438" y2="201.8966" stroke="#202020" stroke-width="1.05" id="observed-adjacency-78" />
+    <line x1="195.2438" y1="201.8966" x2="197.125" y2="203.2069" stroke="#202020" stroke-width="1.05" id="observed-adjacency-79" />
+    <line x1="197.125" y1="203.2069" x2="199" y2="204.5172" stroke="#202020" stroke-width="1.05" id="observed-adjacency-80" />
+    <line x1="199" y1="204.5172" x2="200.875" y2="205.8276" stroke="#202020" stroke-width="1.05" id="observed-adjacency-81" />
+    <line x1="200.875" y1="205.8276" x2="202.7438" y2="205.8276" stroke="#202020" stroke-width="1.05" id="observed-adjacency-82" />
+    <line x1="202.7438" y1="205.8276" x2="204.6188" y2="205.8276" stroke="#202020" stroke-width="1.05" id="observed-adjacency-83" />
+    <line x1="204.6188" y1="205.8276" x2="206.5" y2="204.5172" stroke="#202020" stroke-width="1.05" id="observed-adjacency-84" />
+    <line x1="206.5" y1="204.5172" x2="208.375" y2="205.8276" stroke="#202020" stroke-width="1.05" id="observed-adjacency-85" />
+    <line x1="208.375" y1="205.8276" x2="210.25" y2="207.1379" stroke="#202020" stroke-width="1.05" id="observed-adjacency-86" />
+    <line x1="210.25" y1="207.1379" x2="212.1188" y2="209.7586" stroke="#202020" stroke-width="1.05" id="observed-adjacency-87" />
+    <line x1="212.1188" y1="209.7586" x2="214" y2="211.069" stroke="#202020" stroke-width="1.05" id="observed-adjacency-88" />
+    <line x1="214" y1="211.069" x2="215.875" y2="211.069" stroke="#202020" stroke-width="1.05" id="observed-adjacency-89" />
+    <line x1="215.875" y1="211.069" x2="217.7438" y2="212.3793" stroke="#202020" stroke-width="1.05" id="observed-adjacency-90" />
+    <line x1="217.7438" y1="212.3793" x2="219.625" y2="215" stroke="#202020" stroke-width="1.05" id="observed-adjacency-91" />
+    <line x1="219.625" y1="215" x2="221.4938" y2="216.3103" stroke="#202020" stroke-width="1.05" id="observed-adjacency-92" />
+    <line x1="221.4938" y1="216.3103" x2="223.3688" y2="216.3103" stroke="#202020" stroke-width="1.05" id="observed-adjacency-93" />
+    <line x1="223.3688" y1="216.3103" x2="225.2438" y2="215" stroke="#202020" stroke-width="1.05" id="observed-adjacency-94" />
+    <line x1="225.2438" y1="215" x2="227.1188" y2="216.3103" stroke="#202020" stroke-width="1.05" id="observed-adjacency-95" />
+    <circle cx="49" cy="270.0345" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-1" />
+    <circle cx="50.875" cy="272.6552" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-2" />
+    <circle cx="52.75" cy="273.9655" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-3" />
+    <circle cx="54.625" cy="272.6552" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-4" />
+    <circle cx="56.4937" cy="267.4138" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-5" />
+    <circle cx="58.3687" cy="262.1724" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-6" />
+    <circle cx="60.2437" cy="260.8621" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-7" />
+    <circle cx="62.1187" cy="267.4138" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-8" />
+    <circle cx="64" cy="272.6552" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-9" />
+    <circle cx="65.875" cy="271.3448" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-10" />
+    <circle cx="67.75" cy="258.2414" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-11" />
+    <circle cx="69.625" cy="237.2759" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-12" />
+    <circle cx="71.5" cy="212.3793" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-13" />
+    <circle cx="73.3688" cy="195.3448" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-14" />
+    <circle cx="75.2438" cy="183.5517" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-15" />
+    <circle cx="77.125" cy="175.6897" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-16" />
+    <circle cx="79" cy="167.8276" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-17" />
+    <circle cx="80.875" cy="162.5862" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-18" />
+    <circle cx="82.75" cy="165.2069" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-19" />
+    <circle cx="84.625" cy="177" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-20" />
+    <circle cx="86.4938" cy="190.1034" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-21" />
+    <circle cx="88.3688" cy="197.9655" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-22" />
+    <circle cx="90.25" cy="200.5862" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-23" />
+    <circle cx="92.125" cy="201.8966" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-24" />
+    <circle cx="93.9938" cy="204.5172" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-25" />
+    <circle cx="95.8688" cy="205.8276" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-26" />
+    <circle cx="97.75" cy="205.8276" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-27" />
+    <circle cx="99.6188" cy="199.2759" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-28" />
+    <circle cx="101.5" cy="194.0345" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-29" />
+    <circle cx="103.375" cy="188.7931" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-30" />
+    <circle cx="105.2438" cy="188.7931" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-31" />
+    <circle cx="107.1188" cy="187.4828" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-32" />
+    <circle cx="109" cy="188.7931" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-33" />
+    <circle cx="110.875" cy="188.7931" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-34" />
+    <circle cx="112.75" cy="192.7241" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-35" />
+    <circle cx="114.625" cy="196.6552" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-36" />
+    <circle cx="116.4938" cy="201.8966" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-37" />
+    <circle cx="118.3688" cy="208.4483" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-38" />
+    <circle cx="120.2438" cy="213.6897" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-39" />
+    <circle cx="122.125" cy="213.6897" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-40" />
+    <circle cx="123.9938" cy="211.069" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-41" />
+    <circle cx="125.875" cy="213.6897" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-42" />
+    <circle cx="127.7438" cy="218.931" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-43" />
+    <circle cx="129.6188" cy="221.5517" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-44" />
+    <circle cx="131.5" cy="225.4828" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-45" />
+    <circle cx="133.3688" cy="233.3448" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-46" />
+    <circle cx="135.25" cy="241.2069" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-47" />
+    <circle cx="137.1188" cy="242.5172" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-48" />
+    <circle cx="139" cy="237.2759" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-49" />
+    <circle cx="140.875" cy="232.0345" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-50" />
+    <circle cx="142.75" cy="228.1034" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-51" />
+    <circle cx="144.625" cy="228.1034" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-52" />
+    <circle cx="146.5" cy="230.7241" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-53" />
+    <circle cx="148.375" cy="232.0345" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-54" />
+    <circle cx="150.2438" cy="233.3448" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-55" />
+    <circle cx="152.1188" cy="233.3448" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-56" />
+    <circle cx="153.9938" cy="234.6552" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-57" />
+    <circle cx="155.875" cy="237.2759" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-58" />
+    <circle cx="157.7438" cy="238.5862" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-59" />
+    <circle cx="159.6188" cy="232.0345" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-60" />
+    <circle cx="161.4938" cy="224.1724" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-61" />
+    <circle cx="163.375" cy="215" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-62" />
+    <circle cx="165.25" cy="215" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-63" />
+    <circle cx="167.1188" cy="216.3103" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-64" />
+    <circle cx="169" cy="216.3103" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-65" />
+    <circle cx="170.8688" cy="215" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-66" />
+    <circle cx="172.7438" cy="211.069" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-67" />
+    <circle cx="174.6188" cy="205.8276" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-68" />
+    <circle cx="176.5" cy="203.2069" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-69" />
+    <circle cx="178.3812" cy="204.5172" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-70" />
+    <circle cx="180.2562" cy="205.8276" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-71" />
+    <circle cx="182.1312" cy="205.8276" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-72" />
+    <circle cx="184" cy="205.8276" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-73" />
+    <circle cx="185.875" cy="204.5172" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-74" />
+    <circle cx="187.75" cy="203.2069" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-75" />
+    <circle cx="189.6188" cy="201.8966" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-76" />
+    <circle cx="191.4938" cy="200.5862" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-77" />
+    <circle cx="193.3688" cy="201.8966" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-78" />
+    <circle cx="195.2438" cy="201.8966" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-79" />
+    <circle cx="197.125" cy="203.2069" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-80" />
+    <circle cx="199" cy="204.5172" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-81" />
+    <circle cx="200.875" cy="205.8276" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-82" />
+    <circle cx="202.7438" cy="205.8276" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-83" />
+    <circle cx="204.6188" cy="205.8276" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-84" />
+    <circle cx="206.5" cy="204.5172" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-85" />
+    <circle cx="208.375" cy="205.8276" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-86" />
+    <circle cx="210.25" cy="207.1379" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-87" />
+    <circle cx="212.1188" cy="209.7586" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-88" />
+    <circle cx="214" cy="211.069" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-89" />
+    <circle cx="215.875" cy="211.069" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-90" />
+    <circle cx="217.7438" cy="212.3793" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-91" />
+    <circle cx="219.625" cy="215" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-92" />
+    <circle cx="221.4938" cy="216.3103" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-93" />
+    <circle cx="223.3688" cy="216.3103" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-94" />
+    <circle cx="225.2438" cy="215" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-95" />
+    <circle cx="227.1188" cy="216.3103" r="1.25" fill="#202020" stroke="#202020" stroke-width="0.3" id="observed-sample-96" />
+    <line x1="49" y1="101" x2="49" y2="291" stroke="#202020" stroke-width="0.85" id="observed-y-axis" />
+    <line x1="49" y1="291" x2="229" y2="291" stroke="#202020" stroke-width="0.85" id="observed-time-axis" />
+    <line x1="49" y1="289" x2="49" y2="294" stroke="#202020" stroke-width="0.7" id="observed-time-tick-0" />
+    <text x="49" y="308" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="observed-time-label-0">0</text>
+    <line x1="94" y1="289" x2="94" y2="294" stroke="#202020" stroke-width="0.7" id="observed-time-tick-2" />
+    <text x="94" y="308" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="observed-time-label-2">2</text>
+    <line x1="139" y1="289" x2="139" y2="294" stroke="#202020" stroke-width="0.7" id="observed-time-tick-4" />
+    <text x="139" y="308" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="observed-time-label-4">4</text>
+    <line x1="184" y1="289" x2="184" y2="294" stroke="#202020" stroke-width="0.7" id="observed-time-tick-6" />
+    <text x="184" y="308" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="observed-time-label-6">6</text>
+    <line x1="229" y1="289" x2="229" y2="294" stroke="#202020" stroke-width="0.7" id="observed-time-tick-8" />
+    <text x="229" y="308" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="observed-time-label-8">8</text>
+    <text x="139" y="326" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="observed-time-name">Elapsed time (h)</text>
+    <rect x="25" y="342" width="13" height="9" fill="#FFF8DE" stroke="#202020" stroke-width="0.65" rx="0" id="TIR-band-key" />
+    <text x="44" y="351" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-band-key-label">TIR [70,180]</text>
+    <rect x="25" y="361" width="13" height="9" fill="#F8DCC9" stroke="#202020" stroke-width="0.65" rx="0" id="TITR-band-key" />
+    <text x="44" y="370" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-band-key-label">TITR [70,140]</text>
+    <circle cx="49" cy="270.0345" r="3.5" fill="#A74A22" stroke="#202020" stroke-width="0.7" id="highlight-sample-1" />
+    <text x="53" y="289.0345" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="selected-index-1">1</text>
+    <circle cx="67.75" cy="258.2414" r="3.5" fill="#A47000" stroke="#202020" stroke-width="0.7" id="highlight-sample-11" />
+    <text x="59.75" y="250.2414" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A47000" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="selected-index-11">11</text>
+    <circle cx="80.875" cy="162.5862" r="3.5" fill="#A74A22" stroke="#202020" stroke-width="0.7" id="highlight-sample-18" />
+    <text x="82.875" y="150.5862" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="selected-index-18">18</text>
+  </g>
+  <g id="closed-band-query">
+    <text x="374" y="24" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="query-title-0">b. Closed-band</text>
+    <text x="374" y="41" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="query-title-1">query predicates</text>
+    <text x="374" y="66" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="corrected-glucose">corrected = gᵢ − xᵢ</text>
+    <line x1="272" y1="78" x2="474" y2="78" stroke="#202020" stroke-width="0.7" id="query-table-top" />
+    <rect x="272" y="79" width="202" height="28" fill="#FBEDBA" stroke="none" stroke-width="0.85" rx="0" id="query-row-bg-TIR" />
+    <text x="281" y="98" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="query-name-TIR">TIR</text>
+    <text x="376" y="98" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="query-predicate-TIR">70 ≤ z ≤ 180</text>
+    <line x1="272" y1="107" x2="474" y2="107" stroke="#D0D0CA" stroke-width="0.65" id="query-rule-TIR" />
+    <rect x="272" y="108" width="202" height="28" fill="#F8DCC9" stroke="none" stroke-width="0.85" rx="0" id="query-row-bg-TITR" />
+    <text x="281" y="127" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="query-name-TITR">TITR</text>
+    <text x="376" y="127" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="query-predicate-TITR">70 ≤ z ≤ 140</text>
+    <line x1="272" y1="136" x2="474" y2="136" stroke="#D0D0CA" stroke-width="0.65" id="query-rule-TITR" />
+    <text x="374" y="157" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="integer-offset-domain">D = {−30,…,30}</text>
+    <text x="374" y="179" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="closed-band-unit">closed bands (mg/dL)</text>
+  </g>
+  <g id="constant-offset-baseline">
+    <text x="622" y="24" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-title-0">d. Constant-offset</text>
+    <text x="622" y="41" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-title-1">baseline (V = 0)</text>
+    <text x="508" y="68" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-metric-header">Metric</text>
+    <text x="629" y="68" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-min-header">min</text>
+    <text x="702" y="68" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-max-header">max</text>
+    <line x1="500" y1="77" x2="738" y2="77" stroke="#202020" stroke-width="0.7" id="baseline-rule-top" />
+    <rect x="500" y="78" width="238" height="28" fill="#FBEDBA" stroke="none" stroke-width="0.85" rx="0" id="baseline-row-TIR" />
+    <text x="508" y="97" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-name-TIR">TIR</text>
+    <text x="629" y="97" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-min-TIR">66</text>
+    <text x="702" y="97" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-max-TIR">96</text>
+    <line x1="500" y1="106" x2="738" y2="106" stroke="#D0D0CA" stroke-width="0.65" id="baseline-rule-TIR" />
+    <rect x="500" y="107" width="238" height="28" fill="#F8DCC9" stroke="none" stroke-width="0.85" rx="0" id="baseline-row-TITR" />
+    <text x="508" y="126" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-name-TITR">TITR</text>
+    <text x="629" y="126" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-min-TITR">63</text>
+    <text x="702" y="126" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-max-TITR">91</text>
+    <line x1="500" y1="135" x2="738" y2="135" stroke="#D0D0CA" stroke-width="0.65" id="baseline-rule-TITR" />
+    <text x="622" y="157" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-all-offsets">every constant offset in D</text>
+    <text x="622" y="179" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="baseline-not-nominal">not only x = 0</text>
+  </g>
+  <g id="compiled-query">
+    <rect x="260" y="211" width="488" height="167" fill="white" stroke="#202020" stroke-width="0.9" rx="17" id="compiled-query-frame" />
+    <rect x="387.6554" y="193" width="232.6893" height="19" fill="white" stroke="none" stroke-width="0.85" rx="0" id="compiled-query-title-white" />
+    <text x="504" y="215" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="compiled-query-title-0">c. One temporally coupled query</text>
+    <text x="276" y="235" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="selected-examples-note">Three selected original samples</text>
+    <text x="274" y="273" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A47000" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-TIR-label">TIR</text>
+    <text x="274" y="297" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A74A22" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-TITR-label">TITR</text>
+    <g id="compiled-sample-1">
+      <text x="403.5" y="252" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="compiled-reading-1">g₁ = 61.0</text>
+      <line x1="354" y1="268" x2="453" y2="268" stroke="#D0D0CA" stroke-width="0.7" id="unary-domain-1-TIR" />
+      <line x1="354" y1="268" x2="388.65" y2="268" stroke="#A47000" stroke-width="2" id="unary-segment-1-TIR" />
+      <circle cx="354" cy="268" r="2.5" fill="#A47000" stroke="#A47000" stroke-width="0.7" id="unary-low-1-TIR" />
+      <circle cx="388.65" cy="268" r="2.5" fill="#A47000" stroke="#A47000" stroke-width="0.7" id="unary-high-1-TIR" />
+      <text x="403.5" y="284" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#A47000" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-interval-1-TIR">[−30,−9]</text>
+      <line x1="354" y1="292" x2="453" y2="292" stroke="#D0D0CA" stroke-width="0.7" id="unary-domain-1-TITR" />
+      <line x1="354" y1="292" x2="388.65" y2="292" stroke="#A74A22" stroke-width="2" id="unary-segment-1-TITR" />
+      <circle cx="354" cy="292" r="2.5" fill="#A74A22" stroke="#A74A22" stroke-width="0.7" id="unary-low-1-TITR" />
+      <circle cx="388.65" cy="292" r="2.5" fill="#A74A22" stroke="#A74A22" stroke-width="0.7" id="unary-high-1-TITR" />
+      <text x="403.5" y="308" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-interval-1-TITR">[−30,−9]</text>
+      <line x1="354" y1="317" x2="453" y2="317" stroke="#202020" stroke-width="0.65" id="unary-axis-1" />
+      <line x1="354" y1="315" x2="354" y2="320" stroke="#202020" stroke-width="0.6" id="unary-tick-1--30" />
+      <text x="354" y="333" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-label-1--30">−30</text>
+      <line x1="403.5" y1="315" x2="403.5" y2="320" stroke="#202020" stroke-width="0.6" id="unary-tick-1-0" />
+      <text x="403.5" y="333" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-label-1-0">0</text>
+      <line x1="453" y1="315" x2="453" y2="320" stroke="#202020" stroke-width="0.6" id="unary-tick-1-30" />
+      <text x="453" y="333" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-label-1-30">30</text>
+    </g>
+    <g id="compiled-sample-11">
+      <text x="535.5" y="252" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="compiled-reading-11">g₁₁ = 70.0</text>
+      <line x1="486" y1="268" x2="585" y2="268" stroke="#D0D0CA" stroke-width="0.7" id="unary-domain-11-TIR" />
+      <line x1="486" y1="268" x2="535.5" y2="268" stroke="#A47000" stroke-width="2" id="unary-segment-11-TIR" />
+      <circle cx="486" cy="268" r="2.5" fill="#A47000" stroke="#A47000" stroke-width="0.7" id="unary-low-11-TIR" />
+      <circle cx="535.5" cy="268" r="2.5" fill="#A47000" stroke="#A47000" stroke-width="0.7" id="unary-high-11-TIR" />
+      <text x="535.5" y="284" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#A47000" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-interval-11-TIR">[−30,0]</text>
+      <line x1="486" y1="292" x2="585" y2="292" stroke="#D0D0CA" stroke-width="0.7" id="unary-domain-11-TITR" />
+      <line x1="486" y1="292" x2="535.5" y2="292" stroke="#A74A22" stroke-width="2" id="unary-segment-11-TITR" />
+      <circle cx="486" cy="292" r="2.5" fill="#A74A22" stroke="#A74A22" stroke-width="0.7" id="unary-low-11-TITR" />
+      <circle cx="535.5" cy="292" r="2.5" fill="#A74A22" stroke="#A74A22" stroke-width="0.7" id="unary-high-11-TITR" />
+      <text x="535.5" y="308" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-interval-11-TITR">[−30,0]</text>
+      <line x1="486" y1="317" x2="585" y2="317" stroke="#202020" stroke-width="0.65" id="unary-axis-11" />
+      <line x1="486" y1="315" x2="486" y2="320" stroke="#202020" stroke-width="0.6" id="unary-tick-11--30" />
+      <text x="486" y="333" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-label-11--30">−30</text>
+      <line x1="535.5" y1="315" x2="535.5" y2="320" stroke="#202020" stroke-width="0.6" id="unary-tick-11-0" />
+      <text x="535.5" y="333" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-label-11-0">0</text>
+      <line x1="585" y1="315" x2="585" y2="320" stroke="#202020" stroke-width="0.6" id="unary-tick-11-30" />
+      <text x="585" y="333" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-label-11-30">30</text>
+    </g>
+    <g id="compiled-sample-18">
+      <text x="667.5" y="252" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="compiled-reading-18">g₁₈ = 143.0</text>
+      <line x1="618" y1="268" x2="717" y2="268" stroke="#D0D0CA" stroke-width="0.7" id="unary-domain-18-TIR" />
+      <line x1="618" y1="268" x2="717" y2="268" stroke="#A47000" stroke-width="2" id="unary-segment-18-TIR" />
+      <circle cx="618" cy="268" r="2.5" fill="#A47000" stroke="#A47000" stroke-width="0.7" id="unary-low-18-TIR" />
+      <circle cx="717" cy="268" r="2.5" fill="#A47000" stroke="#A47000" stroke-width="0.7" id="unary-high-18-TIR" />
+      <text x="667.5" y="284" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#A47000" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-interval-18-TIR">[−30,30]</text>
+      <line x1="618" y1="292" x2="717" y2="292" stroke="#D0D0CA" stroke-width="0.7" id="unary-domain-18-TITR" />
+      <line x1="672.45" y1="292" x2="717" y2="292" stroke="#A74A22" stroke-width="2" id="unary-segment-18-TITR" />
+      <circle cx="672.45" cy="292" r="2.5" fill="#A74A22" stroke="#A74A22" stroke-width="0.7" id="unary-low-18-TITR" />
+      <circle cx="717" cy="292" r="2.5" fill="#A74A22" stroke="#A74A22" stroke-width="0.7" id="unary-high-18-TITR" />
+      <text x="667.5" y="308" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-interval-18-TITR">[3,30]</text>
+      <line x1="618" y1="317" x2="717" y2="317" stroke="#202020" stroke-width="0.65" id="unary-axis-18" />
+      <line x1="618" y1="315" x2="618" y2="320" stroke="#202020" stroke-width="0.6" id="unary-tick-18--30" />
+      <text x="618" y="333" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-label-18--30">−30</text>
+      <line x1="667.5" y1="315" x2="667.5" y2="320" stroke="#202020" stroke-width="0.6" id="unary-tick-18-0" />
+      <text x="667.5" y="333" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-label-18-0">0</text>
+      <line x1="717" y1="315" x2="717" y2="320" stroke="#202020" stroke-width="0.6" id="unary-tick-18-30" />
+      <text x="717" y="333" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-label-18-30">30</text>
+    </g>
+    <text x="273" y="329" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="unary-axis-title">offset xᵢ</text>
+    <line x1="272" y1="340" x2="736" y2="340" stroke="#D0D0CA" stroke-width="0.7" id="mechanism-divider" />
+    <circle cx="299" cy="359" r="10" fill="#FBEDBA" stroke="#202020" stroke-width="0.75" id="temporal-node-0" />
+    <text x="299" y="363" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="temporal-label-0">x₁</text>
+    <circle cx="335" cy="359" r="10" fill="#FBEDBA" stroke="#202020" stroke-width="0.75" id="temporal-node-1" />
+    <text x="335" y="363" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="temporal-label-1">x₂</text>
+    <circle cx="371" cy="359" r="10" fill="#FBEDBA" stroke="#202020" stroke-width="0.75" id="temporal-node-2" />
+    <text x="371" y="363" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="temporal-label-2">x₃</text>
+    <circle cx="431" cy="359" r="10" fill="#FBEDBA" stroke="#202020" stroke-width="0.75" id="temporal-node-3" />
+    <text x="431" y="363" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="temporal-label-3">x₉₆</text>
+    <line x1="309" y1="359" x2="324" y2="359" stroke="#202020" stroke-width="0.75" marker-end="url(#arrow)" id="temporal-link-0" />
+    <line x1="345" y1="359" x2="360" y2="359" stroke="#202020" stroke-width="0.75" marker-end="url(#arrow)" id="temporal-link-1" />
+    <line x1="381" y1="359" x2="391" y2="359" stroke="#202020" stroke-width="0.75" marker-end="url(#arrow)" id="temporal-link-2" />
+    <line x1="411" y1="359" x2="420" y2="359" stroke="#202020" stroke-width="0.75" marker-end="url(#arrow)" id="temporal-link-3" />
+    <text x="401" y="362" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="temporal-ellipsis">…</text>
+    <text x="585" y="355" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="one-budget-constraint">∑ᵢ₌₂⁹⁶ |xᵢ − xᵢ₋₁| ≤ V</text>
+    <text x="585" y="373" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="shared-budget-free-endpoints">96 offsets · free endpoints</text>
+  </g>
+  <g id="exact-count-envelopes">
+    <rect x="763" y="31" width="237" height="347" fill="white" stroke="#202020" stroke-width="0.9" rx="17" id="exact-count-envelopes-frame" />
+    <rect x="828.9016" y="13" width="105.1969" height="34" fill="white" stroke="none" stroke-width="0.85" rx="0" id="exact-count-envelopes-title-white" />
+    <text x="881.5" y="28" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="exact-count-envelopes-title-0">e. Exact count</text>
+    <text x="881.5" y="45" font-family="Calibri" font-size="16.4" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="exact-count-envelopes-title-1">envelopes</text>
+    <circle cx="790" cy="63" r="2.8" fill="white" stroke="#202020" stroke-width="1" id="legend-min" />
+    <text x="798" y="67" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="legend-min-text">min</text>
+    <circle cx="851" cy="63" r="2.8" fill="#202020" stroke="#202020" stroke-width="1" id="legend-max" />
+    <text x="859" y="67" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="legend-max-text">max</text>
+    <text x="882" y="88" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="count-common-denominator">Count (of 96)</text>
+    <g id="TIR-endpoints">
+      <text x="887" y="108" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A47000" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-title">TIR [70,180]</text>
+      <text x="783" y="108" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-budget-header">V</text>
+      <line x1="811" y1="119" x2="811" y2="209" stroke="#D0D0CA" stroke-width="0.55" stroke-dasharray="2 2" id="TIR-guide-0" />
+      <line x1="890.5" y1="119" x2="890.5" y2="209" stroke="#D0D0CA" stroke-width="0.55" stroke-dasharray="2 2" id="TIR-guide-48" />
+      <line x1="970" y1="119" x2="970" y2="209" stroke="#D0D0CA" stroke-width="0.55" stroke-dasharray="2 2" id="TIR-guide-96" />
+      <text x="783" y="131" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V0-budget">0</text>
+      <line x1="920.3125" y1="127" x2="970" y2="127" stroke="#A47000" stroke-width="1" id="TIR-V0-join" />
+      <circle cx="920.3125" cy="127" r="2.8" fill="white" stroke="#A47000" stroke-width="1" id="TIR-V0-min" />
+      <circle cx="970" cy="127" r="2.8" fill="#A47000" stroke="#A47000" stroke-width="1" id="TIR-V0-max" />
+      <text x="914.3125" y="131" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V0-min-label">66</text>
+      <text x="975" y="131" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V0-max-label">96</text>
+      <text x="783" y="149" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V1-budget">1</text>
+      <line x1="920.3125" y1="145" x2="970" y2="145" stroke="#A47000" stroke-width="1" id="TIR-V1-join" />
+      <circle cx="920.3125" cy="145" r="2.8" fill="white" stroke="#A47000" stroke-width="1" id="TIR-V1-min" />
+      <circle cx="970" cy="145" r="2.8" fill="#A47000" stroke="#A47000" stroke-width="1" id="TIR-V1-max" />
+      <text x="914.3125" y="149" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V1-min-label">66</text>
+      <text x="975" y="149" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V1-max-label">96</text>
+      <text x="783" y="167" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V4-budget">4</text>
+      <line x1="920.3125" y1="163" x2="970" y2="163" stroke="#A47000" stroke-width="1" id="TIR-V4-join" />
+      <circle cx="920.3125" cy="163" r="2.8" fill="white" stroke="#A47000" stroke-width="1" id="TIR-V4-min" />
+      <circle cx="970" cy="163" r="2.8" fill="#A47000" stroke="#A47000" stroke-width="1" id="TIR-V4-max" />
+      <text x="914.3125" y="167" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V4-min-label">66</text>
+      <text x="975" y="167" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V4-max-label">96</text>
+      <text x="783" y="185" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V16-budget">16</text>
+      <line x1="920.3125" y1="181" x2="970" y2="181" stroke="#A47000" stroke-width="1" id="TIR-V16-join" />
+      <circle cx="920.3125" cy="181" r="2.8" fill="white" stroke="#A47000" stroke-width="1" id="TIR-V16-min" />
+      <circle cx="970" cy="181" r="2.8" fill="#A47000" stroke="#A47000" stroke-width="1" id="TIR-V16-max" />
+      <text x="914.3125" y="185" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V16-min-label">66</text>
+      <text x="975" y="185" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V16-max-label">96</text>
+      <text x="783" y="203" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V64-budget">64</text>
+      <line x1="920.3125" y1="199" x2="970" y2="199" stroke="#A47000" stroke-width="1" id="TIR-V64-join" />
+      <circle cx="920.3125" cy="199" r="2.8" fill="white" stroke="#A47000" stroke-width="1" id="TIR-V64-min" />
+      <circle cx="970" cy="199" r="2.8" fill="#A47000" stroke="#A47000" stroke-width="1" id="TIR-V64-max" />
+      <text x="914.3125" y="203" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V64-min-label">66</text>
+      <text x="975" y="203" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-V64-max-label">96</text>
+      <line x1="811" y1="209" x2="970" y2="209" stroke="#202020" stroke-width="0.85" id="TIR-count-axis" />
+      <line x1="811" y1="207" x2="811" y2="212" stroke="#202020" stroke-width="0.7" id="TIR-count-tick-0" />
+      <text x="811" y="226" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-count-label-0">0</text>
+      <line x1="890.5" y1="207" x2="890.5" y2="212" stroke="#202020" stroke-width="0.7" id="TIR-count-tick-48" />
+      <text x="890.5" y="226" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-count-label-48">48</text>
+      <line x1="970" y1="207" x2="970" y2="212" stroke="#202020" stroke-width="0.7" id="TIR-count-tick-96" />
+      <text x="970" y="226" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TIR-count-label-96">96</text>
+    </g>
+    <g id="TITR-endpoints">
+      <text x="887" y="247" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#A74A22" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-title">TITR [70,140]</text>
+      <text x="783" y="247" font-family="Calibri" font-size="14.2" font-weight="bold" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-budget-header">V</text>
+      <line x1="811" y1="258" x2="811" y2="348" stroke="#D0D0CA" stroke-width="0.55" stroke-dasharray="2 2" id="TITR-guide-0" />
+      <line x1="890.5" y1="258" x2="890.5" y2="348" stroke="#D0D0CA" stroke-width="0.55" stroke-dasharray="2 2" id="TITR-guide-48" />
+      <line x1="970" y1="258" x2="970" y2="348" stroke="#D0D0CA" stroke-width="0.55" stroke-dasharray="2 2" id="TITR-guide-96" />
+      <text x="783" y="270" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V0-budget">0</text>
+      <line x1="915.3438" y1="266" x2="961.7188" y2="266" stroke="#A74A22" stroke-width="1" id="TITR-V0-join" />
+      <circle cx="915.3438" cy="266" r="2.8" fill="white" stroke="#A74A22" stroke-width="1" id="TITR-V0-min" />
+      <circle cx="961.7188" cy="266" r="2.8" fill="#A74A22" stroke="#A74A22" stroke-width="1" id="TITR-V0-max" />
+      <text x="909.3438" y="270" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V0-min-label">63</text>
+      <text x="966.7188" y="270" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V0-max-label">91</text>
+      <text x="783" y="288" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V1-budget">1</text>
+      <line x1="915.3438" y1="284" x2="961.7188" y2="284" stroke="#A74A22" stroke-width="1" id="TITR-V1-join" />
+      <circle cx="915.3438" cy="284" r="2.8" fill="white" stroke="#A74A22" stroke-width="1" id="TITR-V1-min" />
+      <circle cx="961.7188" cy="284" r="2.8" fill="#A74A22" stroke="#A74A22" stroke-width="1" id="TITR-V1-max" />
+      <text x="909.3438" y="288" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V1-min-label">63</text>
+      <text x="966.7188" y="288" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V1-max-label">91</text>
+      <text x="783" y="306" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V4-budget">4</text>
+      <line x1="915.3438" y1="302" x2="963.375" y2="302" stroke="#A74A22" stroke-width="1" id="TITR-V4-join" />
+      <circle cx="915.3438" cy="302" r="2.8" fill="white" stroke="#A74A22" stroke-width="1" id="TITR-V4-min" />
+      <circle cx="963.375" cy="302" r="2.8" fill="#A74A22" stroke="#A74A22" stroke-width="1" id="TITR-V4-max" />
+      <text x="909.3438" y="306" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V4-min-label">63</text>
+      <text x="968.375" y="306" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V4-max-label">92</text>
+      <text x="783" y="324" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V16-budget">16</text>
+      <line x1="915.3438" y1="320" x2="970" y2="320" stroke="#A74A22" stroke-width="1" id="TITR-V16-join" />
+      <circle cx="915.3438" cy="320" r="2.8" fill="white" stroke="#A74A22" stroke-width="1" id="TITR-V16-min" />
+      <circle cx="970" cy="320" r="2.8" fill="#A74A22" stroke="#A74A22" stroke-width="1" id="TITR-V16-max" />
+      <text x="909.3438" y="324" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V16-min-label">63</text>
+      <text x="975" y="324" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V16-max-label">96</text>
+      <text x="783" y="342" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V64-budget">64</text>
+      <line x1="895.4688" y1="338" x2="970" y2="338" stroke="#A74A22" stroke-width="1" id="TITR-V64-join" />
+      <circle cx="895.4688" cy="338" r="2.8" fill="white" stroke="#A74A22" stroke-width="1" id="TITR-V64-min" />
+      <circle cx="970" cy="338" r="2.8" fill="#A74A22" stroke="#A74A22" stroke-width="1" id="TITR-V64-max" />
+      <text x="889.4688" y="342" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="end" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V64-min-label">51</text>
+      <text x="975" y="342" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="start" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-V64-max-label">96</text>
+      <line x1="811" y1="348" x2="970" y2="348" stroke="#202020" stroke-width="0.85" id="TITR-count-axis" />
+      <line x1="811" y1="346" x2="811" y2="351" stroke="#202020" stroke-width="0.7" id="TITR-count-tick-0" />
+      <text x="811" y="365" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-count-label-0">0</text>
+      <line x1="890.5" y1="346" x2="890.5" y2="351" stroke="#202020" stroke-width="0.7" id="TITR-count-tick-48" />
+      <text x="890.5" y="365" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-count-label-48">48</text>
+      <line x1="970" y1="346" x2="970" y2="351" stroke="#202020" stroke-width="0.7" id="TITR-count-tick-96" />
+      <text x="970" y="365" font-family="Calibri" font-size="14.2" font-weight="normal" font-style="normal" fill="#202020" text-anchor="middle" style="font-variant-ligatures:none;font-feature-settings:'liga' 0,'clig' 0" id="TITR-count-label-96">96</text>
+    </g>
+  </g>
+  <g id="cross-zone-relations">
+    <path d="M 245 190 C 255 190 250 251 264 251" stroke="#202020" stroke-width="0.9" fill="none" marker-end="url(#arrow)" id="observations-to-compiler" />
+    <path d="M 476 116 L 494 116" stroke="#202020" stroke-width="0.85" fill="none" marker-end="url(#arrow)" id="predicates-to-static" />
+    <path d="M 739 116 L 761 116" stroke="#202020" stroke-width="0.85" fill="none" marker-end="url(#arrow)" id="static-to-endpoints" />
+    <path d="M 748 294 C 755 294 756 280 762 280" stroke="#202020" stroke-width="0.85" fill="none" marker-end="url(#arrow)" id="compiled-query-to-endpoints" />
+  </g>
+</svg>

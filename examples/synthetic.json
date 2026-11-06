@@ -1,0 +1,6 @@
+{
+  "description": "Synthetic weighted interval query from the paper's conceptual mechanism; no patient observations.",
+  "domain": [0, 23],
+  "budgets": [0, 1, 4],
+  "intervals": [[2, 6, 2], [7, 13, 1], [4, 19, 3], [10, 17, 2]]
+}
