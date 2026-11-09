@@ -72,7 +72,7 @@ Output contains `method`, `domain`, `budgets`, and `bounds`. Add `--diagnostics`
 
 ## Optional fixed BIG001 example
 
-No patient readings are bundled. To check the manuscript's 96-sample example, obtain **BIG IDEAs Lab Glycemic Variability and Wearable Device Data**, PhysioNet version 1.1.3, by Peter Cho, Juseong Kim, Brinnae Bent, and Jessilyn Dunn: [dataset DOI](https://doi.org/10.13026/aw6y-fc44). Follow the dataset's access, attribution, and [ODC Attribution License (ODC-By) requirements](assets/BIG_IDEAs_ODC-By.txt). Dataset terms apply independently of this repository's code permissions.
+The [browser demo](demo.md) includes the attributed [96-reading public extract](demos/big001-input.json). To independently verify it against the manuscript's original source file, obtain **BIG IDEAs Lab Glycemic Variability and Wearable Device Data**, PhysioNet version 1.1.3, by Peter Cho, Juseong Kim, Brinnae Bent, and Jessilyn Dunn: [dataset DOI](https://doi.org/10.13026/aw6y-fc44). Follow the dataset's access, attribution, and [ODC Attribution License (ODC-By) requirements](assets/BIG_IDEAs_ODC-By.txt). Dataset terms apply independently of this repository's code permissions. The full original CSV is not bundled.
 
 With the original `001/Dexcom_001.csv` available locally:
 

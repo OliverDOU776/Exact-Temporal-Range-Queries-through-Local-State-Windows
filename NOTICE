@@ -10,4 +10,10 @@ No open-source license grant is included in this repository. Public availability
 does not by itself grant permission to redistribute, sublicense, or relicense
 the code. Obtain applicable permissions from the rights holder before reuse.
 
-No third-party patient dataset, fonts, paper PDFs, or benchmark logs are bundled.
+The browser demo includes a 96-reading extract from Cho, Kim, Bent, and Dunn,
+BIG IDEAs Lab Glycemic Variability and Wearable Device Data v1.1.3,
+PhysioNet, DOI 10.13026/aw6y-fc44, under the Open Data Commons Attribution
+License (ODC-By). Attribution, selected source rows, and transformations are
+recorded in docs/demos/big001-input.json and docs/demos/README.md. This data
+license is separate from the code permissions above. The full source patient
+CSV, fonts, paper PDFs, and benchmark logs are not bundled.
