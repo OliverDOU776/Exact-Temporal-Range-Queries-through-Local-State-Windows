@@ -246,13 +246,14 @@
     if (!lastDownload) return;
     const url = URL.createObjectURL(new Blob([JSON.stringify(lastDownload, null, 2) + "\n"], { type: "application/json" }));
     const anchor = document.createElement("a"); anchor.href = url; anchor.download = "local-state-windows-query.json"; anchor.click();
+    status("JSON download requested. The file includes your input, query settings and exact answers.", "Export");
     window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
 
   const movies = {
-    "shared-budget": "Two readings, four offset paths. At budget 0 only constant paths are feasible; at budget 1 the exact count pair widens from [1,1] to [0,2]. Teaching example · 12 s · silent, with on-screen explanations.",
-    "big001-budget": "The same 96 original BIG001 observations, five movement budgets. The TITR count pairs are [63,91], [63,91], [63,92], [63,96] and [51,96]. Public data · 12.5 s · silent. No corrected trajectory is plotted.",
-    "local-window": "The witness (6,7,7,10) has total movement 4 and score 8. It crosses two disjoint blocks, while their overlapping cover [4,11] contains the full path. Mathematical example · 11 s · silent."
+    "csv-session": "Paste two readings, set the range and shared budgets, and compute exact bounds. Change 141 to 140, recompute, and download the query with its results. Actual application recording · silent, with on-screen captions.",
+    "public-session": "Load 96 public readings, change allowed offsets from ±30 to ±10, recompute and export. At budget 4, the bounds change from [63,92] to [82,89] while the nominal count stays 84. Actual browser recording; idle pauses trimmed and reading holds added.",
+    "masked-session": "Import a five-row CSV with a 0/1 count mask. Compute three budgets for the three counted rows, inspect the exact bounds, and download the query with its results. Actual application recording · silent, with on-screen captions."
   };
   const tabs = Array.from(document.querySelectorAll("[data-movie]"));
   function movie(tab) {
@@ -260,11 +261,13 @@
     video.pause();
     tabs.forEach((item) => { item.setAttribute("aria-selected", String(item === tab)); item.tabIndex = item === tab ? 0 : -1; });
     video.poster = `demos/${name}.png`;
+    el("movie-captions").src = `demos/${name}.vtt`;
     video.querySelector("source").src = `demos/${name}.mp4`;
     video.load();
     el("movie-panel").setAttribute("aria-labelledby", tab.id);
     el("movie-caption").textContent = movies[name];
     el("movie-mp4").href = `demos/${name}.mp4`;
+    el("movie-fallback").href = `demos/${name}.mp4`;
     el("movie-gif").href = `demos/${name}.gif`;
   }
   tabs.forEach((tab, i) => {

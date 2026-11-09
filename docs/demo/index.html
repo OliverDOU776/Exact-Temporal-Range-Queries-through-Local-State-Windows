@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<base href="../">
+<title>Local State Windows · Run a range query</title>
+<meta name="description" content="Run exact range-count sensitivity queries on your own ordered data. Import CSV, choose offset constraints, and export exact answers.">
+<meta name="author" content="Zijia Wang and Christofer Toumazou">
+<link rel="stylesheet" href="project/style.css?v=real-session-20261109c">
+<script src="project/demo-ui.js?v=real-session-20261109c" defer></script>
+</head><body class="app-page">
+<header class="app-topbar"><strong>Local State Windows</strong><nav aria-label="Application resources"><a href="./">Project</a><a href="https://github.com/OliverDOU776/Exact-Temporal-Range-Queries-through-Local-State-Windows">Code &amp; documentation</a></nav></header>
+<main>
+    <section id="try-demo" class="section shell live-demo" aria-labelledby="demo-heading">
+      <h2 id="demo-heading">Try an exact query on your own data</h2>
+      <p class="section-intro demo-lead">How much can your range count change under one shared offset budget? Paste a sequence, choose a range, and compute the exact minimum and maximum. The actual Local State Windows algorithm runs in your browser.</p>
+      <div class="demo-preset-row"><span>Start with:</span><button type="button" id="preset-toy">Two readings</button><button type="button" id="preset-mask">A masked middle</button><button type="button" id="preset-big">Real BIG001 · 96 readings</button></div>
+      <div class="live-demo-layout">
+        <form id="query-form" class="query-form">
+          <label class="field-label" for="query-data">Your ordered readings</label>
+          <textarea id="query-data" rows="8" spellcheck="false" aria-describedby="data-help">glucose,weight
+70,1
+141,1</textarea>
+          <p id="data-help" class="field-help">One value per line, comma-separated values, or CSV with a glucose/value column and optional weight column (0 or 1). Rows stay in input order; a weight of 0 masks the count, without resetting the budget.</p>
+          <label class="file-upload" for="query-file">Import CSV, TXT or JSON <input id="query-file" type="file" accept=".csv,.txt,.json,text/csv,text/plain,application/json"></label>
+          <div class="query-fields">
+            <fieldset><legend>Count corrected values inside</legend><div class="pair-fields"><label>Range lower<input id="band-lower" value="70" inputmode="decimal" required></label><label>Range upper<input id="band-upper" value="140" inputmode="decimal" required></label></div><div class="endpoint-fields"><label><input id="lower-closed" type="checkbox" checked> Include lower</label><label><input id="upper-closed" type="checkbox" checked> Include upper</label></div></fieldset>
+            <fieldset><legend>Allowed integer offsets</legend><div class="pair-fields"><label>Minimum<input id="domain-lower" type="number" step="1" value="0" required></label><label>Maximum<input id="domain-upper" type="number" step="1" value="1" required></label></div></fieldset>
+          </div>
+          <label class="field-label" for="query-budgets">Shared movement budgets</label><input id="query-budgets" value="0, 1" aria-describedby="budget-help" required><p id="budget-help" class="field-help">Comma-separated integers, 0–64. Budget 0 allows any constant offset. Corrected value = reading − offset.</p>
+          <div class="query-actions"><button type="submit" class="button" id="run-query">Compute exact bounds</button><button type="button" class="cancel-query" id="cancel-query" hidden>Cancel</button></div>
+          <p class="local-privacy">Your imported data stays in this browser. No server upload, account or API key.</p>
+        </form>
+        <div class="query-answer" aria-busy="false" id="query-answer">
+          <div class="answer-heading"><h3>Your query result</h3><span id="query-state">Ready</span></div>
+          <p id="query-status" class="query-status" role="status" aria-live="polite">Choose a preset or paste your readings, then compute.</p>
+          <div id="query-output" hidden>
+            <div class="answer-metrics"><div><span>Counted observations</span><strong id="result-denominator"></strong></div><div><span>Nominal count · offset 0</span><strong id="result-nominal"></strong></div></div>
+            <div class="demo-chart" id="query-trace" aria-label="Your input sequence and target band"></div>
+            <div class="demo-result-table"><table><caption>Exact range count under each shared budget</caption><thead><tr><th scope="col">Budget</th><th scope="col">Minimum</th><th scope="col">Maximum</th><th scope="col">Percentage range</th></tr></thead><tbody id="query-result-rows"></tbody></table></div>
+            <p id="result-interpretation" class="result-interpretation"></p>
+            <p id="result-diagnostics" class="field-help"></p>
+            <button type="button" id="download-result" class="download-result">Download query + results · JSON ↓</button>
+            <p class="field-help">Counts are exact extrema under your specified model. They are not confidence intervals or calibrated error estimates; not every count between the endpoints must be attainable.</p>
+          </div>
+          <div id="query-placeholder" class="query-placeholder"><span>[ minimum, maximum ]</span><p>Check how temporal coupling changes a range report.<br>Try the two-reading example: budget 0 → [1,1]; budget 1 → [0,2].</p></div>
+          <p class="demo-contract"><strong>Interactive edition:</strong> up to 2,000 rows, 401 offset states and budget 64; unit counts with optional zero-weight masks. Larger jobs and rational weights: <a href="https://github.com/OliverDOU776/Exact-Temporal-Range-Queries-through-Local-State-Windows/blob/main/docs/demo.md">demo contract</a> / <a href="#code">Python &amp; C++</a>.</p>
+        </div>
+      </div>
+      <p class="demo-source" id="demo-source">Teaching example. Range endpoints and offsets use the same units as your readings. No clinical interpretation is implied.</p>
+      <p class="field-help"><a href="demos/big001-input.json" download>Download the public 96-reading example · JSON ↓</a> · <a href="assets/BIG_IDEAs_ODC-By.txt">Dataset license &amp; attribution</a></p>
+      <noscript><p>This tool needs JavaScript. The worked examples and downloadable code remain available below.</p></noscript>
+    </section>
+
+</main><footer class="app-footer">Zijia Wang &amp; Christofer Toumazou · Imperial College London</footer></body></html>

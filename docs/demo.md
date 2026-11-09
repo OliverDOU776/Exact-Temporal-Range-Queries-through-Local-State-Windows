@@ -1,6 +1,6 @@
 # Run an exact range count in your browser
 
-[Open the live solver](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/#try-demo) · [Download the 96-reading BIG001 input](demos/big001-input.json) · [Query contract](method.md)
+[Open the live solver](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/demo/) · [Download the 96-reading BIG001 input](demos/big001-input.json) · [Query contract](method.md)
 
 Paste two readings, `70, 141`, set the closed band to `[70, 140]`, set the offset domain to `[0, 1]`, and request budgets `0, 1`. Choose **Compute exact bounds**. The answer changes from **[1, 1]** to **[0, 2]**: the paths (0, 1) and (1, 0) can score two and zero respectively, and both cost one unit of movement. Change 141 to 140 and run again; the answers change to **[1, 2]** at both budgets.
 

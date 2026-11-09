@@ -15,7 +15,7 @@ Imperial College London
 
 ## Run an exact query
 
-**[Try your own data →](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/#try-demo)**
+**[Try your own data →](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/demo/)**
 
 The browser tool lets you:
 
@@ -27,7 +27,19 @@ It supports exact decimal predicates, up to **2,000 rows**, **401 integer states
 
 Check the browser solver independently with `node tests/test_browser_solver.cjs` (320 exhaustive small cases plus fixed public and decimal-boundary checks; no dependencies).
 
-<p align="center"><a href="https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/#try-demo"><img src="docs/demos/query-tool.png" width="900" alt="Actual browser solver running the public BIG001 sequence: editable range and offset controls, five computed exact count pairs, and JSON export."></a></p>
+<p align="center"><a href="https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/demo/"><img src="docs/demos/public-session.gif" width="900" alt="Actual browser recording: load 96 public readings, change offset constraints, recompute exact bounds and export the query."></a></p>
+
+## Using Local State Windows
+
+These screen recordings show the browser application in use: entering data, changing a query, inspecting exact counts and downloading the query with its results. Each session demonstrates a complete task.
+
+| Task | What the session shows | Recording |
+|:--|:--|:--|
+| **Paste data, compute and export** | Paste two readings, compute budgets 0 and 1, edit a reading, recompute and download JSON. | [MP4](docs/demos/csv-session.mp4) · [GIF](docs/demos/csv-session.gif) |
+| **Check a public glucose report** | Load 96 public BIG001 readings, inspect five budgets, narrow the allowed offsets and export the revised report. | [MP4](docs/demos/public-session.mp4) · [GIF](docs/demos/public-session.gif) |
+| **Report selected readings** | Import a five-row CSV with a 0/1 count mask, keep temporal order, add a budget and export. | [MP4](docs/demos/masked-session.mp4) · [GIF](docs/demos/masked-session.gif) |
+
+[Session steps, example files and data attribution](docs/demos/README.md).
 
 ## Two readings explain the problem
 
@@ -38,17 +50,9 @@ Take readings **70 and 141 mg/dL**. Count how many corrected readings fall in th
 
 The budget limits **total movement across the sequence**. It is shared by all rows. Zero movement permits any constant offset in the domain.
 
-<p align="center">
-<img src="docs/demos/shared-budget.gif" width="900" alt="Animated two-reading example: readings 70 and 141, offsets 0 or 1, and exact count bounds widening from [1,1] at movement budget zero to [0,2] at budget one.">
-</p>
-
 ## The same query on real observations
 
 For the manuscript's fixed public **BIG001** example: **96 samples**, offsets **−30…30**, and the closed TITR band **[70,140] mg/dL**. At budget **4**, the exact minimum and maximum are **[63,92] out of 96**.
-
-<p align="center">
-<img src="docs/demos/big001-budget.gif" width="900" alt="Animated fixed public BIG001 example: 96 observed glucose samples and exact count bounds as the shared variation budget changes; TITR gives [63,92] at budget four.">
-</p>
 
 These are **exact extrema, not confidence intervals**. Separate metrics may attain their extrema on different paths. Offsets and budgets define an analyst-specified sensitivity scenario; they do not estimate calibrated sensor error or clinical effects. [Explore the examples interactively →](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/#examples)
 
@@ -104,10 +108,6 @@ Use `method="global"` or `method="gap"` to compare exact physical plans, and `me
 ## Why local windows work
 
 A path with total variation at most $V$ spans at most $V$ offset units. Overlapping windows of at most **$2V$ consecutive states** therefore cover every feasible path. An interval has at most two boundary edges, so each sensitive run appears in at most four windows: **at most $4r$ sensitive run-window incidences** in total. A weighted sweep restores fixed contributions and accounts for inactive windows without enumerating the whole domain.
-
-<p align="center">
-<img src="docs/demos/local-window.gif" width="900" alt="Animated local-state-window illustration: adjacent blocks form overlapping windows, and a highlighted witness path fits inside one covering window.">
-</p>
 
 For $V\ge1$, the complete operator has arithmetic bounds
 

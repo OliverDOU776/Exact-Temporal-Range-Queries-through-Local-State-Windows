@@ -1,0 +1,48 @@
+WEBVTT
+
+NOTE Actual browser capture; idle pauses trimmed; reading holds added.
+
+1
+00:00:00.000 --> 00:00:02.467
+Start with the built-in public example
+Load real BIG001 readings directly in the application.
+
+2
+00:00:02.467 --> 00:00:04.933
+Click Real BIG001 · 96 readings
+The application loads the original ordered sequence and computes five budgets.
+
+3
+00:00:04.933 --> 00:00:08.867
+Inspect the public-data result
+Nominal count: 84 of 96. With offsets -30 to +30, budget 4 gives [63, 92].
+
+4
+00:00:08.867 --> 00:00:11.333
+Narrow the allowed offsets
+Keep all 96 readings fixed; change the lower offset from -30 to -10.
+
+5
+00:00:11.333 --> 00:00:13.667
+Set the upper offset to +10
+Compare a narrower offset scenario using the same readings and budgets.
+
+6
+00:00:13.667 --> 00:00:16.267
+Review the revised settings
+Allowed integer offsets are now -10 to +10.
+
+7
+00:00:16.267 --> 00:00:18.733
+Recompute the revised scenario
+Click Compute exact bounds with the narrower offset range.
+
+8
+00:00:18.733 --> 00:00:22.667
+Compare the exact sensitivity bounds
+Budget 4 now gives [82, 89], compared with [63, 92] before.
+
+9
+00:00:22.667 --> 00:00:25.533
+Export the chosen scenario as JSON
+These are exact sensitivity bounds under the settings, not a calibrated error estimate.

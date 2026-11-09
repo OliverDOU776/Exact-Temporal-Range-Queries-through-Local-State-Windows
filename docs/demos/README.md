@@ -1,53 +1,69 @@
-# Demonstrations
+# Using Local State Windows
 
-The [working browser demo](../demo.md) accepts your own sequence and computes exact answers. These supporting clips each have an H.264 video, a looping GIF with the same sequence, and a still PNG. They illustrate exact count or score bounds; they do not measure processing speed. All clips are silent and use text labels.
+These screen recordings show the [browser application](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/demo/) in use. Each session enters or loads data, computes exact range counts and downloads the query with its results. The MP4, looping GIF and poster show the same application session. Recordings use actual browser captures. Idle pauses are trimmed and reading holds are added; the interface and computed results are not recreated. They are silent with on-screen captions and demonstrate workflows, not processing speed.
 
-| Clip | Video | GIF | Still | Duration |
-| --- | --- | --- | --- | ---: |
-| Two readings and a shared movement budget | [MP4](shared-budget.mp4) | [GIF](shared-budget.gif) | [PNG](shared-budget.png) | 12 s |
-| Five budgets on a fixed BIG001 window | [MP4](big001-budget.mp4) | [GIF](big001-budget.gif) | [PNG](big001-budget.png) | 12.5 s |
-| Why local windows overlap | [MP4](local-window.mp4) | [GIF](local-window.gif) | [PNG](local-window.png) | 11 s |
+| Task | Video | GIF | Poster | Input |
+| --- | --- | --- | --- | --- |
+| Paste data, compute and export | [MP4](csv-session.mp4) | [GIF](csv-session.gif) | [PNG](csv-session.png) | [Two readings · CSV](two-readings.csv) |
+| Check a public glucose report | [MP4](public-session.mp4) | [GIF](public-session.gif) | [PNG](public-session.png) | [BIG001 · JSON](big001-input.json) |
+| Report selected readings | [MP4](masked-session.mp4) | [GIF](masked-session.gif) | [PNG](masked-session.png) | [Masked period · CSV](masked-period.csv) |
 
-## Two readings
+## Paste data, compute and export
 
-For the invented readings `(70, 141)` mg/dL, subtract a separate offset of 0 or 1 from each value. Count corrected readings in the closed band `[70, 140]`. Total variation (TV) is the absolute difference between the two offsets. Both temporal endpoints are free.
+1. Paste the two-reading CSV with readings `70,141`, both weighted 1.
+2. Set the closed range to `[70,140]`, integer offsets to `0..1`, and shared movement budgets to `0,1`.
+3. Compute the exact bounds: `[1,1]` at budget 0 and `[0,2]` at budget 1.
+4. Edit the second reading from `141` to `140` and recompute. Both requested budgets now give `[1,2]`.
+5. Download the JSON containing the revised query and computed results.
 
-| Offsets | Corrected readings | TV | Count |
-| --- | --- | ---: | ---: |
-| (0, 0) | (70, 141) | 0 | 1 |
-| (0, 1) | (70, 140) | 1 | 2 |
-| (1, 0) | (69, 141) | 1 | 0 |
-| (1, 1) | (69, 140) | 0 | 1 |
+The example is synthetic. The edit demonstrates why an existing result must be recomputed when input data changes.
 
-The opening six seconds show the two constant paths: at budget 0 both produce a count of 1. At budget 1 all four paths are feasible. The clip then traces the two paths attaining the new minimum of 0 and maximum of 2. Markers are the discrete offset choices; connecting lines show row order.
+## Check a public glucose report
 
-## Public BIG001 window
+1. Load the public BIG001 example: 96 readings in their original order.
+2. Compute the closed `[70,140]` range with integer offsets `−30..30` and budgets `0,1,4,16,64`.
+3. Narrow the allowed integer offsets to `−10..10` and recompute the same budgets.
+4. Compare the exact bounds and download the revised query and results.
 
-The left panel plots the same 96 original EGV observations in every frame. Points use actual elapsed time, span 28,499 seconds and are joined in order without smoothing. No observations within this window were excluded. The shaded area is the closed `[70, 140]` mg/dL target band. No corrected trajectory is plotted. The right panel highlights a different total-variation budget every 2.5 seconds. Integer offsets range from −30 to +30 mg/dL. Each exact endpoint counts observations out of 96; an endpoint pair does not establish that every intermediate count is attainable.
-
-| Budget | Minimum | Maximum |
+| Budget | Bounds with offsets −30…30 | Bounds with offsets −10…10 |
 | ---: | ---: | ---: |
-| 0 | 63 | 91 |
-| 1 | 63 | 91 |
-| 4 | 63 | 92 |
-| 16 | 63 | 96 |
-| 64 | 51 | 96 |
+| 0 | [63,91] | [84,87] |
+| 1 | [63,91] | [83,87] |
+| 4 | [63,92] | [82,89] |
+| 16 | [63,96] | [80,92] |
+| 64 | [51,96] | [80,92] |
 
-**Source and attribution.** The BIG001 animation, poster and GIF are derived from Peter Cho, Juseong Kim, Brinnae Bent, and Jessilyn Dunn, *BIG IDEAs Lab Glycemic Variability and Wearable Device Data*, version 1.1.3, PhysioNet, [DOI: 10.13026/aw6y-fc44](https://doi.org/10.13026/aw6y-fc44), made available under the [Open Data Commons Attribution License (ODC-By)](../assets/BIG_IDEAs_ODC-By.txt). The source is `001/Dexcom_001.csv`, original CSV lines **14–109** inclusive (line 1 is the header), SHA-256 `6333b21185f23834ab929e5d8bf9045bbed6268cdfd5030adab3c7d5ef689ef5`. The generator reads that file locally. The repository ships the derived media and the attributed 96-reading extract in `big001-input.json`, while the full original patient CSV is not bundled. See the separate [fixed-case verification script](../../examples/verify_big001.py).
+The nominal count at offset 0 stays **84 out of 96**. Changing the allowed offset domain changes the sensitivity scenario, while the observations and nominal count remain fixed. Counts are exact extrema under the specified model, not confidence intervals; intermediate counts need not all be attainable. Offsets and budgets do not estimate calibrated sensor error or clinical effects.
 
-## Overlapping local windows
+**Source and attribution.** The public example and its derived recording use Peter Cho, Juseong Kim, Brinnae Bent, and Jessilyn Dunn, *BIG IDEAs Lab Glycemic Variability and Wearable Device Data*, version 1.1.3, PhysioNet, [DOI: 10.13026/aw6y-fc44](https://doi.org/10.13026/aw6y-fc44), under the [Open Data Commons Attribution License (ODC-By)](../assets/BIG_IDEAs_ODC-By.txt). The source is `001/Dexcom_001.csv`, original CSV lines **14–109** inclusive (line 1 is the header), SHA-256 `6333b21185f23834ab929e5d8bf9045bbed6268cdfd5030adab3c7d5ef689ef5`. The repository includes the attributed 96-reading extract in `big001-input.json`; the full original patient CSV is not bundled. See the [fixed-case verification script](../../examples/verify_big001.py).
 
-The [synthetic weighted query](../../examples/synthetic.json) has offset domain `0..23`, budget 4, and four intervals `(lower, upper, weight)`: `(2,6,2)`, `(7,13,1)`, `(4,19,3)`, `(10,17,2)`. Six disjoint blocks each contain four states. The witness path `(6,7,7,10)` spans two blocks, `[4,7]` and `[8,11]`, so neither block contains it alone. Their union `[4,11]` contains the entire path. The three movements are `1 + 0 + 3 = 4`. Each row earns its full weight, giving the exact maximum `2 + 1 + 3 + 2 = 8`. More generally, a path with total movement at most 4 spans at most four offset units; merging each pair of neighboring blocks covers such paths. See [query contract and method](../method.md).
+## Report selected readings
 
-## Regenerate
+1. Import `masked-period.csv` with ordered readings `70,100,141,100,70` and weights `1,0,1,0,1`.
+2. Set the closed range to `[70,140]`, integer offsets to `0..1`, and budgets to `0,1,2`.
+3. Compute the exact bounds and inspect the count denominator.
+4. Download the JSON query and results.
 
-Run from the repository root. Rendering uses Python 3.10+, Pillow (10 or newer), the DejaVu Sans / DejaVu Sans Mono fonts, and FFmpeg with the `libx264` encoder. The generator imports the solver from this checkout; no installed solver package, web request or GPU is required.
+| Budget | Exact count bounds |
+| ---: | ---: |
+| 0 | [1,2] |
+| 1 | [1,2] |
+| 2 | [0,3] |
+
+Three rows contribute to the count; the nominal count is **2 out of 3**. Weight 0 excludes a row from the count without resetting the shared movement budget or changing input order. This synthetic example illustrates selecting observations within a period while preserving temporal coupling.
+
+The [input format and browser contract](../demo.md) describe accepted files, exact decimal predicates and interactive limits. The application runs the solver locally in the browser, and the JSON download includes the submitted query and its exact count bounds.
+
+## Recording and export
+
+The public BIG001 session is 25.53 seconds; the CSV edit/export session is 29.53 seconds; the masked CSV session is 26.73 seconds. Each clip uses the actual local build of the published browser workspace. Input edits, computation, file import and JSON export were performed through the interface. Exported JSON was independently recomputed with the Python solver. These timings describe edited clip lengths, not query runtimes.
+
+The only added image area is a caption strip below the browser viewport. Every UI frame is captured from the running application. Idle pauses between operations are removed and reading holds are added.
+
+To encode your own captured sessions (Python, Pillow, FFmpeg and DejaVu Sans):
 
 ```bash
-python -m pip install 'Pillow>=10'
-python tools/build_project_demos.py --source-csv /path/to/001/Dexcom_001.csv
+python tools/build_usage_recordings.py --capture-root /path/to/browser-captures --output-dir docs/demos
 ```
 
-Without `--source-csv`, the default command builds the two synthetic clips and leaves the public example untouched. `--demo shared-budget`, `--demo big001-budget` and `--demo local-window` select one clip. `--out-dir DIRECTORY` sends the outputs elsewhere; the default is `docs/demos/`.
-
-Before building the public clip, the generator checks the source hash, window identity and cadence, and recomputes the expected counts with the local, global and gap plans. It independently enumerates the four paths for the two-reading example and checks the method witness against the solver. All outputs use a 1200 × 672 canvas. MP4s use 12 frames per second, H.264 with 4:2:0 color and fast-start metadata; GIFs combine identical frames into timed holds.
+The input folder must contain the three session directories, each with its ordered browser PNGs and a `capture.json` listing `file`, `stage` and `timeMs` for every frame. The script encodes captures; it does not simulate the interface or substitute computed results. Raw recording frames and execution logs are not part of this repository.

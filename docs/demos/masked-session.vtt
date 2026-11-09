@@ -1,0 +1,58 @@
+WEBVTT
+
+NOTE Actual browser capture; idle pauses trimmed; reading holds added.
+
+1
+00:00:00.000 --> 00:00:02.067
+Import a CSV with masked observations
+Use the file picker to load the local masked-period.csv example.
+
+2
+00:00:02.067 --> 00:00:04.000
+Choose masked-period.csv
+The application imports five rows with a 0/1 weight column.
+
+3
+00:00:04.000 --> 00:00:06.467
+Inspect the imported mask
+Weight 0 excludes a row from the count; the row stays in temporal order.
+
+4
+00:00:06.467 --> 00:00:08.533
+Keep the full sequence in order
+Three rows have weight 1; two masked rows remain between them.
+
+5
+00:00:08.533 --> 00:00:10.467
+Compute the masked query
+Click Compute exact bounds for budgets 0 and 1.
+
+6
+00:00:10.467 --> 00:00:14.267
+Read the count over the selected observations
+Three observations count; budgets 0 and 1 both give [1, 2].
+
+7
+00:00:14.267 --> 00:00:16.333
+Add budget 2
+Request budgets 0, 1 and 2 without changing the sequence or its mask.
+
+8
+00:00:16.333 --> 00:00:18.400
+Review the shared budget request
+The same budget spans the full ordered sequence, including masked rows.
+
+9
+00:00:18.400 --> 00:00:20.333
+Recompute all three requested budgets
+Click Compute exact bounds after adding budget 2.
+
+10
+00:00:20.333 --> 00:00:24.267
+Compare the masked-query result table
+Budgets 0 and 1 give [1, 2]; budget 2 reaches [0, 3].
+
+11
+00:00:24.267 --> 00:00:26.733
+Download the masked query and results
+Save the original row order, the mask, settings and exact answers together.

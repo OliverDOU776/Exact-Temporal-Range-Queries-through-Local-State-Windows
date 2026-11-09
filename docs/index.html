@@ -7,9 +7,9 @@
   <meta name="description" content="Work through simple examples, then explore exact temporal range queries with Local State Windows. Research by Zijia Wang and Christofer Toumazou, Imperial College London.">
   <meta name="author" content="Zijia Wang and Christofer Toumazou, Imperial College London">
   <title>Local State Windows · Exact Temporal Range Queries</title>
-  <link rel="stylesheet" href="project/style.css?v=usable-demo-20261109a">
-  <script src="project/demo-ui.js?v=usable-demo-20261109a" defer></script>
-  <script src="project/site.js?v=usable-demo-20261109a" defer></script>
+  <link rel="stylesheet" href="project/style.css?v=real-session-20261109c">
+  <script src="project/demo-ui.js?v=real-session-20261109c" defer></script>
+  <script src="project/site.js?v=real-session-20261109c" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -21,7 +21,7 @@
       <nav class="paper-links" aria-label="Project resources">
         <a class="button" href="https://github.com/OliverDOU776/Exact-Temporal-Range-Queries-through-Local-State-Windows"><svg class="icon" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="m7 5-5 5 5 5m6-10 5 5-5 5m-2-12-2 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Code</a>
         <a class="button" href="#examples"><svg class="icon" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="3" width="14" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M3 8h14M8 8v9" stroke="currentColor" stroke-width="1.5"/></svg>Examples</a>
-        <a class="button" href="#try-demo">Try your data</a>
+        <a class="button" href="demo/">Try your data</a>
         <a class="button" href="#results">Results</a>
         <a class="button" href="#method"><svg class="icon" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M4 3h12v14H4zm3 4h6m-6 3h6m-6 3h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Method</a>
       </nav>
@@ -99,16 +99,16 @@
     </section>
 
     <section id="demonstrations" class="section shell demo-movies" aria-labelledby="movies-heading">
-      <h2 id="movies-heading">Three short walkthroughs</h2>
-      <p class="section-subtitle">See the query, the real-data example and the localization mechanism.</p>
-      <div class="movie-tabs" role="tablist" aria-label="Choose a walkthrough">
-        <button type="button" role="tab" id="movie-tab-shared-budget" aria-selected="true" aria-controls="movie-panel" data-movie="shared-budget">01 · Why share a budget?</button>
-        <button type="button" role="tab" id="movie-tab-big001-budget" aria-selected="false" aria-controls="movie-panel" tabindex="-1" data-movie="big001-budget">02 · A real report</button>
-        <button type="button" role="tab" id="movie-tab-local-window" aria-selected="false" aria-controls="movie-panel" tabindex="-1" data-movie="local-window">03 · Why overlap windows?</button>
+      <h2 id="movies-heading">Using Local State Windows</h2>
+      <p class="section-subtitle">Actual browser sessions: enter data, compare exact range counts under shared budgets, and export a reproducible query.</p>
+      <div class="movie-tabs" role="tablist" aria-label="Choose an application session">
+        <button type="button" role="tab" id="movie-tab-public-session" aria-selected="true" aria-controls="movie-panel" data-movie="public-session">01 · Check a public glucose report</button>
+        <button type="button" role="tab" id="movie-tab-csv-session" aria-selected="false" aria-controls="movie-panel" tabindex="-1" data-movie="csv-session">02 · Paste data, compute and export</button>
+        <button type="button" role="tab" id="movie-tab-masked-session" aria-selected="false" aria-controls="movie-panel" tabindex="-1" data-movie="masked-session">03 · Report selected readings</button>
       </div>
-      <div id="movie-panel" role="tabpanel" aria-labelledby="movie-tab-shared-budget">
-        <video id="demo-video" controls playsinline preload="none" poster="demos/shared-budget.png" aria-describedby="movie-caption"><source src="demos/shared-budget.mp4" type="video/mp4">Your browser does not support inline video. <a href="demos/shared-budget.mp4">Download the MP4</a>.</video>
-        <div class="movie-caption"><p id="movie-caption">Two readings, four offset paths. At budget 0 only constant paths are feasible; at budget 1 the exact count pair widens from [1,1] to [0,2]. Teaching example · 12 s · silent, with on-screen explanations.</p><div><a id="movie-mp4" href="demos/shared-budget.mp4" download>MP4 ↓</a><a id="movie-gif" href="demos/shared-budget.gif" download>GIF ↓</a><a href="https://github.com/OliverDOU776/Exact-Temporal-Range-Queries-through-Local-State-Windows/blob/main/docs/demos/README.md">Transcript &amp; sources</a></div></div>
+      <div id="movie-panel" role="tabpanel" aria-labelledby="movie-tab-public-session">
+        <video id="demo-video" controls playsinline preload="none" poster="demos/public-session.png" aria-describedby="movie-caption"><source src="demos/public-session.mp4" type="video/mp4"><track id="movie-captions" kind="captions" src="demos/public-session.vtt" srclang="en" label="English">Your browser does not support inline video. <a id="movie-fallback" href="demos/public-session.mp4">Download the MP4</a>.</video>
+        <div class="movie-caption"><p id="movie-caption">Load 96 public readings, change the allowed offsets from ±30 to ±10, recompute and export. At budget 4, the bounds change from [63,92] to [82,89] while the nominal count stays 84. See which assumptions drive the range report. Actual browser recording; idle pauses trimmed and reading holds added.</p><div><a id="movie-mp4" href="demos/public-session.mp4" download>MP4 ↓</a><a id="movie-gif" href="demos/public-session.gif" download>GIF ↓</a><a href="https://github.com/OliverDOU776/Exact-Temporal-Range-Queries-through-Local-State-Windows/blob/main/docs/demos/README.md">Session steps &amp; sources</a><a href="demo/">Open the application</a></div></div>
       </div>
     </section>
 
