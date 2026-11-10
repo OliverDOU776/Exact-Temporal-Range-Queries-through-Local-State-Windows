@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "lsw-range"
 version = "0.1.0"
-description = "Exact temporal range queries through local state windows"
+description = "LocalWindows: exact range-count envelopes over ordered time series under total-variation drift budgets"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{name = "Zijia Wang"}, {name = "Christofer Toumazou"}]

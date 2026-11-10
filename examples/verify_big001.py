@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the manuscript's public-data count example without bundling readings.
+"""Check the public BIG001 count example without bundling readings.
 
 Requires the official BIG IDEAs Lab version 1.1.3 001/Dexcom_001.csv.
 See docs/api.md for dataset attribution, DOI, access, and license context.

@@ -155,7 +155,7 @@
     const tighter = result.bounds.some((pair) => pair[0] > independent[0] || pair[1] < independent[1]);
     el("result-interpretation").textContent = `Choosing offsets independently per row gives [${independent.join(", ")}]. ${tighter ? "At least one requested shared budget gives tighter bounds: temporal coupling changes this report." : "These requested budgets reach the independent-row bounds for this input."} Percentages use the fixed count of included observations, rounded for display.`;
     const d = result.diagnostics;
-    el("result-diagnostics").textContent = `Local State Windows · ${d.runs} sensitive runs · ${d.localWindows} active window${d.localWindows === 1 ? "" : "s"} · ${d.incidences} sensitive incidences · at most ${d.maxLocalStates} retained states in a solved window. Masked rows keep one shared budget.`;
+    el("result-diagnostics").textContent = `LocalWindows · ${d.runs} sensitive runs · ${d.localWindows} active window${d.localWindows === 1 ? "" : "s"} · ${d.incidences} sensitive incidences · at most ${d.maxLocalStates} retained states in a solved window. Masked rows keep one shared budget.`;
     drawTrace(payload);
     lastDownload = { format: "lsw-browser-query-v1", input: payload, result, source, note: "Exact count extrema under the supplied integer-offset sensitivity model. Percentages displayed on the page are rounded. No timing benchmark or clinical calibration is implied." };
     status(`Computed ${result.bounds.length} exact budget answer${result.bounds.length === 1 ? "" : "s"} locally from ${payload.values.length} input rows.`, "Complete");

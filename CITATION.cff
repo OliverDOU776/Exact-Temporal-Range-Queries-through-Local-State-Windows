@@ -1,10 +1,35 @@
 cff-version: 1.2.0
-message: "Please cite the accompanying manuscript when using this implementation."
+message: "Please cite the manuscript when using this research software."
 type: software
-title: "Exact Temporal Range Queries through Local State Windows"
-version: 0.1.0
+title: "Exact Range-Count Envelopes Over Ordered Time Series Under Total-Variation Drift Budgets"
+abstract: "LocalWindows: an exact query operator for minimum and maximum threshold-count envelopes over ordered time series under total-variation drift budgets. Python implementation, native C++ driver with exact baselines, and an in-browser query tool."
 authors:
   - family-names: Wang
     given-names: Zijia
+    affiliation: "Centre for Bio-Inspired Technology, Department of Electrical and Electronic Engineering, Imperial College London, United Kingdom"
   - family-names: Toumazou
     given-names: Christofer
+    affiliation: "Centre for Bio-Inspired Technology, Department of Electrical and Electronic Engineering, Imperial College London, United Kingdom"
+version: 0.1.0
+repository-code: "https://github.com/OliverDOU776/Exact-Temporal-Range-Queries-through-Local-State-Windows"
+url: "https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/"
+keywords:
+  - "time-series data management"
+  - "range-count queries"
+  - "total-variation constraints"
+  - "interval run compression"
+  - "dynamic programming"
+preferred-citation:
+  type: unpublished
+  title: "Exact Range-Count Envelopes Over Ordered Time Series Under Total-Variation Drift Budgets"
+  authors:
+    - family-names: Wang
+      given-names: Zijia
+      affiliation: "Centre for Bio-Inspired Technology, Department of Electrical and Electronic Engineering, Imperial College London, United Kingdom"
+      email: "zijia.wang18@imperial.ac.uk"
+    - family-names: Toumazou
+      given-names: Christofer
+      affiliation: "Centre for Bio-Inspired Technology, Department of Electrical and Electronic Engineering, Imperial College London, United Kingdom"
+      email: "c.toumazou@imperial.ac.uk"
+  year: 2026
+  url: "https://github.com/OliverDOU776/Exact-Temporal-Range-Queries-through-Local-State-Windows"

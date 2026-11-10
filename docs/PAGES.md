@@ -2,7 +2,7 @@
 
 Live page: [Project](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/). GitHub Pages is enabled; subsequent updates to `main` rebuild this page automatically.
 
-The buildless project page is `docs/index.html`. Its styles and interaction code are in `docs/project/`; it reuses the original figures and summary CSV in `docs/assets/`. The page works beneath a GitHub repository subpath and needs no package installation or build workflow.
+The buildless project page is `docs/index.html`. Its styles and interaction code are in `docs/project/`; the paper PDF and figures are in `docs/assets/`, and the browser-session recordings in `docs/demos/`. The page works beneath a GitHub repository subpath and needs no package installation or build workflow.
 
 The active publishing configuration can be checked in repository settings:
 
@@ -13,4 +13,4 @@ The active publishing configuration can be checked in repository settings:
 
 The `.nojekyll` file serves the HTML, CSS, JavaScript and figures as static files. Subsequent updates to `main` are published by GitHub Pages automatically. This guide does not require a personal access token or a custom Actions workflow.
 
-The interactive count explorer displays five exact, previously computed projections for one fixed public BIG001 query. It is not a browser implementation of the general solver; the Python and native C++ code provide that functionality.
+The teaser's budget picker displays five exact BIG001 envelopes computed by the repository solver. The query tool (`docs/demo/` and the page's “Try an exact query” section) runs a JavaScript port of the LocalWindows solver in the browser; the Python and native C++ code provide the full functionality.

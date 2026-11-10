@@ -1,4 +1,4 @@
-"""Exact temporal range queries through local state windows."""
+"""LocalWindows: exact range-count envelopes under total-variation drift budgets."""
 
 from .core import Interval, Result, compile_interval, solve_glucose, solve_intervals
 

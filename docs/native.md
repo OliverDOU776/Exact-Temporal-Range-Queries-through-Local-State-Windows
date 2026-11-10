@@ -1,6 +1,6 @@
 # Native C++17 solver
 
-This path retains the paper's native unit-count solver algorithms. For arbitrary exact positive weights and direct glucose-band compilation, use the [Python API](api.md).
+This path retains the authors' native unit-count implementations of LocalWindows, the paper's three exact baselines (SparseGlobal, GapComponents, RunTailFullG) and the Generic ablation. It compiles as C++17 and solves one request at a time; it is not the paper's timing harness. For arbitrary exact positive weights and direct glucose-band compilation, use the [Python API](api.md).
 
 ## Build and run
 
@@ -36,11 +36,11 @@ Every interval is inclusive; inverted intervals are empty. The executable clips 
 
 | Method | Meaning |
 | --- | --- |
-| `LocalWindows` | Overlapping local windows with budget-one prefix specialization |
-| `LocalWindowsGeneric` | Same plan with the generic budget recurrence at one |
-| `GlobalBudgetBank` | Shared-budget DP on global critical support |
-| `GapComponents` | Split global critical support at physical gaps exceeding the maximum budget |
-| `RunTailFullGThenGather` | Original unit-count tail/count-axis baseline |
+| `LocalWindows` | LocalWindows: overlapping local windows with budget-one prefix specialization |
+| `LocalWindowsGeneric` | The paper's Generic ablation: same plan with the generic budget recurrence at one |
+| `GlobalBudgetBank` | The paper's SparseGlobal baseline: shared-budget DP on global critical support |
+| `GapComponents` | The paper's GapComponents baseline: split global critical support at physical gaps exceeding the maximum budget |
+| `RunTailFullGThenGather` | The paper's RunTailFullG baseline: unit-count tail/count-axis DP, then gather requested budgets |
 | `ReferenceFullCount` | Uncontracted original-row, all-integer-state count-axis reference |
 
 Input limits guard the original fixed-width integer implementation: `0 <= N <= 1,000,000`, `1 <= Q <= 1,000,000`, `-1,000,000 <= DOMAIN_LO <= DOMAIN_HI <= 1,000,000`, budgets in `[0,10000]`, and input interval endpoints in `[-1,000,000,000,1,000,000,000]`. These are validation limits, not promises that every request near those limits fits available memory. The full-count reference additionally permits at most 2,000,000 count/state cells. The algorithms remain pseudopolynomial in budget; use small budgets for the local plan.

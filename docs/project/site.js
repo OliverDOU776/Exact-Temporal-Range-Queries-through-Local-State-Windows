@@ -2,7 +2,7 @@
 
 // Deliberately tiny invented examples. All pairs and witnesses were checked
 // against local/global/gap/reference solve_glucose and original-row enumeration.
-// This page displays fixed exact examples; it does not run the research solver.
+// These teaching examples are fixed; the query tool (demo-ui.js) runs the solver.
 const toyExamples = Object.freeze({
   single: {
     title: "A zero budget still allows a constant offset.",
@@ -166,7 +166,8 @@ if (toyTabs.length) {
   renderToyExample(false);
 }
 
-// Fixed original Figure 2 payload, not a solver or interpolated estimate.
+// Exact BIG001 TITR envelopes returned by the repository solver for these
+// readings (docs/demo.md); fixed values, not an interpolated estimate.
 const big001Titr = Object.freeze({
   0: [63, 91],
   1: [63, 91],
@@ -176,11 +177,11 @@ const big001Titr = Object.freeze({
 });
 
 const budgetNotes = {
-  0: "At v = 0, the exact TITR count pair is [63,91]. Every constant offset in D is allowed.",
-  1: "At v = 1, the exact TITR count pair is [63,91] out of 96.",
-  4: "At v = 4, the exact TITR count pair is [63,92] out of 96.",
-  16: "At v = 16, the exact TITR count pair is [63,96] out of 96.",
-  64: "At v = 64, the exact TITR count pair is [51,96] out of 96."
+  0: "At V = 0, the exact TITR envelope is [63,91] out of 96. Every constant offset in D is allowed.",
+  1: "At V = 1, the exact TITR envelope is [63,91] out of 96.",
+  4: "At V = 4, the exact TITR envelope is [63,92] out of 96.",
+  16: "At V = 16, the exact TITR envelope is [63,96] out of 96.",
+  64: "At V = 64, the exact TITR envelope is [51,96] out of 96."
 };
 
 // Opening film: honour reduced-motion preferences by showing the poster with controls instead of autoplay.

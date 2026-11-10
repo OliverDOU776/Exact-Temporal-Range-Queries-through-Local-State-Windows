@@ -1,10 +1,11 @@
 Project authors: Zijia Wang; Christofer Toumazou
-Project: Exact Temporal Range Queries through Local State Windows
+Project: Exact Range-Count Envelopes Over Ordered Time Series Under
+Total-Variation Drift Budgets (LocalWindows)
 
-The native solver is adapted from the supplied D011 operator source,
-which in turn identifies the frozen D005 operator as its origin. The portable
-Python implementation follows those algorithms and the accompanying paper.
-See docs/provenance.md for exact source identities and adaptation scope.
+The native solver is adapted from the authors' C++ research implementation of
+LocalWindows and its exact baselines. The portable Python implementation
+follows those algorithms and the accompanying paper. See docs/provenance.md
+for the source identity and adaptation scope.
 
 No open-source license grant is included in this repository. Public availability
 does not by itself grant permission to redistribute, sublicense, or relicense
@@ -15,5 +16,6 @@ BIG IDEAs Lab Glycemic Variability and Wearable Device Data v1.1.3,
 PhysioNet, DOI 10.13026/aw6y-fc44, under the Open Data Commons Attribution
 License (ODC-By). Attribution, selected source rows, and transformations are
 recorded in docs/demos/big001-input.json and docs/demos/README.md. This data
-license is separate from the code permissions above. The full source patient
-CSV, fonts, paper PDFs, and benchmark logs are not bundled.
+license is separate from the code permissions above. The manuscript is
+included as docs/assets/paper.pdf. The full source patient CSV, fonts, and
+benchmark logs are not bundled.

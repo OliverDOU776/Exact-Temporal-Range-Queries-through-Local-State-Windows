@@ -17,7 +17,7 @@ Rows stay in input order. A zero masks the middle reading without giving the las
 
 ## Reading the output
 
-For input value `g` and offset `x`, the predicate tests `g − x`. The offset path can start and end anywhere in the domain. The sum of the absolute changes between successive offsets cannot exceed the requested budget. At budget zero, the path can use **any constant offset** in the domain.
+For input value `g` and offset `x`, the predicate tests `g − x`. (The paper writes `g + δ` with `δ = −x`; on a symmetric domain such as −30…30 the envelopes are identical.) The offset path can start and end anywhere in the domain. The sum of the absolute changes between successive offsets cannot exceed the requested budget. At budget zero, the path can use **any constant offset** in the domain.
 
 | Output | What it means |
 |---|---|
@@ -30,9 +30,9 @@ The fixed BIG001 preset contains the 96 observations and elapsed seconds, not a 
 
 ## What executes
 
-[solver.js](project/solver.js) ports the local plan from [the Python implementation](../src/lsw_range/core.py). It compiles each band to an inclusive integer hit interval, removes constant rewards, and merges repeated sensitive predicates into weighted runs. A sweep computes constant-offset bounds. For a nontrivial positive maximum budget, overlapping windows retain the runs sensitive to each window. The solver restores fixed scores from the sweep and uses the real distances between retained offsets in its dynamic program. At maximum budget one, a prefix calculation replaces that recurrence. The minimum and maximum across windows give the returned endpoints. The diagnostics count active windows, run-window incidences, retained states, DP cells and prefix steps. A static answer can require zero active windows and zero DP cells.
+[solver.js](project/solver.js) ports the LocalWindows local plan from [the Python implementation](../src/lsw_range/core.py). It compiles each band to an inclusive integer hit interval, removes constant rewards, and merges repeated sensitive predicates into weighted runs. A sweep computes constant-offset bounds. For a nontrivial positive maximum budget, overlapping windows retain the runs sensitive to each window. The solver restores fixed scores from the sweep and uses the real distances between retained offsets in its dynamic program. At maximum budget one, a prefix calculation replaces that recurrence. The minimum and maximum across windows give the returned endpoints. The diagnostics count active windows, run-window incidences, retained states, DP cells and prefix steps. A static answer can require zero active windows and zero DP cells.
 
-The browser handles unit weights and binary masks. Limits are 2,000 rows, 401 consecutive offset states, offset endpoints from −1,000,000 to 1,000,000, 16 requested budgets from 0 to 64, and 40 million DP cells. A query that exceeds a limit returns an error. See the [Python API](api.md) for rational weights and additional exact plans. The manuscript's benchmark timings apply to the recorded native operator; the browser demo does not replicate those measurements.
+The browser handles unit weights and binary masks. Limits are 2,000 rows, 401 consecutive offset states, offset endpoints from −1,000,000 to 1,000,000, 16 requested budgets from 0 to 64, and 40 million DP cells. A query that exceeds a limit returns an error. See the [Python API](api.md) for rational weights and additional exact plans. The paper's timings were measured on native C++ implementations; the browser demo does not reproduce them.
 
 ### JavaScript input and output
 

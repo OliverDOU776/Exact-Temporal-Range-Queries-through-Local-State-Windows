@@ -1,7 +1,8 @@
 """Exact extrema for interval rewards under a shared integer TV budget.
 
-The local/global/gap plans are a readable Python adaptation of the paper's
-D011 native operator (see docs/provenance.md), with exact rational weights.
+The local/global/gap plans are a readable Python adaptation of the native
+LocalWindows operator in native/lsw_range.cpp (see docs/provenance.md), with
+exact rational weights.
 No endpoints of the offset path are pinned.
 """
 
@@ -334,7 +335,7 @@ def solve_intervals(
 
     A feasible path has one integer state per input row, in ``domain``, and
     ``sum(abs(x[i]-x[i-1])) <= budget``. Both endpoints are free. Methods are
-    ``local`` (paper operator), ``global``, ``gap``, and ``reference`` (small
+    ``local`` (the LocalWindows operator), ``global``, ``gap``, and ``reference`` (small
     independent literal DP). Budget order and duplicates are preserved.
     """
     if method not in {"local", "global", "gap", "reference"}:

@@ -1,7 +1,8 @@
 // Native unit-count operator by Zijia Wang.
-// Canonical core adapted from supplied D011 operators.cpp; its native solver
-// functions are retained verbatim. See ../docs/provenance.md for SHA-256 IDs.
-// Only the campaign/timing driver has been replaced with a single-solve CLI.
+// Core adapted from the authors' C++ research implementation of LocalWindows
+// and its exact baselines; the native solver functions are retained verbatim.
+// See ../docs/provenance.md for the source SHA-256. Only the benchmark/timing
+// driver has been replaced with a single-solve CLI.
 #include <algorithm>
 #include <chrono>
 #include <iomanip>

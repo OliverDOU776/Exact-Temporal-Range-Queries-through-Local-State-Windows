@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <base href="../">
-<title>Local State Windows · Run a range query</title>
-<meta name="description" content="Run exact range-count sensitivity queries on your own ordered data. Import CSV, choose offset constraints, and export exact answers.">
+<title>LocalWindows · Run a range-count query</title>
+<meta name="description" content="Run exact range-count envelope queries under a total-variation offset budget on your own ordered data. Import CSV, choose offset constraints, and export exact answers.">
 <meta name="author" content="Zijia Wang and Christofer Toumazou">
-<link rel="stylesheet" href="project/style.css?v=real-session-20261109c">
-<script src="project/demo-ui.js?v=real-session-20261109c" defer></script>
+<link rel="stylesheet" href="project/style.css?v=range-count-envelopes-1">
+<script src="project/demo-ui.js?v=range-count-envelopes-1" defer></script>
 </head><body class="app-page">
-<header class="app-topbar"><strong>Local State Windows</strong><nav aria-label="Application resources"><a href="./">Project</a><a href="https://github.com/OliverDOU776/Exact-Temporal-Range-Queries-through-Local-State-Windows">Code &amp; documentation</a></nav></header>
+<header class="app-topbar"><strong>LocalWindows</strong><nav aria-label="Application resources"><a href="./">Project</a><a href="assets/paper.pdf">Paper</a><a href="https://github.com/OliverDOU776/Exact-Temporal-Range-Queries-through-Local-State-Windows">Code &amp; documentation</a></nav></header>
 <main>
     <section id="try-demo" class="section shell live-demo" aria-labelledby="demo-heading">
       <h2 id="demo-heading">Try an exact query on your own data</h2>
-      <p class="section-intro demo-lead">How much can your range count change under one shared offset budget? Paste a sequence, choose a range, and compute the exact minimum and maximum. The actual Local State Windows algorithm runs in your browser.</p>
+      <p class="section-intro demo-lead">How much can your range count change under one shared offset budget? Paste a sequence, choose a range, and compute the exact minimum and maximum. A JavaScript port of the LocalWindows solver runs in your browser.</p>
       <div class="demo-preset-row"><span>Start with:</span><button type="button" id="preset-toy">Two readings</button><button type="button" id="preset-mask">A masked middle</button><button type="button" id="preset-big">Real BIG001 · 96 readings</button></div>
       <div class="live-demo-layout">
         <form id="query-form" class="query-form">
@@ -52,4 +52,4 @@
       <noscript><p>This tool needs JavaScript. The worked examples and downloadable code remain available below.</p></noscript>
     </section>
 
-</main><footer class="app-footer">Zijia Wang &amp; Christofer Toumazou · Imperial College London</footer></body></html>
+</main><footer class="app-footer">Zijia Wang &amp; Christofer Toumazou · Centre for Bio-Inspired Technology, Imperial College London</footer></body></html>

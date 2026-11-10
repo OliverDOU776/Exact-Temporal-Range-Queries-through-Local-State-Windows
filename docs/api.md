@@ -41,7 +41,7 @@ result = solve_glucose(
 )
 ```
 
-The corrected value is **glucose minus offset**. `compile_interval(value, lower, upper, domain, ...)` exposes the exact endpoint compilation separately. Use `None` for an unbounded endpoint; set either closed flag to `False` for an open endpoint. Decimal glucose observations retain their fractional value. Missing or nonfinite observations are rejected, so the caller selects valid samples and their temporal order explicitly. Timestamps do not change transition weights or impose rate constraints.
+The corrected value is **glucose minus offset**. The paper writes the perturbed reading as $g_i+\delta_i$ with $\delta_i\in\{-R,\ldots,R\}$; on such a symmetric domain both forms give identical envelopes, and for an asymmetric domain the paper's offsets correspond to the reflected domain here. `compile_interval(value, lower, upper, domain, ...)` exposes the exact endpoint compilation separately. Use `None` for an unbounded endpoint; set either closed flag to `False` for an open endpoint. Decimal glucose observations retain their fractional value. Missing or nonfinite observations are rejected, so the caller selects valid samples and their temporal order explicitly. Timestamps do not change transition weights or impose rate constraints.
 
 For a selected unit-count mask with fixed denominator `N > 0`, percentage extrema are `100 * minimum / N` and `100 * maximum / N`. This counts samples, not interpolated elapsed time. An empty mask returns `(0,0)` counts; its percentage is unavailable. No clinical calibration of the offset domain or budget is implied.
 
@@ -49,12 +49,12 @@ For a selected unit-count mask with fixed denominator `N > 0`, percentage extrem
 
 | `method` | State processing |
 | --- | --- |
-| `local` (default) | Sparse overlapping state windows; weighted prefix formula when maximum budget is one |
+| `local` (default) | LocalWindows: sparse overlapping state windows; weighted prefix formula when maximum budget is one |
 | `global` | Shared-budget recurrence on global critical support |
 | `gap` | Components of global critical support split at physical gaps exceeding the maximum budget |
 | `reference` | Literal original-row/all-state/all-predecessor DP for small validation cases |
 
-For `local`, `specialize_v1=False` disables the prefix specialization. `local_support=False` uses all local integers instead of critical support. Both switches retain exact results. No automatic performance selector is supplied; larger budgets can favor the global/gap plans. The native historical local state choice was all local integers, so Python defaults are not a claim of identical implementation timing.
+For `local`, `specialize_v1=False` disables the prefix specialization. `local_support=False` uses all local integers instead of critical support. Both switches retain exact results. No automatic performance selector is supplied; larger budgets can favor the global/gap plans, as the paper's crossover analysis shows. The native local operator uses all local integers, so Python defaults are not a claim of identical implementation timing.
 
 The literal reference takes `O(n |D|²(V+1))` work and `O(|D|(V+1))` memory before a conservative saturation cap. It is guarded to at most 2,000 states, 2,000,000 state/budget cells, and an upper work estimate of 50,000,000 operations. Larger requests raise `ValueError` before dense allocation. Empty input returns zero without state enumeration. Optimized plans do not enumerate the raw domain; the local all-integer option enumerates only its active windows.
 
@@ -72,7 +72,7 @@ Output contains `method`, `domain`, `budgets`, and `bounds`. Add `--diagnostics`
 
 ## Optional fixed BIG001 example
 
-The [browser demo](demo.md) includes the attributed [96-reading public extract](demos/big001-input.json). To independently verify it against the manuscript's original source file, obtain **BIG IDEAs Lab Glycemic Variability and Wearable Device Data**, PhysioNet version 1.1.3, by Peter Cho, Juseong Kim, Brinnae Bent, and Jessilyn Dunn: [dataset DOI](https://doi.org/10.13026/aw6y-fc44). Follow the dataset's access, attribution, and [ODC Attribution License (ODC-By) requirements](assets/BIG_IDEAs_ODC-By.txt). Dataset terms apply independently of this repository's code permissions. The full original CSV is not bundled.
+The [browser demo](demo.md) includes the attributed [96-reading public extract](demos/big001-input.json). To independently verify it against the original source file, obtain **BIG IDEAs Lab Glycemic Variability and Wearable Device Data**, PhysioNet version 1.1.3, by Peter Cho, Juseong Kim, Brinnae Bent, and Jessilyn Dunn: [dataset DOI](https://doi.org/10.13026/aw6y-fc44). Follow the dataset's access, attribution, and [ODC Attribution License (ODC-By) requirements](assets/BIG_IDEAs_ODC-By.txt). Dataset terms apply independently of this repository's code permissions. The full original CSV is not bundled.
 
 With the original `001/Dexcom_001.csv` available locally:
 

@@ -1,4 +1,4 @@
-# Using Local State Windows
+# Using the LocalWindows browser tool
 
 These screen recordings show the [browser application](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/demo/) in use. Each session enters or loads data, computes exact range counts and downloads the query with its results. The MP4, looping GIF and poster show the same application session. Recordings use actual browser captures. Idle pauses are trimmed and reading holds are added; the interface and computed results are not recreated. They are silent with on-screen captions and demonstrate workflows, not processing speed.
 
@@ -33,7 +33,7 @@ The example is synthetic. The edit demonstrates why an existing result must be r
 | 16 | [63,96] | [80,92] |
 | 64 | [51,96] | [80,92] |
 
-The nominal count at offset 0 stays **84 out of 96**. Changing the allowed offset domain changes the sensitivity scenario, while the observations and nominal count remain fixed. Counts are exact extrema under the specified model, not confidence intervals; intermediate counts need not all be attainable. Offsets and budgets do not estimate calibrated sensor error or clinical effects.
+These envelopes are computed live by the browser solver. The nominal count at offset 0 stays **84 out of 96**. Changing the allowed offset domain changes the sensitivity scenario, while the observations and nominal count remain fixed. Counts are exact extrema under the specified model, not confidence intervals; intermediate counts need not all be attainable. The offset domain and budgets are user-specified query parameters, not fitted sensor-error estimates.
 
 **Source and attribution.** The public example and its derived recording use Peter Cho, Juseong Kim, Brinnae Bent, and Jessilyn Dunn, *BIG IDEAs Lab Glycemic Variability and Wearable Device Data*, version 1.1.3, PhysioNet, [DOI: 10.13026/aw6y-fc44](https://doi.org/10.13026/aw6y-fc44), under the [Open Data Commons Attribution License (ODC-By)](../assets/BIG_IDEAs_ODC-By.txt). The source is `001/Dexcom_001.csv`, original CSV lines **14–109** inclusive (line 1 is the header), SHA-256 `6333b21185f23834ab929e5d8bf9045bbed6268cdfd5030adab3c7d5ef689ef5`. The repository includes the attributed 96-reading extract in `big001-input.json`; the full original patient CSV is not bundled. See the [fixed-case verification script](../../examples/verify_big001.py).
 

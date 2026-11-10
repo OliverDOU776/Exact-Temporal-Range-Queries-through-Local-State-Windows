@@ -270,6 +270,12 @@ h1 { font-size: clamp(30px, 3.4vw, 40px); font-weight: 600; line-height: 1.2; le
 .results-table tbody th span { display: block; color: var(--muted); font-size: 12px; font-weight: 400; }
 .results-table tbody tr.favorable td:nth-child(2), .results-table tbody tr.favorable td:nth-child(3) { color: var(--blue); }
 .result-indicator { display: none; }
+.results-table td span { display: block; color: var(--muted); font-size: 12px; }
+.results-table td.win { color: var(--blue); }
+.results-table td.win span { color: var(--muted); }
+.ratio-table td:not(:last-child) { white-space: nowrap; }
+.ratio-table td:last-child { font-size: 13px; color: var(--muted); min-width: 180px; }
+.horizon-table { margin-top: 34px; }
 .table-note { font-size: 13px; color: var(--muted); margin-top: 14px; }
 .results-detail-grid { margin-top: 30px; }
 .results-figure { max-width: 800px; }
@@ -316,6 +322,8 @@ pre { margin: 0; overflow: auto; font: 13px/1.8 ui-monospace, SFMono-Regular, Co
 .citation-text { margin-top: 22px; border: 1px solid var(--line); border-radius: 4px; padding: 17px 20px; }
 .citation-heading-row { display: flex; justify-content: space-between; gap: 15px; align-items: center; font-size: 13px; color: var(--muted); }
 .citation-text p#citation-text { margin: 12px 0; font-size: 16px; }
+.citation-text pre { margin: 12px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.citation-links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
 .attribution { max-width: 900px; margin: 26px auto 0; color: var(--muted); font-size: 13px; }
 .attribution p + p { margin-top: 12px; }
 .attribution strong { color: var(--ink); font-weight: 500; }
@@ -412,6 +420,7 @@ pre { margin: 0; overflow: auto; font: 13px/1.8 ui-monospace, SFMono-Regular, Co
   .evidence-scope strong { font-size: 20px; }
   .evidence-scope span { font-size: 11px; }
   .results-table { min-width: 600px; font-size: 14px; }
+  .ratio-table { min-width: 720px; }
   .results-table th, .results-table td { padding: 10px 12px; }
   .results-table th:first-child { padding-left: 0; }
   .results-table caption { font-size: 15px; }
