@@ -183,6 +183,14 @@ const budgetNotes = {
   64: "At v = 64, the exact TITR count pair is [51,96] out of 96."
 };
 
+// Opening film: honour reduced-motion preferences by showing the poster with controls instead of autoplay.
+const openingFilm = document.getElementById("opening-film");
+if (openingFilm && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  openingFilm.removeAttribute("autoplay");
+  openingFilm.pause();
+  openingFilm.controls = true;
+}
+
 document.querySelectorAll('input[name="budget"]').forEach((radio) => {
   radio.addEventListener("change", () => {
     if (!radio.checked) return;

@@ -1,0 +1,49 @@
+{
+  "title": "One trace. A shared movement budget. Exact count bounds.",
+  "duration_seconds": 20,
+  "size": [
+    1280,
+    660
+  ],
+  "fps": 24,
+  "source": "tools/opening_film_art.html (schematic artwork drawn by Gemini 4 Argon from a written brief) + data layer generated and rendered by tools/build_opening_film.py",
+  "data": "docs/demos/big001-input.json (public BIG001 extract, 96 readings, five minutes apart)",
+  "facts": {
+    "band_mg_dl": [
+      70,
+      140
+    ],
+    "offset_domain": [
+      -30,
+      30
+    ],
+    "budget": 4,
+    "as_recorded": 84,
+    "constant_offset_-12": 91,
+    "exact_bounds_budget_0": [
+      63,
+      91
+    ],
+    "exact_bounds_budget_4": [
+      63,
+      92
+    ],
+    "maximum_witness": "offset -12 for readings 1-15, then one unit per reading up to -8 from reading 19 on",
+    "minimum_witness": "constant offset -30"
+  },
+  "scope": "The skin cross-section, sensor, molecules and well plate are schematic. Every frame of the chart, the offset path, the wells and the counter shows one admissible offset path and its true count on the public trace; the extrema are recomputed by the build script. Offsets and budgets specify a sensitivity scenario; they do not estimate calibrated sensor error or clinical effects. Animation pacing is not execution time.",
+  "files": {
+    "opening-film.mp4": {
+      "bytes": 974639,
+      "sha256": "4636fe3cb0a71778b048562d36238f251db2d2957c3eb89c9ce23dded1bddea9"
+    },
+    "opening-film.gif": {
+      "bytes": 1429480,
+      "sha256": "3caecc518af751b27e354b1bf31e4ab5b4c269ca709b4f50d4966380272c1dc1"
+    },
+    "opening-film.png": {
+      "bytes": 119570,
+      "sha256": "b2e0093a45d481b0a3ed25ffa3a1e6f2a97099df74d8adf233a6c6459b32c56d"
+    }
+  }
+}

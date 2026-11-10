@@ -139,6 +139,9 @@ h1 { font-size: clamp(30px, 3.4vw, 40px); font-weight: 600; line-height: 1.2; le
 .teaser { width: min(1080px, calc(100% - 48px)); padding-top: 42px; padding-bottom: 30px; }
 .teaser > h2 { text-align: center; font-size: 21px; line-height: 1.4; font-weight: 500; letter-spacing: -.3px; margin-bottom: 28px; }
 .teaser-grid { display: grid; grid-template-columns: 1.85fr .72fr 1.03fr; gap: 24px; align-items: center; }
+.opening-film { margin: 0 0 30px; }
+.opening-film video { display: block; width: 100%; height: auto; aspect-ratio: 1280 / 660; background: #fbf7f1; border: 1px solid #e6e0d6; border-radius: 6px; }
+.opening-film figcaption { max-width: 900px; margin: 12px auto 0; text-align: center; color: var(--muted); font-size: 13px; line-height: 1.65; }
 .teaser h3 { font-size: 15px; font-weight: 600; line-height: 1.45; text-align: center; }
 .teaser-input { min-width: 0; }
 .teaser-input img { display: block; width: 100%; height: auto; margin-top: 6px; }
@@ -442,6 +445,19 @@ pre { margin: 0; overflow: auto; font: 13px/1.8 ui-monospace, SFMono-Regular, Co
   .count-range { max-width: 250px; }
   .toy-path-heading span { float: none; display: block; margin: 2px 0 0; }
 }
+.teaser-grid.teaser-grid--explore { grid-template-columns: minmax(0, 300px) minmax(0, 340px); justify-content: center; gap: 24px 56px; }
+.teaser-grid--explore .teaser-constraint, .teaser-grid--explore .teaser-output { grid-column: auto; grid-row: auto; }
+.teaser-grid--explore .teaser-arrow { display: none; }
+.teaser-grid--explore .teaser-equation { margin-top: 12px; }
+@media (max-width: 560px) {
+  .teaser-grid.teaser-grid--explore { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 20px 16px; }
+  .opening-film { margin-bottom: 24px; }
+  .opening-film figcaption { font-size: 12px; }
+}
+@media (max-width: 380px) {
+  .teaser-grid.teaser-grid--explore { grid-template-columns: minmax(0, 1fr); }
+  .teaser-grid--explore .teaser-constraint { max-width: 230px; width: 100%; margin-inline: auto; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -455,6 +471,7 @@ pre { margin: 0; overflow: auto; font: 13px/1.8 ui-monospace, SFMono-Regular, Co
   .teaser { padding-top: 25px; }
   .teaser-grid { grid-template-columns: 1.7fr .8fr 1fr; gap: 15px; }
   .teaser-input { grid-column: auto; grid-row: auto; }
+  .opening-film video { max-height: 9cm; width: auto; margin-inline: auto; }
   .teaser-constraint, .teaser-output { grid-column: auto; grid-row: auto; }
   .teaser-arrow { display: block; }
   .section { padding-block: 24px; }

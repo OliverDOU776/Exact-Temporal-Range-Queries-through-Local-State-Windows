@@ -13,6 +13,10 @@ Imperial College London
 
 </div>
 
+<p align="center"><a href="https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/"><img src="docs/project/opening-film.gif" width="800" alt="Opening film: a glucose sensor under the skin reports 96 readings; each reading fills one well of a 96-well plate; under an offset path with movement budget 4 the number of readings in the 70 to 140 mg/dL band ranges from exactly 63 to exactly 92."></a></p>
+
+<p align="center"><sub>96 public glucose readings, one per well. As recorded, 84 lie in [70,140] mg/dL; over every offset path with movement budget 4 the count is at least 63 and at most 92. Skin, sensor and plate are schematic; the trace, offset paths and counts are computed from the data (<a href="docs/figures.md#project-page-opening-film">details</a>, <a href="docs/project/opening-film.mp4">MP4</a>).</sub></p>
+
 ## Run an exact query
 
 **[Try your own data →](https://oliverdou776.github.io/Exact-Temporal-Range-Queries-through-Local-State-Windows/demo/)**

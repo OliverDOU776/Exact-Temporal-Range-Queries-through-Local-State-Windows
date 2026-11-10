@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Local State Windows — Opening Story Film</title>
+<style>
+:root {
+  --live: #22303c;
+  --ghost: #b9c2c8;
+  --band: rgba(31,138,132,0.13);
+  --band-edge: #1f8a84;
+  --axis: #9aa5ae;
+  --ink: #22303c;
+  --muted: #6b7781;
+  --offset: #6b4a8c;
+  --count: #22303c;
+}
+
+body {
+  margin: 0;
+  background: #fbf7f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+svg {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Shared animation contract: 20s linear 0s infinite */
+.scene1-vis,
+.scene1-text-vis,
+.bench-vis,
+.bench-text-vis,
+.counter-label-vis,
+.offset-ui-vis,
+.scene5-vis,
+.scene5-text-vis,
+.watermark-vis,
+.bar-reveal,
+.rbc-drift-1,
+.rbc-drift-2,
+.rbc-drift-3,
+.gluc-ambient-1,
+.gluc-ambient-2,
+.gluc-ambient-3,
+.gluc-arrive-1,
+.gluc-arrive-2,
+.gluc-arrive-3,
+.gluc-arrive-4,
+.gluc-arrive-5,
+.cell-pulse-a,
+.cell-pulse-b,
+.tip-pulse-ring,
+.tip-pulse-glow,
+.readout-1,
+.readout-2,
+.readout-3,
+.readout-4,
+.readout-5,
+.rdot-1,
+.rdot-2,
+.rdot-3,
+.rdot-4,
+.rdot-5,
+.pip-1,
+.pip-2,
+.pip-3,
+.pip-4,
+.tag-recorded,
+.tag-const12,
+.tag-most,
+.tag-fewest,
+.cap-1,
+.cap-2,
+.cap-3a,
+.cap-3b,
+.cap-4,
+.cap-5,
+.prog-1,
+.prog-2,
+.prog-3,
+.prog-4,
+.prog-5 {
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+}
+
+.cell-pulse-a,
+.cell-pulse-b,
+.tip-pulse-ring,
+.tip-pulse-glow {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* =========================================================
+   SCENE VISIBILITY (20s = 100%, 1s = 5%)
+   ========================================================= */
+
+/* Scene 1 artwork: 0.0-4.4s (dissolve out 4.0-4.6s = 20%-23%; dissolve in 19.6-20.0s = 98%-100%) */
+.scene1-vis { animation-name: kf-scene1-vis; }
+@keyframes kf-scene1-vis {
+  0%     { opacity: 1; }
+  20.0%  { opacity: 1; }
+  20.75% { opacity: 0.82; }
+  21.5%  { opacity: 0.5; }
+  22.25% { opacity: 0.18; }
+  23.0%  { opacity: 0; }
+  98.0%  { opacity: 0; }
+  98.5%  { opacity: 0.2; }
+  99.0%  { opacity: 0.5; }
+  99.5%  { opacity: 0.82; }
+  100%   { opacity: 1; }
+}
+
+/* Scene 1 text: fades out cleanly by 4.35s (21.75%) before Scene 2 / Data Layer text at 4.4s (22%) */
+.scene1-text-vis { animation-name: kf-scene1-text-vis; }
+@keyframes kf-scene1-text-vis {
+  0%     { opacity: 1; }
+  20.0%  { opacity: 1; }
+  20.9%  { opacity: 0.5; }
+  21.75% { opacity: 0; }
+  98.25% { opacity: 0; }
+  99.1%  { opacity: 0.5; }
+  100%   { opacity: 1; }
+}
+
+/* Scenes 2-4 bench backdrops & plate body: 4.4-16.3s (dissolve in 4.1-4.5s, out 16.2-16.6s) */
+.bench-vis { animation-name: kf-bench-vis; }
+@keyframes kf-bench-vis {
+  0%     { opacity: 0; }
+  20.5%  { opacity: 0; }
+  21.25% { opacity: 0.25; }
+  22.0%  { opacity: 0.75; }
+  22.5%  { opacity: 1; }
+  81.0%  { opacity: 1; }
+  81.75% { opacity: 0.7; }
+  82.5%  { opacity: 0.25; }
+  83.0%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* Scenes 2-4 bench headings & plate labels: strictly within 4.4-16.3s (22.0%-81.5%) */
+.bench-text-vis { animation-name: kf-bench-text-vis; }
+@keyframes kf-bench-text-vis {
+  0%     { opacity: 0; }
+  21.8%  { opacity: 0; }
+  22.3%  { opacity: 0.5; }
+  22.8%  { opacity: 1; }
+  80.7%  { opacity: 1; }
+  81.2%  { opacity: 0.5; }
+  81.7%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* "of 96 in the band": visible 6.5-16.3s (32.5%-81.5%) */
+.counter-label-vis { animation-name: kf-counter-label-vis; }
+@keyframes kf-counter-label-vis {
+  0%     { opacity: 0; }
+  31.8%  { opacity: 0; }
+  32.4%  { opacity: 0.5; }
+  33.0%  { opacity: 1; }
+  80.7%  { opacity: 1; }
+  81.2%  { opacity: 0.5; }
+  81.7%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* Offset strip heading + budget label + hollow pips: 8.6-16.3s (43.0%-81.5%) */
+.offset-ui-vis { animation-name: kf-offset-ui-vis; }
+@keyframes kf-offset-ui-vis {
+  0%     { opacity: 0; }
+  42.3%  { opacity: 0; }
+  42.9%  { opacity: 0.5; }
+  43.5%  { opacity: 1; }
+  80.7%  { opacity: 1; }
+  81.2%  { opacity: 0.5; }
+  81.7%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* Scene 5 card: dissolve in 16.3-16.7s (81.5%-83.5%), dissolve to Scene 1 19.6-20.0s (98.0%-100%) */
+.scene5-vis { animation-name: kf-scene5-vis; }
+@keyframes kf-scene5-vis {
+  0%     { opacity: 0; }
+  81.5%  { opacity: 0; }
+  82.5%  { opacity: 0.5; }
+  83.5%  { opacity: 1; }
+  98.0%  { opacity: 1; }
+  99.0%  { opacity: 0.45; }
+  100%   { opacity: 0; }
+}
+
+/* Scene 5 text: active 16.4-19.65s (82.0%-98.25%) so zero overlap with bench or scene 1 text */
+.scene5-text-vis { animation-name: kf-scene5-text-vis; }
+@keyframes kf-scene5-text-vis {
+  0%     { opacity: 0; }
+  81.8%  { opacity: 0; }
+  82.6%  { opacity: 0.5; }
+  83.4%  { opacity: 1; }
+  97.4%  { opacity: 1; }
+  97.85% { opacity: 0.5; }
+  98.2%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* Faint watermark echo of skin cross-section in Scene 5 (max opacity 0.08 <= 0.12) */
+.watermark-vis { animation-name: kf-watermark-vis; }
+@keyframes kf-watermark-vis {
+  0%     { opacity: 0; }
+  81.5%  { opacity: 0; }
+  83.5%  { opacity: 0.08; }
+  98.0%  { opacity: 0.08; }
+  100%   { opacity: 0; }
+}
+
+/* Scene 5 scale bar left-to-right reveal (63 to 92 = 241.7px) */
+.bar-reveal { animation-name: kf-bar-reveal; }
+@keyframes kf-bar-reveal {
+  0%     { stroke-dashoffset: 242; }
+  82.5%  { stroke-dashoffset: 242; }
+  84.0%  { stroke-dashoffset: 180; }
+  85.5%  { stroke-dashoffset: 85; }
+  87.0%  { stroke-dashoffset: 0; }
+  100%   { stroke-dashoffset: 0; }
+}
+
+/* =========================================================
+   SCENE 1 HISTOLOGY MOTION (Cells, RBCs, Glucose, Sensor Tip)
+   ========================================================= */
+
+.cell-pulse-a { animation-name: kf-cell-pulse-a; }
+@keyframes kf-cell-pulse-a {
+  0%    { transform: scale(1); }
+  12%   { transform: scale(1.035); }
+  25%   { transform: scale(1); }
+  50%   { transform: scale(1.03); }
+  75%   { transform: scale(0.985); }
+  100%  { transform: scale(1); }
+}
+
+.cell-pulse-b { animation-name: kf-cell-pulse-b; }
+@keyframes kf-cell-pulse-b {
+  0%    { transform: scale(1); }
+  10%   { transform: scale(0.975); }
+  22%   { transform: scale(1.04); }
+  45%   { transform: scale(1); }
+  70%   { transform: scale(1.03); }
+  100%  { transform: scale(1); }
+}
+
+/* Red blood cells drifting along the capillary (looping cleanly at 0% and 100%) */
+.rbc-drift-1 { animation-name: kf-rbc-drift-1; }
+@keyframes kf-rbc-drift-1 {
+  0%    { transform: translate(0px, 0px); }
+  11%   { transform: translate(58px, -3px); }
+  23%   { transform: translate(118px, 1px); }
+  50%   { transform: translate(60px, 2px); }
+  97%   { transform: translate(-8px, 0px); }
+  100%  { transform: translate(0px, 0px); }
+}
+
+.rbc-drift-2 { animation-name: kf-rbc-drift-2; }
+@keyframes kf-rbc-drift-2 {
+  0%    { transform: translate(0px, 0px); }
+  11%   { transform: translate(46px, 2px); }
+  23%   { transform: translate(96px, -2px); }
+  50%   { transform: translate(48px, -1px); }
+  97%   { transform: translate(-6px, 0px); }
+  100%  { transform: translate(0px, 0px); }
+}
+
+.rbc-drift-3 { animation-name: kf-rbc-drift-3; }
+@keyframes kf-rbc-drift-3 {
+  0%    { transform: translate(0px, 0px); }
+  11%   { transform: translate(66px, -2px); }
+  23%   { transform: translate(134px, -4px); }
+  50%   { transform: translate(64px, 1px); }
+  97%   { transform: translate(-10px, 0px); }
+  100%  { transform: translate(0px, 0px); }
+}
+
+/* Ambient interstitial glucose drift */
+.gluc-ambient-1 { animation-name: kf-gluc-ambient-1; }
+@keyframes kf-gluc-ambient-1 {
+  0%    { transform: translate(0px, 0px); }
+  6%    { transform: translate(10px, -14px); }
+  12%   { transform: translate(22px, -26px); }
+  18%   { transform: translate(30px, -38px); }
+  24%   { transform: translate(36px, -46px); }
+  97%   { transform: translate(-4px, 4px); }
+  100%  { transform: translate(0px, 0px); }
+}
+
+.gluc-ambient-2 { animation-name: kf-gluc-ambient-2; }
+@keyframes kf-gluc-ambient-2 {
+  0%    { transform: translate(0px, 0px); }
+  8%    { transform: translate(-12px, -16px); }
+  16%   { transform: translate(-20px, -32px); }
+  24%   { transform: translate(-28px, -44px); }
+  97%   { transform: translate(3px, 4px); }
+  100%  { transform: translate(0px, 0px); }
+}
+
+.gluc-ambient-3 { animation-name: kf-gluc-ambient-3; }
+@keyframes kf-gluc-ambient-3 {
+  0%    { transform: translate(0px, 0px); }
+  10%   { transform: translate(14px, -10px); }
+  20%   { transform: translate(6px, -24px); }
+  24%   { transform: translate(2px, -30px); }
+  97%   { transform: translate(-2px, 3px); }
+  100%  { transform: translate(0px, 0px); }
+}
+
+/* 5 Glucose rings leaving the capillary (y=462) and reaching filament tip (450, 342)
+   Arrivals at: #1=0.3s(1.5%), #2=1.1s(5.5%), #3=1.9s(9.5%), #4=2.7s(13.5%), #5=3.5s(17.5%) */
+.gluc-arrive-1 { animation-name: kf-gluc-arrive-1; }
+@keyframes kf-gluc-arrive-1 {
+  0%    { transform: translate(-18px, 38px); opacity: 0.95; }
+  0.8%  { transform: translate(-8px, 16px); opacity: 1; }
+  1.5%  { transform: translate(0px, 0px); opacity: 1; }
+  2.2%  { transform: translate(2px, -4px); opacity: 0; }
+  98.0% { transform: translate(-36px, 82px); opacity: 0; }
+  99.0% { transform: translate(-28px, 60px); opacity: 0.7; }
+  100%  { transform: translate(-18px, 38px); opacity: 0.95; }
+}
+
+.gluc-arrive-2 { animation-name: kf-gluc-arrive-2; }
+@keyframes kf-gluc-arrive-2 {
+  0%    { transform: translate(-64px, 118px); opacity: 0.75; }
+  2.0%  { transform: translate(-44px, 84px); opacity: 0.95; }
+  3.8%  { transform: translate(-20px, 38px); opacity: 1; }
+  5.5%  { transform: translate(0px, 0px); opacity: 1; }
+  6.2%  { transform: translate(2px, -4px); opacity: 0; }
+  98.5% { transform: translate(-64px, 118px); opacity: 0; }
+  100%  { transform: translate(-64px, 118px); opacity: 0.75; }
+}
+
+.gluc-arrive-3 { animation-name: kf-gluc-arrive-3; }
+@keyframes kf-gluc-arrive-3 {
+  0%    { transform: translate(58px, 122px); opacity: 0.4; }
+  3.5%  { transform: translate(50px, 104px); opacity: 0.85; }
+  6.5%  { transform: translate(26px, 54px); opacity: 1; }
+  8.2%  { transform: translate(10px, 20px); opacity: 1; }
+  9.5%  { transform: translate(0px, 0px); opacity: 1; }
+  10.2% { transform: translate(-2px, -4px); opacity: 0; }
+  99.0% { transform: translate(58px, 122px); opacity: 0; }
+  100%  { transform: translate(58px, 122px); opacity: 0.4; }
+}
+
+.gluc-arrive-4 { animation-name: kf-gluc-arrive-4; }
+@keyframes kf-gluc-arrive-4 {
+  0%    { transform: translate(-18px, 126px); opacity: 0.2; }
+  7.0%  { transform: translate(-18px, 120px); opacity: 0.75; }
+  10.0% { transform: translate(-12px, 72px); opacity: 0.95; }
+  12.0% { transform: translate(-5px, 28px); opacity: 1; }
+  13.5% { transform: translate(0px, 0px); opacity: 1; }
+  14.2% { transform: translate(0px, -4px); opacity: 0; }
+  99.0% { transform: translate(-18px, 126px); opacity: 0; }
+  100%  { transform: translate(-18px, 126px); opacity: 0.2; }
+}
+
+.gluc-arrive-5 { animation-name: kf-gluc-arrive-5; }
+@keyframes kf-gluc-arrive-5 {
+  0%    { transform: translate(82px, 124px); opacity: 0.15; }
+  11.0% { transform: translate(74px, 114px); opacity: 0.75; }
+  14.0% { transform: translate(42px, 68px); opacity: 0.95; }
+  16.0% { transform: translate(16px, 26px); opacity: 1; }
+  17.5% { transform: translate(0px, 0px); opacity: 1; }
+  18.2% { transform: translate(-2px, -4px); opacity: 0; }
+  99.0% { transform: translate(82px, 124px); opacity: 0; }
+  100%  { transform: translate(82px, 124px); opacity: 0.15; }
+}
+
+/* Teal pulse at filament tip on each arrival: 1.5%(0.3s), 5.5%(1.1s), 9.5%(1.9s), 13.5%(2.7s), 17.5%(3.5s) */
+.tip-pulse-ring { animation-name: kf-tip-pulse-ring; }
+@keyframes kf-tip-pulse-ring {
+  0%    { transform: scale(0.5); opacity: 0; }
+  1.3%  { transform: scale(0.5); opacity: 0; }
+  1.6%  { transform: scale(0.85); opacity: 0.9; }
+  2.4%  { transform: scale(1.45); opacity: 0.4; }
+  3.2%  { transform: scale(1.9); opacity: 0; }
+
+  5.3%  { transform: scale(0.5); opacity: 0; }
+  5.6%  { transform: scale(0.85); opacity: 0.9; }
+  6.4%  { transform: scale(1.45); opacity: 0.4; }
+  7.2%  { transform: scale(1.9); opacity: 0; }
+
+  9.3%  { transform: scale(0.5); opacity: 0; }
+  9.6%  { transform: scale(0.85); opacity: 0.9; }
+  10.4% { transform: scale(1.45); opacity: 0.4; }
+  11.2% { transform: scale(1.9); opacity: 0; }
+
+  13.3% { transform: scale(0.5); opacity: 0; }
+  13.6% { transform: scale(0.85); opacity: 0.9; }
+  14.4% { transform: scale(1.45); opacity: 0.4; }
+  15.2% { transform: scale(1.9); opacity: 0; }
+
+  17.3% { transform: scale(0.5); opacity: 0; }
+  17.6% { transform: scale(0.85); opacity: 0.9; }
+  18.4% { transform: scale(1.45); opacity: 0.4; }
+  19.2% { transform: scale(1.9); opacity: 0; }
+  100%  { transform: scale(0.5); opacity: 0; }
+}
+
+.tip-pulse-glow { animation-name: kf-tip-pulse-glow; }
+@keyframes kf-tip-pulse-glow {
+  0%    { opacity: 0.15; transform: scale(0.9); }
+  1.4%  { opacity: 0.15; transform: scale(0.9); }
+  1.7%  { opacity: 0.85; transform: scale(1.25); }
+  2.8%  { opacity: 0.15; transform: scale(0.9); }
+
+  5.4%  { opacity: 0.15; transform: scale(0.9); }
+  5.7%  { opacity: 0.85; transform: scale(1.25); }
+  6.8%  { opacity: 0.15; transform: scale(0.9); }
+
+  9.4%  { opacity: 0.15; transform: scale(0.9); }
+  9.7%  { opacity: 0.85; transform: scale(1.25); }
+  10.8% { opacity: 0.15; transform: scale(0.9); }
+
+  13.4% { opacity: 0.15; transform: scale(0.9); }
+  13.7% { opacity: 0.85; transform: scale(1.25); }
+  14.8% { opacity: 0.15; transform: scale(0.9); }
+
+  17.4% { opacity: 0.15; transform: scale(0.9); }
+  17.7% { opacity: 0.85; transform: scale(1.25); }
+  18.8% { opacity: 0.15; transform: scale(0.9); }
+  100%  { opacity: 0.15; transform: scale(0.9); }
+}
+
+/* =========================================================
+   SCENE 1 READ-OUT NUMBERS ("61", "59", "58", "59", "63")
+   Cross-faded at ~0.8s intervals with non-overlapping touch-at-zero transitions
+   ========================================================= */
+
+/* Reading 1: "61" (0.0-0.85s = 0%-4.25%) */
+.readout-1 { animation-name: kf-readout-1; }
+@keyframes kf-readout-1 {
+  0% { opacity: 1; }
+  4.24% { opacity: 1; }
+  4.25% { opacity: 0; }
+  98.5% { opacity: 0; }
+  99.25% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Reading 2: "59" (0.85-1.65s = 4.25%-8.25%) */
+.readout-2 { animation-name: kf-readout-2; }
+@keyframes kf-readout-2 {
+  0% { opacity: 0; }
+  4.24% { opacity: 0; }
+  4.25% { opacity: 1; }
+  8.24% { opacity: 1; }
+  8.25% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Reading 3: "58" (1.65-2.45s = 8.25%-12.25%) */
+.readout-3 { animation-name: kf-readout-3; }
+@keyframes kf-readout-3 {
+  0% { opacity: 0; }
+  8.24% { opacity: 0; }
+  8.25% { opacity: 1; }
+  12.24% { opacity: 1; }
+  12.25% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Reading 4: "59" (2.45-3.25s = 12.25%-16.25%) */
+.readout-4 { animation-name: kf-readout-4; }
+@keyframes kf-readout-4 {
+  0% { opacity: 0; }
+  12.24% { opacity: 0; }
+  12.25% { opacity: 1; }
+  16.24% { opacity: 1; }
+  16.25% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Reading 5: "63" (3.25-4.35s = 16.25%-21.75%) */
+.readout-5 { animation-name: kf-readout-5; }
+@keyframes kf-readout-5 {
+  0% { opacity: 0; }
+  16.24% { opacity: 0; }
+  16.25% { opacity: 1; }
+  20.5% { opacity: 1; }
+  21.1% { opacity: 0.5; }
+  21.75% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Five dots under the readout number filling one per reading */
+.rdot-1 { animation-name: kf-rdot-1; }
+@keyframes kf-rdot-1 {
+  0%    { opacity: 1; }
+  22.0% { opacity: 1; }
+  23.0% { opacity: 0; }
+  98.5% { opacity: 0; }
+  100%  { opacity: 1; }
+}
+
+.rdot-2 { animation-name: kf-rdot-2; }
+@keyframes kf-rdot-2 {
+  0%    { opacity: 0; }
+  4.25% { opacity: 0; }
+  4.75% { opacity: 1; }
+  22.0% { opacity: 1; }
+  23.0% { opacity: 0; }
+  100%  { opacity: 0; }
+}
+
+.rdot-3 { animation-name: kf-rdot-3; }
+@keyframes kf-rdot-3 {
+  0%    { opacity: 0; }
+  8.25% { opacity: 0; }
+  8.75% { opacity: 1; }
+  22.0% { opacity: 1; }
+  23.0% { opacity: 0; }
+  100%  { opacity: 0; }
+}
+
+.rdot-4 { animation-name: kf-rdot-4; }
+@keyframes kf-rdot-4 {
+  0%     { opacity: 0; }
+  12.25% { opacity: 0; }
+  12.75% { opacity: 1; }
+  22.0%  { opacity: 1; }
+  23.0%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+.rdot-5 { animation-name: kf-rdot-5; }
+@keyframes kf-rdot-5 {
+  0%     { opacity: 0; }
+  16.25% { opacity: 0; }
+  16.75% { opacity: 1; }
+  22.0%  { opacity: 1; }
+  23.0%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* =========================================================
+   SCENE 3 BUDGET PIPS
+   Fill solid violet at 11.0s (55%), 11.2s (56%), 11.4s (57%), 11.6s (58%);
+   Empty one by one between 13.2s (66%) and 13.6s (68%).
+   ========================================================= */
+
+.pip-1 { animation-name: kf-pip-1; }
+@keyframes kf-pip-1 {
+  0%     { opacity: 0; }
+  54.6%  { opacity: 0; }
+  55.0%  { opacity: 1; }
+  67.5%  { opacity: 1; }
+  68.0%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+.pip-2 { animation-name: kf-pip-2; }
+@keyframes kf-pip-2 {
+  0%     { opacity: 0; }
+  55.6%  { opacity: 0; }
+  56.0%  { opacity: 1; }
+  67.0%  { opacity: 1; }
+  67.5%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+.pip-3 { animation-name: kf-pip-3; }
+@keyframes kf-pip-3 {
+  0%     { opacity: 0; }
+  56.6%  { opacity: 0; }
+  57.0%  { opacity: 1; }
+  66.5%  { opacity: 1; }
+  67.0%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+.pip-4 { animation-name: kf-pip-4; }
+@keyframes kf-pip-4 {
+  0%     { opacity: 0; }
+  57.6%  { opacity: 0; }
+  58.0%  { opacity: 1; }
+  66.0%  { opacity: 1; }
+  66.5%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* =========================================================
+   STATE TAGS UNDER PLATE (x=1228, y=520)
+   1. "as recorded · offset 0" (6.5–9.0 s = 32.5%–45.0%, muted)
+   2. "constant offset −12" (10.4–11.0 s = 52.0%–55.0%, violet)
+   3. "most · budget 4 spent" (11.8–13.2 s = 59.0%–66.0%, teal)
+   4. "fewest · constant offset −30" (15.0–16.3 s = 75.0%–81.5%, amber-orange)
+   ========================================================= */
+
+.tag-recorded { animation-name: kf-tag-recorded; }
+@keyframes kf-tag-recorded {
+  0%     { opacity: 0; }
+  31.8%  { opacity: 0; }
+  32.5%  { opacity: 1; }
+  44.3%  { opacity: 1; }
+  45.0%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+.tag-const12 { animation-name: kf-tag-const12; }
+@keyframes kf-tag-const12 {
+  0%     { opacity: 0; }
+  51.3%  { opacity: 0; }
+  52.0%  { opacity: 1; }
+  54.4%  { opacity: 1; }
+  55.0%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+.tag-most { animation-name: kf-tag-most; }
+@keyframes kf-tag-most {
+  0%     { opacity: 0; }
+  58.3%  { opacity: 0; }
+  59.0%  { opacity: 1; }
+  65.3%  { opacity: 1; }
+  66.0%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+.tag-fewest { animation-name: kf-tag-fewest; }
+@keyframes kf-tag-fewest {
+  0%     { opacity: 0; }
+  74.3%  { opacity: 0; }
+  75.0%  { opacity: 1; }
+  80.8%  { opacity: 1; }
+  81.5%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* =========================================================
+   CAPTIONS (Non-overlapping 0.3s fade transitions at boundaries)
+   ========================================================= */
+
+/* Caption 1: 0.0–4.4 s (0%–22.0%) */
+.cap-1 { animation-name: kf-cap-1; }
+@keyframes kf-cap-1 {
+  0%     { opacity: 1; }
+  21.25% { opacity: 1; }
+  21.6%  { opacity: 0.5; }
+  22.0%  { opacity: 0; }
+  99.25% { opacity: 0; }
+  99.6%  { opacity: 0.5; }
+  100%   { opacity: 1; }
+}
+
+/* Caption 2: 4.4–8.6 s (22.0%–43.0%) */
+.cap-2 { animation-name: kf-cap-2; }
+@keyframes kf-cap-2 {
+  0%     { opacity: 0; }
+  22.0%  { opacity: 0; }
+  22.4%  { opacity: 0.5; }
+  22.75% { opacity: 1; }
+  42.25% { opacity: 1; }
+  42.6%  { opacity: 0.5; }
+  43.0%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* Caption 3a: 8.6–11.0 s (43.0%–55.0%) */
+.cap-3a { animation-name: kf-cap-3a; }
+@keyframes kf-cap-3a {
+  0%     { opacity: 0; }
+  43.0%  { opacity: 0; }
+  43.4%  { opacity: 0.5; }
+  43.75% { opacity: 1; }
+  54.25% { opacity: 1; }
+  54.6%  { opacity: 0.5; }
+  55.0%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* Caption 3b: 11.0–13.2 s (55.0%–66.0%) */
+.cap-3b { animation-name: kf-cap-3b; }
+@keyframes kf-cap-3b {
+  0%     { opacity: 0; }
+  55.0%  { opacity: 0; }
+  55.4%  { opacity: 0.5; }
+  55.75% { opacity: 1; }
+  65.25% { opacity: 1; }
+  65.6%  { opacity: 0.5; }
+  66.0%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* Caption 4: 13.2–16.3 s (66.0%–81.5%) */
+.cap-4 { animation-name: kf-cap-4; }
+@keyframes kf-cap-4 {
+  0%     { opacity: 0; }
+  66.0%  { opacity: 0; }
+  66.4%  { opacity: 0.5; }
+  66.75% { opacity: 1; }
+  80.75% { opacity: 1; }
+  81.1%  { opacity: 0.5; }
+  81.5%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* Caption 5: 16.6–19.6 s (fade in 16.3–16.6s = 81.5%–83.0%, fade out 19.6–19.85s = 98.0%–99.25%) */
+.cap-5 { animation-name: kf-cap-5; }
+@keyframes kf-cap-5 {
+  0%     { opacity: 0; }
+  81.5%  { opacity: 0; }
+  82.25% { opacity: 0.5; }
+  83.0%  { opacity: 1; }
+  98.0%  { opacity: 1; }
+  98.6%  { opacity: 0.5; }
+  99.25% { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* =========================================================
+   TOP-RIGHT 5-DOT PROGRESS INDICATOR
+   ========================================================= */
+
+.prog-1 { animation-name: kf-prog-1; }
+@keyframes kf-prog-1 {
+  0%    { opacity: 1; }
+  21.5% { opacity: 1; }
+  22.5% { opacity: 0; }
+  99.0% { opacity: 0; }
+  100%  { opacity: 1; }
+}
+
+.prog-2 { animation-name: kf-prog-2; }
+@keyframes kf-prog-2 {
+  0%    { opacity: 0; }
+  21.5% { opacity: 0; }
+  22.5% { opacity: 1; }
+  42.5% { opacity: 1; }
+  43.5% { opacity: 0; }
+  100%  { opacity: 0; }
+}
+
+.prog-3 { animation-name: kf-prog-3; }
+@keyframes kf-prog-3 {
+  0%    { opacity: 0; }
+  42.5% { opacity: 0; }
+  43.5% { opacity: 1; }
+  65.5% { opacity: 1; }
+  66.5% { opacity: 0; }
+  100%  { opacity: 0; }
+}
+
+.prog-4 { animation-name: kf-prog-4; }
+@keyframes kf-prog-4 {
+  0%    { opacity: 0; }
+  65.5% { opacity: 0; }
+  66.5% { opacity: 1; }
+  81.0% { opacity: 1; }
+  82.0% { opacity: 0; }
+  100%  { opacity: 0; }
+}
+
+.prog-5 { animation-name: kf-prog-5; }
+@keyframes kf-prog-5 {
+  0%    { opacity: 0; }
+  81.0% { opacity: 0; }
+  82.0% { opacity: 1; }
+  99.0% { opacity: 1; }
+  100%  { opacity: 0; }
+}
+
+/*DATA-LAYER-CSS*/
+</style>
+</head>
+<body>
+<svg viewBox="0 0 1280 660" width="1280" height="660" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- =====================================================
+         DATA LAYER CONTRACT SHAPES (Centred at 0,0; no animations or filters)
+         ===================================================== -->
+    <!-- Empty well, radius 16 (pale rim, hollow) -->
+    <g id="well-empty">
+      <circle cx="0" cy="0" r="16" fill="#f6f9fa" stroke="#b9c6ca" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="13.2" fill="#fbfdfe" stroke="#d7e0e3" stroke-width="1"/>
+      <path d="M -9.5 -7 A 12 12 0 0 1 7 -9.5" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round"/>
+    </g>
+
+    <!-- Well filled with teal liquid (#1f8a84), radius 16, with meniscus highlight -->
+    <g id="well-in">
+      <circle cx="0" cy="0" r="16" fill="#176c67" stroke="#135854" stroke-width="1.2"/>
+      <circle cx="0" cy="0" r="14.5" fill="#1f8a84"/>
+      <circle cx="0.8" cy="1" r="11.2" fill="#259c95"/>
+      <path d="M -8.5 -6.2 A 11 11 0 0 1 6.2 -8.5" fill="none" stroke="#acebe7" stroke-width="2.2" stroke-linecap="round" opacity="0.88"/>
+      <circle cx="-5.8" cy="-5.8" r="1.4" fill="#ffffff" opacity="0.75"/>
+    </g>
+
+    <!-- Well filled with amber-orange liquid (#e07b39), radius 16, with meniscus highlight -->
+    <g id="well-out">
+      <circle cx="0" cy="0" r="16" fill="#b85c21" stroke="#994b19" stroke-width="1.2"/>
+      <circle cx="0" cy="0" r="14.5" fill="#e07b39"/>
+      <circle cx="0.8" cy="1" r="11.2" fill="#ea8d4f"/>
+      <path d="M -8.5 -6.2 A 11 11 0 0 1 6.2 -8.5" fill="none" stroke="#fde2cc" stroke-width="2.2" stroke-linecap="round" opacity="0.88"/>
+      <circle cx="-5.8" cy="-5.8" r="1.4" fill="#ffffff" opacity="0.75"/>
+    </g>
+
+    <!-- Small reading dot, radius 5 -->
+    <g id="reading-dot">
+      <circle cx="0" cy="0" r="5" fill="#1f8a84" stroke="#ffffff" stroke-width="1.2"/>
+    </g>
+
+    <!-- =====================================================
+         REUSABLE HISTOLOGY SHAPES FOR SCENE 1
+         ===================================================== -->
+    <!-- Glucose molecule: golden hexagon ring (~9 px across) -->
+    <g id="glucose-hex">
+      <polygon points="-4.8,0 -2.4,-4.2 2.4,-4.2 4.8,0 2.4,4.2 -2.4,4.2" fill="#f6d68a" stroke="#d99a1e" stroke-width="1.4" stroke-linejoin="round"/>
+      <circle cx="2.4" cy="-4.2" r="1.15" fill="#d99a1e"/>
+    </g>
+
+    <!-- Red blood cell: biconcave disc in histological section (#d0565a) -->
+    <g id="rbc-disc">
+      <path d="M -13,-3.5 C -9,-7.5 -4,-4.5 0,-4.5 C 4,-4.5 9,-7.5 13,-3.5 C 16,0 16,4 13,6.5 C 9,9.5 4,6.8 0,6.8 C -4,6.8 -9,9.5 -13,6.5 C -16,4 -16,0 -13,-3.5 Z" fill="#d0565a" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.1"/>
+      <ellipse cx="0" cy="1.2" rx="6.5" ry="2.2" fill="#b94347" opacity="0.55"/>
+    </g>
+
+    <g id="rbc-disc-tilted">
+      <path d="M -11,-5.5 C -6,-8.5 -2,-5.2 2,-4.2 C 6,-3.2 11,-4.8 13,-1 C 14.5,2.5 12,6.5 8,7.5 C 4,8.5 0,5.5 -4,4.8 C -8,4.2 -12,5.2 -13.5,1.5 C -14.5,-1.5 -13.5,-4 -11,-5.5 Z" fill="#d0565a" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.1"/>
+      <ellipse cx="-0.5" cy="1.2" rx="5.5" ry="1.9" fill="#b94347" opacity="0.55"/>
+    </g>
+
+    <!-- Small violet nucleus (#6b4a8c) for epidermal keratinocytes -->
+    <g id="epi-nucleus">
+      <ellipse cx="0" cy="0" rx="4.2" ry="3.1" fill="#6b4a8c" stroke="#3a2f3a" stroke-opacity="0.45" stroke-width="0.8"/>
+      <circle cx="-1.2" cy="-0.6" r="1" fill="#4c3168" opacity="0.7"/>
+    </g>
+
+    <!-- Interstitial dermal cell with violet nucleus -->
+    <g id="dermal-cell-round">
+      <path d="M -16,-4 C -14,-13 -4,-16 6,-14 C 15,-12 19,-3 16,6 C 13,14 3,17 -7,14 C -15,11 -18,4 -16,-4 Z" fill="#f1d2cb" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+      <ellipse cx="-1" cy="0.5" rx="6.5" ry="5" fill="#6b4a8c" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1"/>
+      <circle cx="-2.5" cy="-0.5" r="1.6" fill="#462c61"/>
+      <circle cx="2" cy="1.5" r="1.1" fill="#9a7bb8" opacity="0.7"/>
+    </g>
+
+    <g id="dermal-cell-spindle">
+      <path d="M -26,2 C -16,-6 -7,-10 2,-9 C 11,-8 19,-3 27,3 C 18,8 9,11 -1,10 C -11,9 -19,6 -26,2 Z" fill="#efd0c9" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+      <ellipse cx="0" cy="0.5" rx="7.5" ry="3.8" fill="#6b4a8c" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1"/>
+      <circle cx="-2" cy="0.2" r="1.4" fill="#462c61"/>
+    </g>
+
+    <!-- Clip path for the skin cross-section frame (x=40..820, y=96..560) -->
+    <clipPath id="skin-frame-clip">
+      <rect x="40" y="114" width="780" height="446" rx="10"/>
+    </clipPath>
+
+    <!-- At most two filters: 1) soft card shadow, 2) soft tip glow -->
+    <filter id="card-shadow" x="-6%" y="-6%" width="112%" height="114%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#3a2f3a" flood-opacity="0.07"/>
+    </filter>
+
+    <filter id="tip-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+
+    <!-- Gradient for Scene 5 range bar -->
+    <linearGradient id="range-bar-grad" x1="765" y1="360" x2="1006.7" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e07b39"/>
+      <stop offset="32%" stop-color="#1f8a84"/>
+      <stop offset="100%" stop-color="#1f8a84"/>
+    </linearGradient>
+  </defs>
+
+  <!-- =======================================================
+       STAGE BACKGROUND (#fbf7f1 warm paper)
+       ======================================================= -->
+  <rect x="0" y="0" width="1280" height="660" fill="#fbf7f1"/>
+
+  <!-- Subtle textbook plate border line at top under header -->
+  <line x1="40" y1="78" x2="1240" y2="78" stroke="#e5dec9" stroke-width="1"/>
+
+  <!-- =======================================================
+       PERSISTENT FILM TITLE (Top Left, y=60) & PROGRESS DOTS (Top Right, y=54)
+       ======================================================= -->
+  <text x="40" y="60" fill="#22303c" font-size="26" font-weight="600">Local State Windows <tspan fill="#6b7781" font-size="22" font-weight="400">&#183; exact range counts under an offset budget</tspan></text>
+
+  <!-- Discreet 5-dot scene progress indicator (x: 1150–1230, y: 54) -->
+  <g>
+    <line x1="1150" y1="54" x2="1230" y2="54" stroke="#dfd8cc" stroke-width="1.5"/>
+    <circle cx="1150" cy="54" r="5" fill="#fbf7f1" stroke="#b9c2c8" stroke-width="1.5"/>
+    <circle cx="1170" cy="54" r="5" fill="#fbf7f1" stroke="#b9c2c8" stroke-width="1.5"/>
+    <circle cx="1190" cy="54" r="5" fill="#fbf7f1" stroke="#b9c2c8" stroke-width="1.5"/>
+    <circle cx="1210" cy="54" r="5" fill="#fbf7f1" stroke="#b9c2c8" stroke-width="1.5"/>
+    <circle cx="1230" cy="54" r="5" fill="#fbf7f1" stroke="#b9c2c8" stroke-width="1.5"/>
+
+    <circle class="prog-1" cx="1150" cy="54" r="5" fill="#1f8a84"/>
+    <circle class="prog-2" cx="1170" cy="54" r="5" fill="#1f8a84"/>
+    <circle class="prog-3" cx="1190" cy="54" r="5" fill="#1f8a84"/>
+    <circle class="prog-4" cx="1210" cy="54" r="5" fill="#1f8a84"/>
+    <circle class="prog-5" cx="1230" cy="54" r="5" fill="#1f8a84"/>
+  </g>
+
+  <!-- =======================================================
+       SCENE 1 (0.0–4.4 s): H&E SKIN CROSS-SECTION & READ-OUT PANEL
+       ======================================================= -->
+  <g class="scene1-vis">
+    <!-- Clipped H&E tissue block (x=40..820, y=114..560) -->
+    <g clip-path="url(#skin-frame-clip)">
+      <!-- Dermis base fill (#f8e6dc) -->
+      <rect x="40" y="114" width="780" height="446" fill="#f8e6dc"/>
+
+      <!-- Subtle deep reticular dermis warm tint at bottom -->
+      <path d="M 40,420 Q 260,408 450,422 T 820,414 L 820,560 L 40,560 Z" fill="#f4ded2" opacity="0.65"/>
+
+      <!-- Wavy collagen fibres (#e9c9b8) in the dermis -->
+      <g fill="none" stroke="#e9c9b8" stroke-linecap="round">
+        <path d="M 45,254 C 125,238 195,270 275,252 C 355,234 420,266 500,250 C 580,234 660,266 740,248 C 775,240 800,246 816,252" stroke-width="7"/>
+        <path d="M 45,264 C 125,248 195,280 275,262 C 355,244 420,276 500,260 C 580,244 660,276 740,258" stroke-width="2.5" opacity="0.8"/>
+
+        <path d="M 42,308 C 115,324 190,292 270,310 C 350,328 430,296 510,312 C 590,328 670,294 750,312 C 785,320 802,314 816,308" stroke-width="8"/>
+        <path d="M 55,358 C 140,340 215,374 300,356 C 385,338 465,370 550,354 C 635,338 715,368 815,350" stroke-width="6.5"/>
+        <path d="M 42,404 C 120,420 205,390 290,406 C 375,422 455,392 540,408 C 625,424 710,392 815,408" stroke-width="7.5"/>
+        <path d="M 45,436 C 135,422 225,444 315,430 C 405,416 495,440 585,426 C 675,412 755,434 816,424" stroke-width="5.5" opacity="0.85"/>
+        <path d="M 42,536 C 150,524 260,548 370,534 C 480,520 590,544 700,532 C 760,526 795,534 816,538" stroke-width="6.5"/>
+      </g>
+
+      <!-- Cellular Epidermis (#e6a29d) with undulating rete ridges -->
+      <path d="M 40,136
+               L 442,136 L 442,204
+               C 415,208 395,222 365,220
+               C 330,218 315,194 280,196
+               C 245,198 228,224 192,222
+               C 156,220 140,194 106,196
+               C 75,198 58,214 40,212 Z"
+            fill="#e6a29d" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+
+      <path d="M 458,136
+               L 820,136 L 820,210
+               C 795,212 775,194 742,196
+               C 708,198 690,224 654,222
+               C 618,220 600,194 565,196
+               C 530,198 512,222 480,218
+               C 468,216 462,210 458,204 Z"
+            fill="#e6a29d" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+
+      <!-- Subtle spinous/basal zone shading in epidermis -->
+      <path d="M 40,178 Q 110,172 190,184 T 360,182 L 442,180 L 442,204
+               C 415,208 395,222 365,220 C 330,218 315,194 280,196 C 245,198 228,224 192,222 C 156,220 140,194 106,196 C 75,198 58,214 40,212 Z"
+            fill="#dc908a" opacity="0.45"/>
+      <path d="M 458,180 L 560,182 Q 650,192 740,178 L 820,182 L 820,210
+               C 795,212 775,194 742,196 C 708,198 690,224 654,222 C 618,220 600,194 565,196 C 530,198 512,222 480,218 C 468,216 462,210 458,204 Z"
+            fill="#dc908a" opacity="0.45"/>
+
+      <!-- Stratum corneum (#f1c4be) layered keratinized sheets at top of epidermis -->
+      <path d="M 40,114 L 443,114 L 443,138 L 40,138 Z" fill="#f1c4be" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+      <path d="M 457,114 L 820,114 L 820,138 L 457,138 Z" fill="#f1c4be" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+      <!-- Keratin lamellae lines inside stratum corneum -->
+      <g fill="none" stroke="#3a2f3a" stroke-opacity="0.4" stroke-width="1">
+        <path d="M 40,122 Q 140,119 240,123 T 442,121"/>
+        <path d="M 40,130 Q 150,133 260,129 T 442,131"/>
+        <path d="M 458,121 Q 560,124 660,120 T 820,122"/>
+        <path d="M 458,130 Q 570,127 680,131 T 820,129"/>
+      </g>
+
+      <!-- Small violet nuclei (#6b4a8c) throughout the epidermis -->
+      <g>
+        <!-- Upper spinous row -->
+        <use href="#epi-nucleus" x="68" y="156"/>
+        <use href="#epi-nucleus" x="108" y="152"/>
+        <use href="#epi-nucleus" x="148" y="158"/>
+        <use href="#epi-nucleus" x="188" y="162"/>
+        <use href="#epi-nucleus" x="228" y="156"/>
+        <use href="#epi-nucleus" x="268" y="152"/>
+        <use href="#epi-nucleus" x="308" y="156"/>
+        <use href="#epi-nucleus" x="348" y="162"/>
+        <use href="#epi-nucleus" x="388" y="158"/>
+        <use href="#epi-nucleus" x="424" y="154"/>
+
+        <use href="#epi-nucleus" x="478" y="156"/>
+        <use href="#epi-nucleus" x="516" y="160"/>
+        <use href="#epi-nucleus" x="556" y="152"/>
+        <use href="#epi-nucleus" x="596" y="156"/>
+        <use href="#epi-nucleus" x="636" y="162"/>
+        <use href="#epi-nucleus" x="676" y="158"/>
+        <use href="#epi-nucleus" x="716" y="152"/>
+        <use href="#epi-nucleus" x="756" y="155"/>
+        <use href="#epi-nucleus" x="796" y="158"/>
+
+        <!-- Basal layer nuclei following the undulating rete ridges -->
+        <use href="#epi-nucleus" x="56" y="198"/>
+        <use href="#epi-nucleus" x="84" y="190"/>
+        <use href="#epi-nucleus" x="114" y="185"/>
+        <use href="#epi-nucleus" x="144" y="194"/>
+        <use href="#epi-nucleus" x="174" y="208"/>
+        <use href="#epi-nucleus" x="204" y="210"/>
+        <use href="#epi-nucleus" x="234" y="198"/>
+        <use href="#epi-nucleus" x="264" y="186"/>
+        <use href="#epi-nucleus" x="294" y="186"/>
+        <use href="#epi-nucleus" x="324" y="198"/>
+        <use href="#epi-nucleus" x="354" y="208"/>
+        <use href="#epi-nucleus" x="384" y="208"/>
+        <use href="#epi-nucleus" x="414" y="198"/>
+
+        <use href="#epi-nucleus" x="484" y="204"/>
+        <use href="#epi-nucleus" x="514" y="204"/>
+        <use href="#epi-nucleus" x="544" y="190"/>
+        <use href="#epi-nucleus" x="574" y="186"/>
+        <use href="#epi-nucleus" x="604" y="196"/>
+        <use href="#epi-nucleus" x="636" y="208"/>
+        <use href="#epi-nucleus" x="668" y="208"/>
+        <use href="#epi-nucleus" x="698" y="196"/>
+        <use href="#epi-nucleus" x="728" y="186"/>
+        <use href="#epi-nucleus" x="758" y="186"/>
+        <use href="#epi-nucleus" x="788" y="196"/>
+      </g>
+
+      <!-- Interstitial cells in the dermis (outer placement <g transform>, inner animated <g class>) -->
+      <g transform="translate(215, 282)">
+        <g class="cell-pulse-a">
+          <use href="#dermal-cell-round" x="0" y="0"/>
+        </g>
+      </g>
+      <g transform="translate(335, 368)">
+        <g class="cell-pulse-b">
+          <use href="#dermal-cell-spindle" x="0" y="0"/>
+        </g>
+      </g>
+      <g transform="translate(572, 276)">
+        <g class="cell-pulse-b">
+          <use href="#dermal-cell-round" x="0" y="0"/>
+        </g>
+      </g>
+      <g transform="translate(698, 354)">
+        <g class="cell-pulse-a">
+          <use href="#dermal-cell-round" x="0" y="0"/>
+        </g>
+      </g>
+      <g transform="translate(154, 396)">
+        <g class="cell-pulse-b">
+          <use href="#dermal-cell-spindle" x="0" y="0"/>
+        </g>
+      </g>
+      <g transform="translate(612, 412)">
+        <g class="cell-pulse-a">
+          <use href="#dermal-cell-spindle" x="0" y="0"/>
+        </g>
+      </g>
+
+      <!-- Capillary crossing the dermis (#c44a4f wall, #f3d0cf lumen) -->
+      <g>
+        <!-- Lumen (#f3d0cf) -->
+        <path d="M 40,474 C 190,486 330,454 455,456 C 580,458 700,484 820,474
+                 L 820,512 C 700,522 580,496 455,494 C 330,492 190,524 40,512 Z"
+              fill="#f3d0cf"/>
+
+        <!-- Upper capillary wall (#c44a4f) -->
+        <path d="M 40,468 C 190,480 330,448 455,450 C 580,452 700,478 820,468
+                 L 820,475 C 700,485 580,459 455,457 C 330,455 190,487 40,475 Z"
+              fill="#c44a4f" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+
+        <!-- Lower capillary wall (#c44a4f) -->
+        <path d="M 40,511 C 190,523 330,491 455,493 C 580,495 700,521 820,511
+                 L 820,518 C 700,528 580,502 455,500 C 330,498 190,530 40,518 Z"
+              fill="#c44a4f" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+
+        <!-- Flattened endothelial nuclei along capillary walls -->
+        <ellipse cx="145" cy="474" rx="9" ry="2.6" fill="#6b4a8c" opacity="0.85"/>
+        <ellipse cx="325" cy="458" rx="9" ry="2.6" fill="#6b4a8c" opacity="0.85"/>
+        <ellipse cx="525" cy="457" rx="9" ry="2.6" fill="#6b4a8c" opacity="0.85"/>
+        <ellipse cx="715" cy="474" rx="9" ry="2.6" fill="#6b4a8c" opacity="0.85"/>
+        <ellipse cx="225" cy="511" rx="9" ry="2.6" fill="#6b4a8c" opacity="0.85"/>
+        <ellipse cx="425" cy="495" rx="9" ry="2.6" fill="#6b4a8c" opacity="0.85"/>
+        <ellipse cx="625" cy="507" rx="9" ry="2.6" fill="#6b4a8c" opacity="0.85"/>
+
+        <!-- Drifting Red Blood Cells (biconcave discs, #d0565a) -->
+        <g transform="translate(80, 494)">
+          <g class="rbc-drift-1">
+            <use href="#rbc-disc" x="0" y="0"/>
+            <use href="#rbc-disc-tilted" x="155" y="-12"/>
+            <use href="#rbc-disc" x="315" y="-18"/>
+            <use href="#rbc-disc-tilted" x="455" y="-12"/>
+            <use href="#rbc-disc" x="580" y="-2"/>
+          </g>
+        </g>
+        <g transform="translate(150, 498)">
+          <g class="rbc-drift-2">
+            <use href="#rbc-disc-tilted" x="0" y="0"/>
+            <use href="#rbc-disc" x="180" y="-20"/>
+            <use href="#rbc-disc-tilted" x="345" y="-19"/>
+            <use href="#rbc-disc" x="500" y="-5"/>
+          </g>
+        </g>
+        <g transform="translate(65, 488)">
+          <g class="rbc-drift-3">
+            <use href="#rbc-disc" x="0" y="0"/>
+            <use href="#rbc-disc-tilted" x="245" y="-14"/>
+            <use href="#rbc-disc" x="515" y="-4"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- Ambient glucose rings drifting in interstitial fluid -->
+      <g transform="translate(268, 398)">
+        <g class="gluc-ambient-1">
+          <use href="#glucose-hex" x="0" y="0"/>
+          <use href="#glucose-hex" x="88" y="28"/>
+          <use href="#glucose-hex" x="236" y="16"/>
+        </g>
+      </g>
+      <g transform="translate(382, 294)">
+        <g class="gluc-ambient-2">
+          <use href="#glucose-hex" x="0" y="0"/>
+          <use href="#glucose-hex" x="138" y="34"/>
+          <use href="#glucose-hex" x="-112" y="42"/>
+        </g>
+      </g>
+      <g transform="translate(518, 384)">
+        <g class="gluc-ambient-3">
+          <use href="#glucose-hex" x="0" y="0"/>
+          <use href="#glucose-hex" x="128" y="-36"/>
+          <use href="#glucose-hex" x="-218" y="-68"/>
+        </g>
+      </g>
+
+      <!-- 5 Hero glucose rings leaving capillary and arriving at filament tip (450, 342) -->
+      <g transform="translate(450, 342)">
+        <g class="gluc-arrive-1"><use href="#glucose-hex" x="0" y="0"/></g>
+        <g class="gluc-arrive-2"><use href="#glucose-hex" x="0" y="0"/></g>
+        <g class="gluc-arrive-3"><use href="#glucose-hex" x="0" y="0"/></g>
+        <g class="gluc-arrive-4"><use href="#glucose-hex" x="0" y="0"/></g>
+        <g class="gluc-arrive-5"><use href="#glucose-hex" x="0" y="0"/></g>
+      </g>
+
+      <!-- Teal pulse rings & glow at the sensor filament tip (450, 340) -->
+      <g transform="translate(450, 340)">
+        <circle class="tip-pulse-glow" cx="0" cy="0" r="18" fill="#1f8a84" filter="url(#tip-glow)"/>
+        <circle class="tip-pulse-ring" cx="0" cy="0" r="16" fill="none" stroke="#1f8a84" stroke-width="2.4"/>
+      </g>
+
+      <!-- Sensor filament reaching into the dermis (graphite #4a5560 with teal membrane tip #1f8a84) -->
+      <g>
+        <!-- Subtle tissue indentation funnel around insertion site -->
+        <path d="M 441,114 L 445,142 L 455,142 L 459,114 Z" fill="#e9c9b8" opacity="0.6"/>
+        <!-- Graphite filament shaft (#4a5560) -->
+        <rect x="446" y="114" width="8" height="202" fill="#4a5560" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+        <line x1="448.5" y1="116" x2="448.5" y2="315" stroke="#7c8894" stroke-width="1.2"/>
+        <!-- Teal sensing membrane tip (#1f8a84) -->
+        <path d="M 446,314 L 454,314 L 454,352 C 454,356.5 452.2,359 450,359 C 447.8,359 446,356.5 446,352 Z"
+              fill="#1f8a84" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+        <!-- Highlight on membrane tip -->
+        <line x1="448.5" y1="317" x2="448.5" y2="353" stroke="#8fe3de" stroke-width="1.4" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Crisp outer histology slide border (x=40..820, y=114..560) -->
+    <rect x="40" y="114" width="780" height="446" rx="10" fill="none" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+
+    <!-- Slim transmitter patch sitting on the skin surface (x=370..530, y=92..116) -->
+    <g>
+      <!-- White cloth adhesive pad on skin surface -->
+      <rect x="358" y="110" width="184" height="6" rx="3" fill="#efeae1" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+      <!-- Slim low-profile transmitter body -->
+      <path d="M 376,110 C 376,97 392,92 414,92 L 486,92 C 508,92 524,97 524,110 Z"
+            fill="#f2f5f7" stroke="#3a2f3a" stroke-opacity="0.55" stroke-width="1.2"/>
+      <!-- Graphite top accent band & status dot -->
+      <path d="M 396,98 L 504,98 C 510,98 514,101 516,105 L 384,105 C 386,101 390,98 396,98 Z"
+            fill="#4a5560"/>
+      <circle cx="450" cy="101.5" r="2.5" fill="#1f8a84"/>
+    </g>
+
+    <!-- Delicate connector line from sensor patch to read-out panel -->
+    <path d="M 530,101 L 844,101 C 854,101 860,107 860,117 L 860,150" fill="none" stroke="#9aa5ae" stroke-width="1.5" stroke-dasharray="5 5"/>
+
+    <!-- Read-out panel on the right (x: 860–1240, y: 150–470) -->
+    <g filter="url(#card-shadow)">
+      <rect x="860" y="150" width="380" height="320" rx="14" fill="#ffffff" stroke="#d9d2c6" stroke-width="1.5"/>
+    </g>
+    <!-- Top accent bar inside readout card -->
+    <line x1="892" y1="234" x2="1208" y2="234" stroke="#ece6dc" stroke-width="1.2"/>
+
+    <!-- Five dots under the readout number, filling in one per reading -->
+    <g>
+      <circle cx="994"  cy="416" r="7" fill="#f3f5f6" stroke="#b9c2c8" stroke-width="1.8"/>
+      <circle cx="1022" cy="416" r="7" fill="#f3f5f6" stroke="#b9c2c8" stroke-width="1.8"/>
+      <circle cx="1050" cy="416" r="7" fill="#f3f5f6" stroke="#b9c2c8" stroke-width="1.8"/>
+      <circle cx="1078" cy="416" r="7" fill="#f3f5f6" stroke="#b9c2c8" stroke-width="1.8"/>
+      <circle cx="1106" cy="416" r="7" fill="#f3f5f6" stroke="#b9c2c8" stroke-width="1.8"/>
+
+      <circle class="rdot-1" cx="994"  cy="416" r="7" fill="#1f8a84"/>
+      <circle class="rdot-2" cx="1022" cy="416" r="7" fill="#1f8a84"/>
+      <circle class="rdot-3" cx="1050" cy="416" r="7" fill="#1f8a84"/>
+      <circle class="rdot-4" cx="1078" cy="416" r="7" fill="#1f8a84"/>
+      <circle class="rdot-5" cx="1106" cy="416" r="7" fill="#1f8a84"/>
+    </g>
+  </g>
+
+  <!-- Scene 1 Text (separated for clean fade before Scene 2 text appears at 4.4s) -->
+  <g class="scene1-text-vis">
+    <!-- Subtle anatomical labels inside the slide -->
+    <text x="64" y="172" fill="#6b4a8c" font-size="22">Epidermis</text>
+    <text x="64" y="302" fill="#6b7781" font-size="22">Dermis</text>
+    <text x="64" y="446" fill="#c44a4f" font-size="22">Capillary</text>
+    <text x="468" y="252" fill="#1f8a84" font-size="22">Sensor filament</text>
+
+    <!-- Read-out panel heading & static unit -->
+    <text x="1050" y="206" text-anchor="middle" fill="#6b7781" font-size="26" font-weight="600">reading every 5 min</text>
+    <text x="1062" y="346" text-anchor="start" fill="#6b7781" font-size="28" font-weight="600">mg/dL</text>
+
+    <!-- Cross-faded real first five readings: "61", "59", "58", "59", "63" -->
+    <text class="readout-1" x="1048" y="348" text-anchor="end" fill="#22303c" font-size="88" font-weight="700">61</text>
+    <text class="readout-2" x="1048" y="348" text-anchor="end" fill="#22303c" font-size="88" font-weight="700">59</text>
+    <text class="readout-3" x="1048" y="348" text-anchor="end" fill="#22303c" font-size="88" font-weight="700">58</text>
+    <text class="readout-4" x="1048" y="348" text-anchor="end" fill="#22303c" font-size="88" font-weight="700">59</text>
+    <text class="readout-5" x="1048" y="348" text-anchor="end" fill="#22303c" font-size="88" font-weight="700">63</text>
+  </g>
+
+  <!-- =======================================================
+       SCENES 2–4 (4.4–16.3 s): LAB-BENCH BACKDROPS, HEADINGS & 96-WELL PLATE BODY
+       (Placed BEFORE the data-layer marker per contract)
+       ======================================================= -->
+  <g class="bench-vis">
+    <!-- Subtle lab-bench paper card behind glucose strip chart (plot area x:90-590, y:150-380) -->
+    <rect x="36" y="142" width="570" height="272" rx="10" fill="#ffffff" fill-opacity="0.7" stroke="#e4ddd0" stroke-width="1.2"/>
+
+    <!-- 96-Well Polystyrene Plate Body (x: 684–1236, y: 122–494) -->
+    <g filter="url(#card-shadow)">
+      <!-- Outer plate shell (#eef2f3 with #c9d3d6 edge) -->
+      <rect x="684" y="122" width="552" height="372" rx="14" fill="#eef2f3" stroke="#c9d3d6" stroke-width="2"/>
+      <!-- Soft inner bevel highlight -->
+      <rect x="689" y="127" width="542" height="362" rx="11" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+      <!-- Recessed well-matrix deck -->
+      <rect x="712" y="152" width="510" height="332" rx="8" fill="#e6ecee" stroke="#d3dde0" stroke-width="1.2"/>
+      <!-- Classic microtitre plate corner chamfer accent on left edge -->
+      <path d="M 684,142 L 704,122" fill="none" stroke="#c9d3d6" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Offset strip card backdrop & 4 budget pips (visible 8.6–16.3 s) -->
+  <g class="offset-ui-vis">
+    <rect x="36" y="442" width="570" height="92" rx="10" fill="#ffffff" fill-opacity="0.7" stroke="#e4ddd0" stroke-width="1.2"/>
+
+    <!-- Four budget pips (circles r=6, 18 px apart, last one ending at x=590 -> cx = 530, 548, 566, 584) -->
+    <circle cx="530" cy="424" r="6" fill="none" stroke="#6b4a8c" stroke-width="2"/>
+    <circle cx="548" cy="424" r="6" fill="none" stroke="#6b4a8c" stroke-width="2"/>
+    <circle cx="566" cy="424" r="6" fill="none" stroke="#6b4a8c" stroke-width="2"/>
+    <circle cx="584" cy="424" r="6" fill="none" stroke="#6b4a8c" stroke-width="2"/>
+
+    <!-- Solid violet pip fills (11.0, 11.2, 11.4, 11.6 s; empty 13.2–13.6 s) -->
+    <circle class="pip-1" cx="530" cy="424" r="6" fill="#6b4a8c"/>
+    <circle class="pip-2" cx="548" cy="424" r="6" fill="#6b4a8c"/>
+    <circle class="pip-3" cx="566" cy="424" r="6" fill="#6b4a8c"/>
+    <circle class="pip-4" cx="584" cy="424" r="6" fill="#6b4a8c"/>
+  </g>
+
+  <!-- Bench-view headings & plate row/column labels (4.4–16.3 s) -->
+  <g class="bench-text-vis">
+    <!-- Chart heading (baseline y=132, x=90) -->
+    <text x="90" y="132" fill="#22303c" font-size="24" font-weight="600">Glucose readings (mg/dL)</text>
+
+    <!-- Plate heading (baseline y=108, starting x=684) -->
+    <text x="684" y="108" fill="#22303c" font-size="24" font-weight="600">96 readings in time order, A1 &#8594; H12</text>
+
+    <!-- Column numbers 1–12 centred on column centres (x = 728 + 43*c) at baseline y=146 (18 px exception) -->
+    <g fill="#6b7781" font-size="18" font-weight="600" text-anchor="middle">
+      <text x="728"  y="146">1</text>
+      <text x="771"  y="146">2</text>
+      <text x="814"  y="146">3</text>
+      <text x="857"  y="146">4</text>
+      <text x="900"  y="146">5</text>
+      <text x="943"  y="146">6</text>
+      <text x="986"  y="146">7</text>
+      <text x="1029" y="146">8</text>
+      <text x="1072" y="146">9</text>
+      <text x="1115" y="146">10</text>
+      <text x="1158" y="146">11</text>
+      <text x="1201" y="146">12</text>
+    </g>
+
+    <!-- Row letters A–H centred at x=702 on each row centre (y = 170 + 42*r, baseline +6px for 18 px exception) -->
+    <g fill="#6b7781" font-size="18" font-weight="600" text-anchor="middle">
+      <text x="702" y="176">A</text>
+      <text x="702" y="218">B</text>
+      <text x="702" y="260">C</text>
+      <text x="702" y="302">D</text>
+      <text x="702" y="344">E</text>
+      <text x="702" y="386">F</text>
+      <text x="702" y="428">G</text>
+      <text x="702" y="470">H</text>
+    </g>
+  </g>
+
+  <!-- Offset strip heading & budget label (8.6–16.3 s) -->
+  <g class="offset-ui-vis">
+    <text x="90" y="432" fill="#6b4a8c" font-size="24" font-weight="600">Offset path x&#7522;</text>
+    <text x="514" y="432" text-anchor="end" fill="#6b4a8c" font-size="22" font-weight="600">budget v = 4</text>
+  </g>
+
+  <!-- Static text next to counter digits (start x=904, baseline y=552, 30 px, muted, visible 6.5–16.3 s) -->
+  <text class="counter-label-vis" x="904" y="564" fill="#6b7781" font-size="30">of 96 in the band</text>
+
+  <!--DATA-LAYER-->
+
+  <!-- =======================================================
+       STATE TAG UNDER PLATE (Scenes 2–4: x=1228, baseline y=520, 22 px)
+       Placed AFTER the data-layer marker per contract
+       ======================================================= -->
+  <text class="tag-recorded" x="1228" y="520" text-anchor="end" fill="#6b7781" font-size="22" font-weight="600">as recorded &#183; offset 0</text>
+  <text class="tag-const12"  x="1228" y="520" text-anchor="end" fill="#6b4a8c" font-size="22" font-weight="600">constant offset &#8722;12</text>
+  <text class="tag-most"     x="1228" y="520" text-anchor="end" fill="#1f8a84" font-size="22" font-weight="600">most &#183; budget 4 spent</text>
+  <text class="tag-fewest"   x="1228" y="520" text-anchor="end" fill="#e07b39" font-size="22" font-weight="600">fewest &#183; constant offset &#8722;30</text>
+
+  <!-- =======================================================
+       SCENE 5 (16.6–19.6 s): RESULT CARD & HORIZONTAL SCALE
+       ======================================================= -->
+  <!-- Faint echo of the skin cross-section as a watermark behind the card (opacity <= 0.08) -->
+  <g class="watermark-vis" fill="none" stroke="#6b4a8c">
+    <path d="M 140,150 Q 340,136 540,152 T 940,146 T 1140,152" stroke-width="2"/>
+    <path d="M 140,210 C 220,232 300,188 380,212 C 460,236 540,188 620,212 C 700,236 780,188 860,212 C 940,236 1020,188 1140,210" stroke-width="2.5"/>
+    <path d="M 140,310 C 290,290 440,330 590,308 C 740,286 890,328 1140,306" stroke-width="4" stroke="#d99a1e"/>
+    <path d="M 140,486 C 340,502 540,468 740,478 C 940,488 1040,502 1140,490" stroke-width="6" stroke="#c44a4f"/>
+  </g>
+
+  <!-- Scene 5 Scale Graphics (x from 240 to 1040; 1 reading = 8.3333 px) -->
+  <g class="scene5-vis">
+    <!-- Thin grey base line (0 to 96 -> x=240 to x=1040) -->
+    <line x1="240" y1="364" x2="1040" y2="364" stroke="#b9c2c8" stroke-width="4" stroke-linecap="round"/>
+    <!-- End ticks at 0 (x=240) and 96 (x=1040) -->
+    <line x1="240" y1="354" x2="240" y2="374" stroke="#9aa5ae" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="1040" y1="354" x2="1040" y2="374" stroke="#9aa5ae" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Thick rounded bar from 63 (x=765) to 92 (x=1006.7) with left-to-right reveal -->
+    <line class="bar-reveal" x1="765" y1="364" x2="1006.7" y2="364"
+          stroke="url(#range-bar-grad)" stroke-width="18" stroke-linecap="round"
+          stroke-dasharray="242"/>
+
+    <!-- Endpoint markers at 63 (x=765) and 92 (x=1006.7) -->
+    <circle cx="765" cy="364" r="6" fill="#e07b39" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="1006.7" cy="364" r="6" fill="#1f8a84" stroke="#ffffff" stroke-width="1.5"/>
+
+    <!-- Small ink tick at 84 (x=940) -->
+    <line x1="940" y1="344" x2="940" y2="380" stroke="#22303c" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Scene 5 Text (16.45–19.65 s) -->
+  <g class="scene5-text-vis">
+    <!-- Main line: "63 ≤ readings in the band ≤ 92" -->
+    <text x="640" y="264" text-anchor="middle" fill="#22303c" font-size="30" font-weight="600">
+      <tspan fill="#e07b39" font-size="110" font-weight="700" dy="26">63</tspan><tspan fill="#22303c" font-size="30" font-weight="600" dy="-26"> &#8804; readings in the band &#8804; </tspan><tspan fill="#1f8a84" font-size="110" font-weight="700" dy="26">92</tspan>
+    </text>
+
+    <!-- Tick label at 84 (x=940) and scale end labels "0" (x=240) and "96" (x=1040) -->
+    <text x="940" y="332" text-anchor="middle" fill="#22303c" font-size="22" font-weight="600">84 as recorded</text>
+    <text x="240" y="406" text-anchor="middle" fill="#6b7781" font-size="22" font-weight="600">0</text>
+    <text x="1040" y="406" text-anchor="middle" fill="#6b7781" font-size="22" font-weight="600">96</text>
+
+    <!-- Two lines of 22 px muted text under the scale -->
+    <text x="640" y="462" text-anchor="middle" fill="#6b7781" font-size="22">Public BIG001 trace &#183; 96 readings &#183; offsets &#8722;30&#8230;30 mg/dL &#183; movement budget 4</text>
+    <text x="640" y="498" text-anchor="middle" fill="#6b7781" font-size="22">A sensitivity scenario, not an estimate of sensor error or clinical effect.</text>
+  </g>
+
+  <!-- =======================================================
+       CAPTION BAND AT BOTTOM (y from 576 to 660)
+       ======================================================= -->
+  <rect x="0" y="576" width="1280" height="84" fill="#ffffff" fill-opacity="0.86"/>
+  <line x1="0" y1="576" x2="1280" y2="576" stroke="#d9d2c6" stroke-width="1.5"/>
+
+  <!-- Caption 1 (0.0–4.4 s) -->
+  <text class="cap-1" x="640" y="612" text-anchor="middle" fill="#22303c" font-size="28">A glucose sensor under the skin reports one reading every five minutes.</text>
+
+  <!-- Caption 2 (4.4–8.6 s) -->
+  <text class="cap-2" x="640" y="612" text-anchor="middle" fill="#22303c" font-size="28">Eight hours give 96 readings. 84 lie in the 70&#8211;140 mg/dL band.</text>
+
+  <!-- Caption 3a (8.6–11.0 s) -->
+  <text class="cap-3a" x="640" y="612" text-anchor="middle" fill="#22303c" font-size="28">
+    <tspan x="640" y="612">Sensitivity question: subtract an offset x&#7522; from every reading.</tspan>
+    <tspan x="640" y="646">A constant &#8722;12 mg/dL puts 91 in the band.</tspan>
+  </text>
+
+  <!-- Caption 3b (11.0–13.2 s) -->
+  <text class="cap-3b" x="640" y="612" text-anchor="middle" fill="#22303c" font-size="28">
+    <tspan x="640" y="612">Let the offset move by 4 mg/dL in total along the trace.</tspan>
+    <tspan x="640" y="646">At most 92 readings are in the band.</tspan>
+  </text>
+
+  <!-- Caption 4 (13.2–16.3 s) -->
+  <text class="cap-4" x="640" y="612" text-anchor="middle" fill="#22303c" font-size="28">Under the same budget, at least 63. No admissible offset path gives fewer.</text>
+
+  <!-- Caption 5 (16.6–19.6 s) -->
+  <text class="cap-5" x="640" y="612" text-anchor="middle" fill="#22303c" font-size="28">
+    <tspan x="640" y="612">Exact minimum and maximum over every offset path within the budget.</tspan>
+    <tspan x="640" y="646">Not a confidence interval.</tspan>
+  </text>
+</svg>
+</body>
+</html>
